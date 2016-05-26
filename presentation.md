@@ -73,5 +73,73 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
    5. Wikis
 
 --------------------------------------------------------------------------------
+
+# 1. Introducción a los sistemas de control de versiones
+
+## 1.1. Local
+
+## 1.2. Centralizado
+
+## 1.3. Distribuido
+
+--------------------------------------------------------------------------------
+
+# 2. Introducción a git
+
+## 2.1. Inicializar un repositorio
+
+## 2.2. Agregar y borrar archivos
+
+## 2.3. Guardar cambios
+
+## 2.4. Enviar cambios al servidor
+
+--------------------------------------------------------------------------------
+
+# 3. Configuración del cliente git
+
+## 3.1. Datos del usuario
+
+## 3.2. Reparar fin de línea en los archivos
+
+## 3.3. Ignorar espacios en blanco
+
+--------------------------------------------------------------------------------
+
+# 4. Trabajando con repositorios existentes
+
+## 4.1. Clonar un repositorio existente
+
+## 4.2. Resolución de conflictos
+
+## 4.3. Corregir el commit anterior
+
+--------------------------------------------------------------------------------
+
+# 5. Introducción a Github
+
+## 5.1. Crear una cuenta en Github
+
+## 5.2. Administración de repositorios via web
+
+## 5.3. Cliente gráfico de git para Mac y Windows
+
+## 5.4. Documentación en Markdown
+
+--------------------------------------------------------------------------------
+
+# 6. Trabajo colaborativo en Github
+
+## 6.1. Fork
+
+## 6.2. Pull requests
+
+## 6.3. gist
+
+## 6.4. Github Pages
+
+## 6.5. Wikis
+
+--------------------------------------------------------------------------------
 <!-- zoom-out slide -->
 
