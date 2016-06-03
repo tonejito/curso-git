@@ -1,224 +1,220 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="en">
 <head>
-  <meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=1024">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <title>presentation</title>
-  <style type="text/css">
-atom-text-editor,
-  :host {
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>presentation</title>
+    <style type="text/css">atom-text-editor,
+:host {
   background-color: white;
   color: #555;
-  }
-  atom-text-editor .invisible-character,
-  :host .invisible-character {
+}
+atom-text-editor .invisible-character,
+:host .invisible-character {
   color: rgba(85, 85, 85, 0.2);
-  }
-  atom-text-editor .indent-guide,
-  :host .indent-guide {
+}
+atom-text-editor .indent-guide,
+:host .indent-guide {
   color: rgba(85, 85, 85, 0.2);
-  }
-  atom-text-editor .wrap-guide,
-  :host .wrap-guide {
+}
+atom-text-editor .wrap-guide,
+:host .wrap-guide {
   background-color: rgba(85, 85, 85, 0.2);
-  }
-  atom-text-editor .gutter,
-  :host .gutter {
+}
+atom-text-editor .gutter,
+:host .gutter {
   color: #555;
   background: white;
-  }
-  atom-text-editor .gutter .line-number.folded,
-  :host .gutter .line-number.folded,
-  atom-text-editor .gutter .line-number:after,
-  :host .gutter .line-number:after,
-  atom-text-editor .fold-marker:after,
-  :host .fold-marker:after {
+}
+atom-text-editor .gutter .line-number.folded,
+:host .gutter .line-number.folded,
+atom-text-editor .gutter .line-number:after,
+:host .gutter .line-number:after,
+atom-text-editor .fold-marker:after,
+:host .fold-marker:after {
   color: #e87b00;
-  }
-  atom-text-editor .invisible,
-  :host .invisible {
+}
+atom-text-editor .invisible,
+:host .invisible {
   color: #555;
-  }
-  atom-text-editor .selection .region,
-  :host .selection .region {
+}
+atom-text-editor .selection .region,
+:host .selection .region {
   background-color: #e1e1e1;
-  }
-  atom-text-editor.is-focused .cursor,
-  :host.is-focused .cursor {
+}
+atom-text-editor.is-focused .cursor,
+:host.is-focused .cursor {
   border-color: black;
-  }
-  atom-text-editor.is-focused .selection .region,
-  :host.is-focused .selection .region {
+}
+atom-text-editor.is-focused .selection .region,
+:host.is-focused .selection .region {
   background-color: #afc4da;
-  }
-  atom-text-editor.is-focused .line-number.cursor-line-no-selection,
-  :host.is-focused .line-number.cursor-line-no-selection,
-  atom-text-editor.is-focused .line.cursor-line,
-  :host.is-focused .line.cursor-line {
+}
+atom-text-editor.is-focused .line-number.cursor-line-no-selection,
+:host.is-focused .line-number.cursor-line-no-selection,
+atom-text-editor.is-focused .line.cursor-line,
+:host.is-focused .line.cursor-line {
   background-color: rgba(255, 255, 134, 0.34);
-  }
-  atom-text-editor .source.gfm,
-  :host .source.gfm {
+}
+atom-text-editor .source.gfm,
+:host .source.gfm {
   color: #444;
-  }
-  atom-text-editor .gfm .markup.heading,
-  :host .gfm .markup.heading {
+}
+atom-text-editor .gfm .markup.heading,
+:host .gfm .markup.heading {
   color: #111;
-  }
-  atom-text-editor .gfm .link,
-  :host .gfm .link {
+}
+atom-text-editor .gfm .link,
+:host .gfm .link {
   color: #888;
-  }
-  atom-text-editor .gfm .variable.list,
-  :host .gfm .variable.list {
+}
+atom-text-editor .gfm .variable.list,
+:host .gfm .variable.list {
   color: #888;
-  }
-  atom-text-editor .markdown .paragraph,
-  :host .markdown .paragraph {
+}
+atom-text-editor .markdown .paragraph,
+:host .markdown .paragraph {
   color: #444;
-  }
-  atom-text-editor .markdown .heading,
-  :host .markdown .heading {
+}
+atom-text-editor .markdown .heading,
+:host .markdown .heading {
   color: #111;
-  }
-  atom-text-editor .markdown .link,
-  :host .markdown .link {
+}
+atom-text-editor .markdown .link,
+:host .markdown .link {
   color: #888;
-  }
-  atom-text-editor .markdown .link .string,
-  :host .markdown .link .string {
+}
+atom-text-editor .markdown .link .string,
+:host .markdown .link .string {
   color: #888;
-  }
-  :host(.is-focused) .cursor {
+}
+:host(.is-focused) .cursor {
   border-color: black;
-  }
-  :host(.is-focused) .selection .region {
+}
+:host(.is-focused) .selection .region {
   background-color: #afc4da;
-  }
-  :host(.is-focused) .line-number.cursor-line-no-selection,
-  :host(.is-focused) .line.cursor-line {
+}
+:host(.is-focused) .line-number.cursor-line-no-selection,
+:host(.is-focused) .line.cursor-line {
   background-color: rgba(255, 255, 134, 0.34);
-  }
-  .comment {
+}
+.comment {
   color: #999988;
   font-style: italic;
-  }
-  .string {
+}
+.string {
   color: #D14;
-  }
-  .string .source,
-  .string .meta.embedded.line {
+}
+.string .source,
+.string .meta.embedded.line {
   color: #5A5A5A;
-  }
-  .string .punctuation.section.embedded {
+}
+.string .punctuation.section.embedded {
   color: #920B2D;
-  }
-  .string .punctuation.section.embedded .source {
+}
+.string .punctuation.section.embedded .source {
   color: #920B2D;
-  }
-  .constant.numeric {
+}
+.constant.numeric {
   color: #D14;
-  }
-  .constant.language {
+}
+.constant.language {
   color: #606aa1;
-  }
-  .constant.character,
-  .constant.other {
+}
+.constant.character,
+.constant.other {
   color: #606aa1;
-  }
-  .constant.symbol {
+}
+.constant.symbol {
   color: #990073;
-  }
-  .constant.numeric.line-number.find-in-files .match {
+}
+.constant.numeric.line-number.find-in-files .match {
   color: rgba(143, 190, 0, 0.63);
-  }
-  .variable {
+}
+.variable {
   color: #008080;
-  }
-  .variable.parameter {
+}
+.variable.parameter {
   color: #606aa1;
-  }
-  .keyword {
+}
+.keyword {
   color: #222;
   font-weight: bold;
-  }
-  .keyword.unit {
+}
+.keyword.unit {
   color: #445588;
-  }
-  .keyword.special-method {
+}
+.keyword.special-method {
   color: #0086B3;
-  }
-  .storage {
+}
+.storage {
   color: #222;
-  }
-  .storage.type {
+}
+.storage.type {
   color: #222;
-  }
-  .entity.name.class {
+}
+.entity.name.class {
   text-decoration: underline;
   color: #606aa1;
-  }
-  .entity.other.inherited-class {
+}
+.entity.other.inherited-class {
   text-decoration: underline;
   color: #606aa1;
-  }
-  .entity.name.function {
+}
+.entity.name.function {
   color: #900;
-  }
-  .entity.name.tag {
+}
+.entity.name.tag {
   color: #008080;
-  }
-  .entity.other.attribute-name {
+}
+.entity.other.attribute-name {
   color: #458;
   font-weight: bold;
-  }
-  .entity.name.filename.find-in-files {
+}
+.entity.name.filename.find-in-files {
   color: #E6DB74;
-  }
-  .support.constant,
-  .support.function,
-  .support.type {
+}
+.support.constant,
+.support.function,
+.support.type {
   color: #458;
-  }
-  .support.class {
+}
+.support.class {
   color: #008080;
-  }
-  .invalid {
+}
+.invalid {
   color: #F8F8F0;
   background-color: #00A8C6;
-  }
-  .invalid.deprecated {
+}
+.invalid.deprecated {
   color: #F8F8F0;
   background-color: #8FBE00;
-  }
-  .meta.structure.dictionary.json > .string.quoted.double.json,
-  .meta.structure.dictionary.json > .string.quoted.double.json .punctuation.string {
+}
+.meta.structure.dictionary.json > .string.quoted.double.json,
+.meta.structure.dictionary.json > .string.quoted.double.json .punctuation.string {
   color: #000080;
-  }
-  .meta.structure.dictionary.value.json > .string.quoted.double.json {
+}
+.meta.structure.dictionary.value.json > .string.quoted.double.json {
   color: #d14;
-  }
-  .meta.diff,
-  .meta.diff.header {
+}
+.meta.diff,
+.meta.diff.header {
   color: #75715E;
-  }
-  .css.support.property-name {
+}
+.css.support.property-name {
   font-weight: bold;
   color: #333;
-  }
-  .css.constant {
+}
+.css.constant {
   color: #099;
-  }
-  .bracket-matcher .region {
+}
+.bracket-matcher .region {
   background-color: #C9C9C9;
   opacity: .7;
   border-bottom: 0 none;
-  }
-  body {
+}
+body {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   color: #333;
@@ -226,154 +222,154 @@ atom-text-editor,
   font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
-  }
-  a {
+}
+a {
   background-color: transparent;
-  }
-  a:active,
-  a:hover {
+}
+a:active,
+a:hover {
   outline: 0;
-  }
-  strong {
+}
+strong {
   font-weight: bold;
-  }
-  h1 {
+}
+h1 {
   font-size: 2em;
   margin: 0.67em 0;
-  }
-  img {
+}
+img {
   border: 0;
-  }
-  hr {
+}
+hr {
   box-sizing: content-box;
   height: 0;
-  }
-  pre {
+}
+pre {
   overflow: auto;
-  }
-  code,
-  kbd,
-  pre {
+}
+code,
+kbd,
+pre {
   font-family: monospace, monospace;
   font-size: 1em;
-  }
-  input {
+}
+input {
   color: inherit;
   font: inherit;
   margin: 0;
-  }
-  html input[disabled] {
+}
+html input[disabled] {
   cursor: default;
-  }
-  input {
+}
+input {
   line-height: normal;
-  }
-  input[type="checkbox"] {
+}
+input[type="checkbox"] {
   box-sizing: border-box;
   padding: 0;
-  }
-  table {
+}
+table {
   border-collapse: collapse;
   border-spacing: 0;
-  }
-  td,
-  th {
+}
+td,
+th {
   padding: 0;
-  }
-  * {
+}
+* {
   box-sizing: border-box;
-  }
-  input {
+}
+input {
   font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-  a {
+}
+a {
   color: #4078c0;
   text-decoration: none;
-  }
-  a:hover,
-  a:active {
+}
+a:hover,
+a:active {
   text-decoration: underline;
-  }
-  hr {
+}
+hr {
   height: 0;
   margin: 15px 0;
   overflow: hidden;
   background: transparent;
   border: 0;
   border-bottom: 1px solid #ddd;
-  }
-  hr:before {
+}
+hr:before {
   display: table;
   content: "";
-  }
-  hr:after {
+}
+hr:after {
   display: table;
   clear: both;
   content: "";
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 15px;
   margin-bottom: 15px;
   line-height: 1.1;
-  }
-  h1 {
+}
+h1 {
   font-size: 30px;
-  }
-  h2 {
+}
+h2 {
   font-size: 21px;
-  }
-  h3 {
+}
+h3 {
   font-size: 16px;
-  }
-  h4 {
+}
+h4 {
   font-size: 14px;
-  }
-  h5 {
+}
+h5 {
   font-size: 12px;
-  }
-  h6 {
+}
+h6 {
   font-size: 11px;
-  }
-  blockquote {
+}
+blockquote {
   margin: 0;
-  }
-  ul,
-  ol {
+}
+ul,
+ol {
   padding: 0;
   margin-top: 0;
   margin-bottom: 0;
-  }
-  ol ol,
-  ul ol {
+}
+ol ol,
+ul ol {
   list-style-type: lower-roman;
-  }
-  ul ul ol,
-  ul ol ol,
-  ol ul ol,
-  ol ol ol {
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
   list-style-type: lower-alpha;
-  }
-  dd {
+}
+dd {
   margin-left: 0;
-  }
-  code {
+}
+code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
-  }
-  pre {
+}
+pre {
   margin-top: 0;
   margin-bottom: 0;
   font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  }
-  .select::-ms-expand {
+}
+.select::-ms-expand {
   opacity: 0;
-  }
-  .octicon {
+}
+.octicon {
   font: normal normal normal 16px/1 octicons-link;
   display: inline-block;
   text-decoration: none;
@@ -384,202 +380,202 @@ atom-text-editor,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  }
-  .octicon-link:before {
+}
+.octicon-link:before {
   content: '\f05c';
-  }
-  .markdown-body:before {
+}
+.markdown-body:before {
   display: table;
   content: "";
-  }
-  .markdown-body:after {
+}
+.markdown-body:after {
   display: table;
   clear: both;
   content: "";
-  }
-  .markdown-body > *:first-child {
+}
+.markdown-body > *:first-child {
   margin-top: 0 !important;
-  }
-  .markdown-body > *:last-child {
+}
+.markdown-body > *:last-child {
   margin-bottom: 0 !important;
-  }
-  a:not([href]) {
+}
+a:not([href]) {
   color: inherit;
   text-decoration: none;
-  }
-  .anchor {
+}
+.anchor {
   display: inline-block;
   padding-right: 2px;
   margin-left: -18px;
-  }
-  .anchor:focus {
+}
+.anchor:focus {
   outline: none;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 1em;
   margin-bottom: 16px;
   font-weight: bold;
   line-height: 1.4;
-  }
-  h1 .octicon-link,
-  h2 .octicon-link,
-  h3 .octicon-link,
-  h4 .octicon-link,
-  h5 .octicon-link,
-  h6 .octicon-link {
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
   color: #000;
   vertical-align: middle;
   visibility: hidden;
-  }
-  h1:hover .anchor,
-  h2:hover .anchor,
-  h3:hover .anchor,
-  h4:hover .anchor,
-  h5:hover .anchor,
-  h6:hover .anchor {
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
   text-decoration: none;
-  }
-  h1:hover .anchor .octicon-link,
-  h2:hover .anchor .octicon-link,
-  h3:hover .anchor .octicon-link,
-  h4:hover .anchor .octicon-link,
-  h5:hover .anchor .octicon-link,
-  h6:hover .anchor .octicon-link {
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
   visibility: visible;
-  }
-  h1 {
+}
+h1 {
   padding-bottom: 0.3em;
   font-size: 2.25em;
   line-height: 1.2;
   border-bottom: 1px solid #eee;
-  }
-  h1 .anchor {
+}
+h1 .anchor {
   line-height: 1;
-  }
-  h2 {
+}
+h2 {
   padding-bottom: 0.3em;
   font-size: 1.75em;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
-  }
-  h2 .anchor {
+}
+h2 .anchor {
   line-height: 1;
-  }
-  h3 {
+}
+h3 {
   font-size: 1.5em;
   line-height: 1.43;
-  }
-  h3 .anchor {
+}
+h3 .anchor {
   line-height: 1.2;
-  }
-  h4 {
+}
+h4 {
   font-size: 1.25em;
-  }
-  h4 .anchor {
+}
+h4 .anchor {
   line-height: 1.2;
-  }
-  h5 {
+}
+h5 {
   font-size: 1em;
-  }
-  h5 .anchor {
+}
+h5 .anchor {
   line-height: 1.1;
-  }
-  h6 {
+}
+h6 {
   font-size: 1em;
   color: #777;
-  }
-  h6 .anchor {
+}
+h6 .anchor {
   line-height: 1.1;
-  }
-  p,
-  blockquote,
-  ul,
-  ol,
-  dl,
-  table,
-  pre {
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
   margin-top: 0;
   margin-bottom: 16px;
-  }
-  hr {
+}
+hr {
   height: 4px;
   padding: 0;
   margin: 16px 0;
   background-color: #e7e7e7;
   border: 0 none;
-  }
-  ul,
-  ol {
+}
+ul,
+ol {
   padding-left: 2em;
-  }
-  ul ul,
-  ul ol,
-  ol ol,
-  ol ul {
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
   margin-top: 0;
   margin-bottom: 0;
-  }
-  li > p {
+}
+li > p {
   margin-top: 16px;
-  }
-  dl {
+}
+dl {
   padding: 0;
-  }
-  dl dt {
+}
+dl dt {
   padding: 0;
   margin-top: 16px;
   font-size: 1em;
   font-style: italic;
   font-weight: bold;
-  }
-  dl dd {
+}
+dl dd {
   padding: 0 16px;
   margin-bottom: 16px;
-  }
-  blockquote {
+}
+blockquote {
   padding: 0 15px;
   color: #777;
   border-left: 4px solid #ddd;
-  }
-  blockquote > :first-child {
+}
+blockquote > :first-child {
   margin-top: 0;
-  }
-  blockquote > :last-child {
+}
+blockquote > :last-child {
   margin-bottom: 0;
-  }
-  table {
+}
+table {
   display: block;
   width: 100%;
   overflow: auto;
   word-break: normal;
   word-break: keep-all;
-  }
-  table th {
+}
+table th {
   font-weight: bold;
-  }
-  table th,
-  table td {
+}
+table th,
+table td {
   padding: 6px 13px;
   border: 1px solid #ddd;
-  }
-  table tr {
+}
+table tr {
   background-color: #fff;
   border-top: 1px solid #ccc;
-  }
-  table tr:nth-child(2n) {
+}
+table tr:nth-child(2n) {
   background-color: #f8f8f8;
-  }
-  img {
+}
+img {
   max-width: 100%;
   box-sizing: content-box;
   background-color: #fff;
-  }
-  code {
+}
+code {
   padding: 0;
   padding-top: 0.2em;
   padding-bottom: 0.2em;
@@ -587,13 +583,13 @@ atom-text-editor,
   font-size: 85%;
   background-color: rgba(0, 0, 0, 0.04);
   border-radius: 3px;
-  }
-  code:before,
-  code:after {
+}
+code:before,
+code:after {
   letter-spacing: -0.2em;
   content: "\00a0";
-  }
-  pre > code {
+}
+pre > code {
   padding: 0;
   margin: 0;
   font-size: 100%;
@@ -601,27 +597,27 @@ atom-text-editor,
   white-space: pre;
   background: transparent;
   border: 0;
-  }
-  .highlight {
+}
+.highlight {
   margin-bottom: 16px;
-  }
-  .highlight pre,
-  pre {
+}
+.highlight pre,
+pre {
   padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
   background-color: #f7f7f7;
   border-radius: 3px;
-  }
-  .highlight pre {
+}
+.highlight pre {
   margin-bottom: 0;
   word-break: normal;
-  }
-  pre {
+}
+pre {
   word-wrap: normal;
-  }
-  pre code {
+}
+pre code {
   display: inline;
   max-width: initial;
   padding: 0;
@@ -631,12 +627,12 @@ atom-text-editor,
   word-wrap: normal;
   background-color: transparent;
   border: 0;
-  }
-  pre code:before,
-  pre code:after {
+}
+pre code:before,
+pre code:after {
   content: normal;
-  }
-  kbd {
+}
+kbd {
   display: inline-block;
   padding: 3px 5px;
   font-size: 11px;
@@ -648,87 +644,87 @@ atom-text-editor,
   border-bottom-color: #bbb;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 #bbb;
-  }
-  .pl-c {
+}
+.pl-c {
   color: #969896;
-  }
-  .pl-c1,
-  .pl-s .pl-v {
+}
+.pl-c1,
+.pl-s .pl-v {
   color: #0086b3;
-  }
-  .pl-e,
-  .pl-en {
+}
+.pl-e,
+.pl-en {
   color: #795da3;
-  }
-  .pl-s .pl-s1,
-  .pl-smi {
+}
+.pl-s .pl-s1,
+.pl-smi {
   color: #333;
-  }
-  .pl-ent {
+}
+.pl-ent {
   color: #63a35c;
-  }
-  .pl-k {
+}
+.pl-k {
   color: #a71d5d;
-  }
-  .pl-pds,
-  .pl-s,
-  .pl-s .pl-pse .pl-s1,
-  .pl-sr,
-  .pl-sr .pl-cce,
-  .pl-sr .pl-sra,
-  .pl-sr .pl-sre {
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
   color: #183691;
-  }
-  .pl-v {
+}
+.pl-v {
   color: #ed6a43;
-  }
-  .pl-id {
+}
+.pl-id {
   color: #b52a1d;
-  }
-  .pl-ii {
+}
+.pl-ii {
   background-color: #b52a1d;
   color: #f8f8f8;
-  }
-  .pl-sr .pl-cce {
+}
+.pl-sr .pl-cce {
   color: #63a35c;
   font-weight: bold;
-  }
-  .pl-ml {
+}
+.pl-ml {
   color: #693a17;
-  }
-  .pl-mh,
-  .pl-mh .pl-en,
-  .pl-ms {
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
   color: #1d3e81;
   font-weight: bold;
-  }
-  .pl-mq {
+}
+.pl-mq {
   color: #008080;
-  }
-  .pl-mi {
+}
+.pl-mi {
   color: #333;
   font-style: italic;
-  }
-  .pl-mb {
+}
+.pl-mb {
   color: #333;
   font-weight: bold;
-  }
-  .pl-md {
+}
+.pl-md {
   background-color: #ffecec;
   color: #bd2c00;
-  }
-  .pl-mi1 {
+}
+.pl-mi1 {
   background-color: #eaffea;
   color: #55a532;
-  }
-  .pl-mdr {
+}
+.pl-mdr {
   color: #795da3;
   font-weight: bold;
-  }
-  .pl-mo {
+}
+.pl-mo {
   color: #1d3e81;
-  }
-  kbd {
+}
+kbd {
   display: inline-block;
   padding: 3px 5px;
   font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -740,56 +736,56 @@ atom-text-editor,
   border-bottom-color: #bbb;
   border-radius: 3px;
   box-shadow: inset 0 -1px 0 #bbb;
-  }
-  .task-list-item {
+}
+.task-list-item {
   list-style-type: none;
-  }
-  .task-list-item + .task-list-item {
+}
+.task-list-item + .task-list-item {
   margin-top: 3px;
-  }
-  .task-list-item input {
+}
+.task-list-item input {
   margin: 0 0.35em 0.25em -1.6em;
   vertical-align: middle;
-  }
-  :checked + .radio-label {
+}
+:checked + .radio-label {
   z-index: 1;
   position: relative;
   border-color: #4078c0;
-  }
-  body {
+}
+body {
   font-size: 100%;
   font-size: 2.4vmin;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   border-bottom: 0;
-  }
-  h1 {
+}
+h1 {
   font-size: 6em;
   font-size: 6.24vmin;
   text-align: center;
   margin-top: 0;
-  }
-  h2 {
+}
+h2 {
   font-size: 4em;
   font-size: 4.32vmin;
   margin-top: 2.4vmin;
-  }
-  h3 {
+}
+h3 {
   font-size: 3em;
   font-size: 2.88vmin;
   margin-top: 2.4vmin;
-  }
-  h4,
-  h5,
-  h6 {
+}
+h4,
+h5,
+h6 {
   font-size: 2.4vmin;
-  }
-  body {
+}
+body {
   line-height: 1;
   min-height: 740px;
   color: #0f0f0f;
@@ -800,26 +796,26 @@ atom-text-editor,
   background: -ms-radial-gradient(#f0f0f0, #bebebe);
   background: -o-radial-gradient(#f0f0f0, #bebebe);
   background: radial-gradient(#f0f0f0, #bebebe);
-  }
-  blockquote {
+}
+blockquote {
   color: #5c5c5c;
-  }
-  img {
+}
+img {
   background: transparent;
-  }
-  .highlight pre,
-  pre {
+}
+.highlight pre,
+pre {
   background-color: #f0f0f0;
-  }
-  a {
+}
+a {
   color: #000;
   text-decoration: underline;
   padding: 0.1em;
-  }
-  a:hover {
+}
+a:hover {
   color: #4d4d4d;
-  }
-  .step {
+}
+.step {
   position: relative;
   width: 85vw;
   max-height: 100vh;
@@ -837,14 +833,14 @@ atom-text-editor,
   -ms-transition: opacity 1s;
   -o-transition: opacity 1s;
   transition: opacity 1s;
-  }
-  .step.past {
+}
+.step.past {
   opacity: 0.3;
-  }
-  .step.active {
+}
+.step.active {
   opacity: 1;
-  }
-  kbd {
+}
+kbd {
   font-size: 2.4vmin;
   display: inline-block;
   padding: 0.36vmin 0.84vmin;
@@ -857,236 +853,226 @@ atom-text-editor,
   border-bottom-color: #bbb;
   border-radius: 0.4vmax;
   box-shadow: inset 0 -0.1vmax 0 #bbb;
-  }
-  </style>
+}
+</style>
 </head>
-
 <body>
-  <div id="impress">
-    <div class="step" data-z="6000">
-      <h1 id="user-content-control-de-versiones-con-git" class="deep-link">Control de versiones con git</h1>
-    </div>
-
-    <div class="step" data-z="12000">
-      <h1 id="user-content-informaci&#243;n-del-curso" class="deep-link">Informaci&#243;n del curso</h1>
-
-      <h2 id="user-content-nivel-de-especializaci&#243;n" class="deep-link">Nivel de especializaci&#243;n</h2>
-
-      <p>Intermedio</p>
-
-      <h2 id="user-content-objetivo" class="deep-link">Objetivo</h2>
-
-      <p>El alumno conocer&#225; el sistema de control de versiones git y aprender&#225; el uso de esta herramienta tanto desde l&#237;nea de comandos, como desde un cliente de escritorio y v&#237;a web a trav&#233;s de Github.</p>
-    </div>
-
-    <div class="step" data-z="18000">
-      <h1 id="user-content-perfil-del-asistente" class="deep-link">Perfil del asistente</h1>
-
-      <p>Estudiantes, pasantes o egresados de carreras afines a computaci&#243;n, desarrolladores y entusiastas de la programaci&#243;n.</p>
-
-      <h2 id="user-content-conocimientos-previos" class="deep-link">Conocimientos previos</h2>
-
-      <ul>
-        <li>Conocimientos b&#225;sicos de GNU/Linux y Windows a nivel usuario</li>
-
-        <li>Uso de internet</li>
-
-        <li>Cuenta de correo electr&#243;nico</li>
-
-        <li>Conocimientos b&#225;sicos de ingl&#233;s a nivel t&#233;cnico</li>
-      </ul>
-    </div>
-
-    <div class="step" data-z="24000">
-      <h1 id="user-content-temario" class="deep-link">Temario</h1>
-
-      <ol>
-        <li>
-          <p>Introducci&#243;n a los sistemas de control de versiones</p>
-
-          <ol>
-            <li>Local</li>
-
-            <li>Centralizado</li>
-
-            <li>Distribuido</li>
-          </ol>
-        </li>
-
-        <li>
-          <p>Introducci&#243;n a git</p>
-
-          <ol>
-            <li>Inicializar un repositorio</li>
-
-            <li>Agregar y borrar archivos</li>
-
-            <li>Guardar cambios</li>
-
-            <li>Enviar cambios al servidor</li>
-          </ol>
-        </li>
-      </ol>
-    </div>
-
-    <div class="step" data-z="30000">
-      <h1 id="user-content-temario-cont" class="deep-link">Temario (cont)</h1>
-
-      <ol start="3">
-        <li>
-          <p>Configuraci&#243;n del cliente git</p>
-
-          <ol>
-            <li>Datos del usuario</li>
-
-            <li>Reparar fin de l&#237;nea en los archivos</li>
-
-            <li>Ignorar espacios en blanco</li>
-          </ol>
-        </li>
-
-        <li>
-          <p>Trabajando con repositorios existentes</p>
-
-          <ol>
-            <li>Clonar un repositorio existente</li>
-
-            <li>Resoluci&#243;n de conflictos</li>
-
-            <li>Corregir el commit anterior</li>
-          </ol>
-        </li>
-      </ol>
-    </div>
-
-    <div class="step" data-z="36000">
-      <h1 id="user-content-temario-cont-2" class="deep-link">Temario (cont 2)</h1>
-
-      <ol start="5">
-        <li>
-          <p>Introducci&#243;n a Github</p>
-
-          <ol>
-            <li>Crear una cuenta en Github</li>
-
-            <li>Administraci&#243;n de repositorios via web</li>
-
-            <li>Cliente gr&#225;fico de git para Mac y Windows</li>
-
-            <li>Documentaci&#243;n en Markdown</li>
-          </ol>
-        </li>
-
-        <li>
-          <p>Trabajo colaborativo en Github</p>
-
-          <ol>
-            <li>Fork</li>
-
-            <li>Pull requests</li>
-
-            <li>gist</li>
-
-            <li>Github Pages</li>
-
-            <li>Wikis</li>
-          </ol>
-        </li>
-      </ol>
-    </div>
-
-    <div class="step" data-z="42000">
-      <h1 id="user-content-1-introducci&#243;n-a-los-sistemas-de-control-de-versiones" class="deep-link">1. Introducci&#243;n a los sistemas de control de versiones</h1>
-
-      <h2 id="user-content-11-local" class="deep-link">1.1. Local</h2>
-
-      <h2 id="user-content-12-centralizado" class="deep-link">1.2. Centralizado</h2>
-
-      <h2 id="user-content-13-distribuido" class="deep-link">1.3. Distribuido</h2>
-    </div>
-
-    <div class="step" data-z="48000">
-      <h1 id="user-content-2-introducci&#243;n-a-git" class="deep-link">2. Introducci&#243;n a git</h1>
-
-      <h2 id="user-content-21-inicializar-un-repositorio" class="deep-link">2.1. Inicializar un repositorio</h2>
-
-      <h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
-
-      <h2 id="user-content-23-guardar-cambios" class="deep-link">2.3. Guardar cambios</h2>
-
-      <h2 id="user-content-24-enviar-cambios-al-servidor" class="deep-link">2.4. Enviar cambios al servidor</h2>
-    </div>
-
-    <div class="step" data-z="54000">
-      <h1 id="user-content-3-configuraci&#243;n-del-cliente-git" class="deep-link">3. Configuraci&#243;n del cliente git</h1>
-
-      <h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
-
-      <h2 id="user-content-32-reparar-fin-de-l&#237;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#237;nea en los archivos</h2>
-
-      <h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
-    </div>
-
-    <div class="step" data-z="60000">
-      <h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
-
-      <h2 id="user-content-41-clonar-un-repositorio-existente" class="deep-link">4.1. Clonar un repositorio existente</h2>
-
-      <h2 id="user-content-42-resoluci&#243;n-de-conflictos" class="deep-link">4.2. Resoluci&#243;n de conflictos</h2>
-
-      <h2 id="user-content-43-corregir-el-commit-anterior" class="deep-link">4.3. Corregir el commit anterior</h2>
-    </div>
-
-    <div class="step" data-z="66000">
-      <h1 id="user-content-5-introducci&#243;n-a-github" class="deep-link">5. Introducci&#243;n a Github</h1>
-
-      <h2 id="user-content-51-crear-una-cuenta-en-github" class="deep-link">5.1. Crear una cuenta en Github</h2>
-
-      <h2 id="user-content-52-administraci&#243;n-de-repositorios-via-web" class="deep-link">5.2. Administraci&#243;n de repositorios via web</h2>
-
-      <h2 id="user-content-53-cliente-gr&#225;fico-de-git-para-mac-y-windows" class="deep-link">5.3. Cliente gr&#225;fico de git para Mac y Windows</h2>
-
-      <h2 id="user-content-54-documentaci&#243;n-en-markdown" class="deep-link">5.4. Documentaci&#243;n en Markdown</h2>
-    </div>
-
-    <div class="step" data-z="72000">
-      <h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
-
-      <h2 id="user-content-61-fork" class="deep-link">6.1. Fork</h2>
-
-      <h2 id="user-content-62-pull-requests" class="deep-link">6.2. Pull requests</h2>
-
-      <h2 id="user-content-63-gist" class="deep-link">6.3. gist</h2>
-
-      <h2 id="user-content-64-github-pages" class="deep-link">6.4. Github Pages</h2>
-
-      <h2 id="user-content-65-wikis" class="deep-link">6.5. Wikis</h2>
-    </div>
-
-    <div class="step" data-z="78000">
-      <!-- zoom-out slide -->
-    </div>
-  </div><script type="text/javascript">
-/**
-  * impress.js
-  *
-  * impress.js is a presentation tool based on the power of CSS3 transforms and transitions
-  * in modern browsers and inspired by the idea behind prezi.com.
-  *
-  *
-  * Copyright 2011-2012 Bartek Szopka (@bartaz)
-  *
-  * Released under the MIT and GPL Licenses.
-  *
-  * ------------------------------------------------
-  *  author:  Bartek Szopka
-  *  version: 0.5.3
-  *  url:     http://bartaz.github.com/impress.js/
-  *  source:  http://github.com/bartaz/impress.js/
-  */
-  (function(a,b){"use strict";var c=function(){var b=a.createElement("dummy").style,c="Webkit Moz O ms Khtml".split(" "),d={};return function(a){if(d[a]===void 0){var e=a.charAt(0).toUpperCase()+a.substr(1),f=(a+" "+c.join(e+" ")+e).split(" ");d[a]=null;for(var g in f)if(void 0!==b[f[g]]){d[a]=f[g];break}}return d[a]}}(),d=function(a){return[].slice.call(a)},e=function(a,b){var d,e;for(d in b)b.hasOwnProperty(d)&&(e=c(d),null!==e&&(a.style[e]=b[d]));return a},f=function(a,b){return isNaN(a)?b||0:Number(a)},g=function(b){return a.getElementById(b)},h=function(b,c){return c=c||a,c.querySelector(b)},i=function(b,c){return c=c||a,d(c.querySelectorAll(b))},j=function(b,c,d){var e=a.createEvent("CustomEvent");e.initCustomEvent(c,!0,!0,d),b.dispatchEvent(e)},k=function(a){return" translate3d("+a.x+"px,"+a.y+"px,"+a.z+"px) "},l=function(a,b){var c=" rotateX("+a.x+"deg) ",d=" rotateY("+a.y+"deg) ",e=" rotateZ("+a.z+"deg) ";return b?e+d+c:c+d+e},m=function(a){return" scale("+a+") "},n=function(a){return" perspective("+a+"px) "},o=function(){return g(b.location.hash.replace(/^#\/?/,""))},p=function(a){var c=b.innerHeight/a.height,d=b.innerWidth/a.width,e=c>d?d:c;return a.maxScale&&e>a.maxScale&&(e=a.maxScale),a.minScale&&a.minScale>e&&(e=a.minScale),e},q=a.body,r=navigator.userAgent.toLowerCase(),s=null!==c("perspective")&&q.classList&&q.dataset&&-1===r.search(/(iphone)|(ipod)|(android)/);s?(q.classList.remove("impress-not-supported"),q.classList.add("impress-supported")):q.className+=" impress-not-supported ";var t={},u={width:1024,height:768,maxScale:1,minScale:0,perspective:1e3,transitionDuration:1e3},v=function(){return!1},w=b.impress=function(c){if(!s)return{init:v,"goto":v,prev:v,next:v};if(c=c||"impress",t["impress-root-"+c])return t["impress-root-"+c];var r={},w=null,x=null,y=null,z=null,A=null,B=g(c),C=a.createElement("div"),D=!1,E=null,F=function(a){E!==a&&(j(a,"impress:stepenter"),E=a)},G=function(a){E===a&&(j(a,"impress:stepleave"),E=null)},H=function(a,b){var c=a.dataset,d={translate:{x:f(c.x),y:f(c.y),z:f(c.z)},rotate:{x:f(c.rotateX),y:f(c.rotateY),z:f(c.rotateZ||c.rotate)},scale:f(c.scale,1),el:a};a.id||(a.id="step-"+(b+1)),r["impress-"+a.id]=d,e(a,{position:"absolute",transform:"translate(-50%,-50%)"+k(d.translate)+l(d.rotate)+m(d.scale),transformStyle:"preserve-3d"})},I=function(){if(!D){var b=h("meta[name='viewport']")||a.createElement("meta");b.content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no",b.parentNode!==a.head&&(b.name="viewport",a.head.appendChild(b));var g=B.dataset;z={width:f(g.width,u.width),height:f(g.height,u.height),maxScale:f(g.maxScale,u.maxScale),minScale:f(g.minScale,u.minScale),perspective:f(g.perspective,u.perspective),transitionDuration:f(g.transitionDuration,u.transitionDuration)},A=p(z),d(B.childNodes).forEach(function(a){C.appendChild(a)}),B.appendChild(C),a.documentElement.style.height="100%",e(q,{height:"100%",overflow:"hidden"});var k={position:"absolute",transformOrigin:"top left",transition:"all 0s ease-in-out",transformStyle:"preserve-3d"};e(B,k),e(B,{top:"50%",left:"50%",transform:n(z.perspective/A)+m(A)}),e(C,k),q.classList.remove("impress-disabled"),q.classList.add("impress-enabled"),y=i(".step",B),y.forEach(H),x={translate:{x:0,y:0,z:0},rotate:{x:0,y:0,z:0},scale:1},D=!0,j(B,"impress:init",{api:t["impress-root-"+c]})}},J=function(a){return"number"==typeof a?a=0>a?y[y.length+a]:y[a]:"string"==typeof a&&(a=g(a)),a&&a.id&&r["impress-"+a.id]?a:null},K=null,L=function(a,c){if(!D||!(a=J(a)))return!1;b.scrollTo(0,0);var d=r["impress-"+a.id];w&&(w.classList.remove("active"),q.classList.remove("impress-on-"+w.id)),a.classList.add("active"),q.classList.add("impress-on-"+a.id);var g={rotate:{x:-d.rotate.x,y:-d.rotate.y,z:-d.rotate.z},translate:{x:-d.translate.x,y:-d.translate.y,z:-d.translate.z},scale:1/d.scale},h=g.scale>=x.scale;c=f(c,z.transitionDuration);var i=c/2;a===w&&(A=p(z));var j=g.scale*A;return w&&w!==a&&G(w),e(B,{transform:n(z.perspective/j)+m(j),transitionDuration:c+"ms",transitionDelay:(h?i:0)+"ms"}),e(C,{transform:l(g.rotate,!0)+k(g.translate),transitionDuration:c+"ms",transitionDelay:(h?0:i)+"ms"}),(x.scale===g.scale||x.rotate.x===g.rotate.x&&x.rotate.y===g.rotate.y&&x.rotate.z===g.rotate.z&&x.translate.x===g.translate.x&&x.translate.y===g.translate.y&&x.translate.z===g.translate.z)&&(i=0),x=g,w=a,b.clearTimeout(K),K=b.setTimeout(function(){F(w)},c+i),a},M=function(){var a=y.indexOf(w)-1;return a=a>=0?y[a]:y[y.length-1],L(a)},N=function(){var a=y.indexOf(w)+1;return a=y.length>a?y[a]:y[0],L(a)};return B.addEventListener("impress:init",function(){y.forEach(function(a){a.classList.add("future")}),B.addEventListener("impress:stepenter",function(a){a.target.classList.remove("past"),a.target.classList.remove("future"),a.target.classList.add("present")},!1),B.addEventListener("impress:stepleave",function(a){a.target.classList.remove("present"),a.target.classList.add("past")},!1)},!1),B.addEventListener("impress:init",function(){var a="";B.addEventListener("impress:stepenter",function(c){b.location.hash=a="#/"+c.target.id},!1),b.addEventListener("hashchange",function(){b.location.hash!==a&&L(o())},!1),L(o()||y[0],0)},!1),q.classList.add("impress-disabled"),t["impress-root-"+c]={init:I,"goto":L,next:N,prev:M}};w.supported=s})(document,window),function(a,b){"use strict";var c=function(a,b){var c=null;return function(){var d=this,e=arguments;clearTimeout(c),c=setTimeout(function(){a.apply(d,e)},b)}};a.addEventListener("impress:init",function(d){var e=d.detail.api;a.addEventListener("keydown",function(a){(9===a.keyCode||a.keyCode>=32&&34>=a.keyCode||a.keyCode>=37&&40>=a.keyCode)&&a.preventDefault()},!1),a.addEventListener("keyup",function(a){if(9===a.keyCode||a.keyCode>=32&&34>=a.keyCode||a.keyCode>=37&&40>=a.keyCode){switch(a.keyCode){case 33:case 37:case 38:e.prev();break;case 9:case 32:case 34:case 39:case 40:e.next()}a.preventDefault()}},!1),a.addEventListener("click",function(b){for(var c=b.target;"A"!==c.tagName&&c!==a.documentElement;)c=c.parentNode;if("A"===c.tagName){var d=c.getAttribute("href");d&&"#"===d[0]&&(c=a.getElementById(d.slice(1)))}e.goto(c)&&(b.stopImmediatePropagation(),b.preventDefault())},!1),a.addEventListener("click",function(b){for(var c=b.target;(!c.classList.contains("step")||c.classList.contains("active"))&&c!==a.documentElement;)c=c.parentNode;e.goto(c)&&b.preventDefault()},!1),a.addEventListener("touchstart",function(a){if(1===a.touches.length){var c=a.touches[0].clientX,d=.3*b.innerWidth,f=null;d>c?f=e.prev():c>b.innerWidth-d&&(f=e.next()),f&&a.preventDefault()}},!1),b.addEventListener("resize",c(function(){e.goto(a.querySelector(".active"),500)},250),!1)},!1)}(document,window);
-  </script><script type="text/javascript">
-impress().init();
-  </script>
+    <div id="impress"><div class="step" data-z="6000"><h1 id="user-content-control-de-versiones-con-git" class="deep-link">Control de versiones con git</h1>
+</div><div class="step" data-z="12000"><h1 id="user-content-informaci&#xF3;n-del-curso" class="deep-link">Informaci&#xF3;n del curso</h1>
+<h2 id="user-content-nivel-de-especializaci&#xF3;n" class="deep-link">Nivel de especializaci&#xF3;n</h2>
+<p>Intermedio</p>
+<h2 id="user-content-objetivo" class="deep-link">Objetivo</h2>
+<p>El alumno conocer&#xE1; el sistema de control de versiones git y aprender&#xE1; el uso de esta herramienta tanto desde l&#xED;nea de comandos, como desde un cliente de escritorio y v&#xED;a web a trav&#xE9;s de Github.</p>
+</div><div class="step" data-z="18000"><h1 id="user-content-perfil-del-asistente" class="deep-link">Perfil del asistente</h1>
+<p>Estudiantes, pasantes o egresados de carreras afines a computaci&#xF3;n, desarrolladores y entusiastas de la programaci&#xF3;n.</p>
+<h2 id="user-content-conocimientos-previos" class="deep-link">Conocimientos previos</h2>
+<ul>
+<li>Conocimientos b&#xE1;sicos de GNU/Linux y Windows a nivel usuario</li>
+<li>Uso de internet</li>
+<li>Cuenta de correo electr&#xF3;nico</li>
+<li>Conocimientos b&#xE1;sicos de ingl&#xE9;s a nivel t&#xE9;cnico</li>
+</ul>
+</div><div class="step" data-z="24000"><h1 id="user-content-temario" class="deep-link">Temario</h1>
+<ol>
+<li>
+<p>Introducci&#xF3;n a los sistemas de control de versiones</p>
+<ol>
+<li>Local</li>
+<li>Centralizado</li>
+<li>Distribuido</li>
+</ol>
+</li>
+<li>
+<p>Introducci&#xF3;n a git</p>
+<ol>
+<li>Inicializar un repositorio</li>
+<li>Agregar y borrar archivos</li>
+<li>Guardar cambios</li>
+<li>Enviar cambios al servidor</li>
+</ol>
+</li>
+</ol>
+</div><div class="step" data-z="30000"><h1 id="user-content-temario-cont" class="deep-link">Temario (cont)</h1>
+<ol start="3">
+<li>
+<p>Configuraci&#xF3;n del cliente git</p>
+<ol>
+<li>Datos del usuario</li>
+<li>Reparar fin de l&#xED;nea en los archivos</li>
+<li>Ignorar espacios en blanco</li>
+</ol>
+</li>
+<li>
+<p>Trabajando con repositorios existentes</p>
+<ol>
+<li>Clonar un repositorio existente</li>
+<li>Resoluci&#xF3;n de conflictos</li>
+<li>Corregir el commit anterior</li>
+</ol>
+</li>
+</ol>
+</div><div class="step" data-z="36000"><h1 id="user-content-temario-cont-2" class="deep-link">Temario (cont 2)</h1>
+<ol start="5">
+<li>
+<p>Introducci&#xF3;n a Github</p>
+<ol>
+<li>Crear una cuenta en Github</li>
+<li>Administraci&#xF3;n de repositorios via web</li>
+<li>Cliente gr&#xE1;fico de git para Mac y Windows</li>
+<li>Documentaci&#xF3;n en Markdown</li>
+</ol>
+</li>
+<li>
+<p>Trabajo colaborativo en Github</p>
+<ol>
+<li>Fork</li>
+<li>Pull requests</li>
+<li>gist</li>
+<li>Github Pages</li>
+<li>Wikis</li>
+</ol>
+</li>
+</ol>
+</div><div class="step" data-z="42000"><h1 id="user-content-1-introducci&#xF3;n-a-los-sistemas-de-control-de-versiones" class="deep-link">1. Introducci&#xF3;n a los sistemas de control de versiones</h1>
+<h2 id="user-content-sistema-de-control-de-versiones" class="deep-link">Sistema de control de versiones</h2>
+<ul>
+<li>Guarda las versiones del c&#xF3;digo fuente de un programa</li>
+<li>Permite mostrar los cambios en el c&#xF3;digo</li>
+<li>Trabaja principalmente con archivos de texto</li>
+<li>Asocia el cambio con el autor</li>
+<li>Tiene la capacidad de regresar a versiones anteriores</li>
+</ul>
+</div><div class="step" data-z="48000"><h2 id="user-content-11-local" class="deep-link">1.1. Local</h2>
+<h3 id="user-content-guardar-cambios-en-archivos-separados" class="deep-link">Guardar cambios en archivos separados</h3>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;prog.c&#xA0;prog1.c&#xA0;prog2.c&#xA0;...&#xA0;prog&lt;n&gt;.c</span></span></div></pre></div>
+<h3 id="user-content-guardar-cambios-en-carpetas-separadas" class="deep-link">Guardar cambios en carpetas separadas</h3>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;tarea/prog.c</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;version_inicial/prog.c</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;modificado2/prog.c</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;vers-28sep/prog.c</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;ProyectoFinal_2017-1_completo(Andres)/prog1.c</span></span></div></pre></div>
+</div><div class="step" data-z="54000"><h4 id="user-content-desventajas-del-control-de-versiones-local" class="deep-link">Desventajas del control de versiones local</h4>
+<ul>
+<li>Se tienen muchos archivos bastante similares</li>
+<li>No se conoce cual es la &#xFA;ltima versi&#xF3;n</li>
+<li>Es necesario copiar el archivo de trabajo constantemente</li>
+<li>Al modificar el archivo de trabajo se pierde la versi&#xF3;n anterior</li>
+<li>Cuando se borra el archivo de trabajo se pierde esa revisi&#xF3;n</li>
+</ul>
+</div><div class="step" data-z="60000"><h3 id="user-content-enviar-cambios-por-correo-electr&#xF3;nico" class="deep-link">Enviar cambios por correo electr&#xF3;nico</h3>
+<ul>
+<li>
+<p>Se genera un correo por cada versi&#xF3;n enviada</p>
+</li>
+<li>
+<p>Puede ser tedioso encontrar una versi&#xF3;n anterior</p>
+<img alt="Thunderbird" src="img/1_1-thunderbird.png" style="width: auto; height: 50px;">
+<img alt="Gmail" src="img/1_1-gmail.svg" style="width: auto; height: 50px;">
+<img alt="Apple Mail" src="img/1_1-apple-mail.png" style="width: auto; height: 50px;">
+<img alt="Outlook" src="img/1_1-outlook.svg" style="width: auto; height: 50px;">
+</li>
+</ul>
+</div><div class="step" data-z="66000"><h3 id="user-content-utilizar-almacenamiento-en-la-nube" class="deep-link">Utilizar almacenamiento en la nube</h3>
+<ul>
+<li>
+<p>Algunos servicios de almacenamiento en la nube permiten regresar a versiones anteriores</p>
+</li>
+<li>
+<p>Muchos de los servicios gratuitos &#xFA;nicamente permiten un n&#xFA;mero finito de versiones anteriores</p>
+</li>
+<li>
+<p>Algunas veces los servicios de almacenamiento quitan las versiones anteriores m&#xE1;s antiguas</p>
+<img alt="Dropbox" src="img/1_1-dropbox.svg" style="width: auto; height: 50px;">
+<img alt="GoogleDrive" src="img/1_1-google_drive.png" style="width: auto; height: 50px;">
+<img alt="Evernote" src="img/1_1-evernote.svg" style="width: auto; height: 50px;">
+<img alt="box.net" src="img/1_1-box.svg" style="width: auto; height: 50px;">
+<img alt="OneDrive" src="img/1_1-onedrive.svg" style="width: auto; height: 50px;">
+<img alt="ownCloud" src="img/1_1-owncloud.svg" style="width: auto; height: 50px;">
+</li>
+</ul>
+</div><div class="step" data-z="72000"><h2 id="user-content-12-centralizado---cvcs" class="deep-link">1.2. Centralizado - CVCS</h2>
+<ul>
+<li>
+<p>Se basa en un modelo <em>cliente-servidor</em></p>
+</li>
+<li>
+<p>El servidor tiene una copia de todas las versiones del c&#xF3;digo</p>
+</li>
+<li>
+<p>Los clientes <em>clonan</em> el repositorio y tienen una <em>copia de trabajo</em> que pueden modificar</p>
+</li>
+<li>
+<p>Cuando los cambios est&#xE1;n listos, los clientes los env&#xED;an al servidor</p>
+</li>
+<li>
+<p>Si el servidor falla, se pierden todas las versiones del proyecto</p>
+<img alt="SVN" src="img/1_2-svn.svg" style="width: auto; height: 50px;">
+<br>
+<img alt="svn-actions" src="img/1_2-svn_actions.svg" style="width: auto; height: auto;">
+</li>
+</ul>
+</div><div class="step" data-z="78000"><h2 id="user-content-13-distribuido---dvcs" class="deep-link">1.3. Distribuido - DVCS</h2>
+<ul>
+<li>
+<p>Cada cliente tiene una copia de todas las versiones del proyecto</p>
+</li>
+<li>
+<p>Si el servidor falla es posible copiar todas las versiones desde un cliente</p>
+</li>
+<li>
+<p>Es posible establecer estructuras jer&#xE1;rquicas</p>
+<img alt="git" src="img/1_3-git.svg" style="width: auto; height: 50px;">
+<img alt="hg" src="img/1_3-hg.svg" style="width: auto; height: 50px;">
+<img alt="bzr" src="img/1_3-bzr.svg" style="width: auto; height: 50px;">
+<img alt="arch" src="img/1_3-arch.png" style="width: auto; height: 50px;">
+<img alt="BitKeeper" src="img/1_3-bitkeeper.png" style="width: auto; height: 50px;">
+</li>
+</ul>
+</div><div class="step" data-z="84000"><h1 id="user-content-2-introducci&#xF3;n-a-git" class="deep-link">2. Introducci&#xF3;n a git</h1>
+<h2 id="user-content-21-inicializar-un-repositorio" class="deep-link">2.1. Inicializar un repositorio</h2>
+<h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
+<h2 id="user-content-23-guardar-cambios" class="deep-link">2.3. Guardar cambios</h2>
+<h2 id="user-content-24-enviar-cambios-al-servidor" class="deep-link">2.4. Enviar cambios al servidor</h2>
+</div><div class="step" data-z="90000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
+<h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
+<h2 id="user-content-32-reparar-fin-de-l&#xED;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#xED;nea en los archivos</h2>
+<h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
+</div><div class="step" data-z="96000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
+<h2 id="user-content-41-clonar-un-repositorio-existente" class="deep-link">4.1. Clonar un repositorio existente</h2>
+<h2 id="user-content-42-resoluci&#xF3;n-de-conflictos" class="deep-link">4.2. Resoluci&#xF3;n de conflictos</h2>
+<h2 id="user-content-43-corregir-el-commit-anterior" class="deep-link">4.3. Corregir el commit anterior</h2>
+</div><div class="step" data-z="102000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
+<h2 id="user-content-51-crear-una-cuenta-en-github" class="deep-link">5.1. Crear una cuenta en Github</h2>
+<h2 id="user-content-52-administraci&#xF3;n-de-repositorios-via-web" class="deep-link">5.2. Administraci&#xF3;n de repositorios via web</h2>
+<h2 id="user-content-53-cliente-gr&#xE1;fico-de-git-para-mac-y-windows" class="deep-link">5.3. Cliente gr&#xE1;fico de git para Mac y Windows</h2>
+<h2 id="user-content-54-documentaci&#xF3;n-en-markdown" class="deep-link">5.4. Documentaci&#xF3;n en Markdown</h2>
+</div><div class="step" data-z="108000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
+<h2 id="user-content-61-fork" class="deep-link">6.1. Fork</h2>
+<h2 id="user-content-62-pull-requests" class="deep-link">6.2. Pull requests</h2>
+<h2 id="user-content-63-gist" class="deep-link">6.3. gist</h2>
+<h2 id="user-content-64-github-pages" class="deep-link">6.4. Github Pages</h2>
+<h2 id="user-content-65-wikis" class="deep-link">6.5. Wikis</h2>
+</div><div class="step" data-z="114000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
+<ul>
+<li><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
+<li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
+<li><a href="https://github.com/papadako/git-a-little-tale/">https://github.com/papadako/git-a-little-tale/</a></li>
+</ul>
+</div><div class="step" data-z="120000"><!-- zoom-out slide -->
+</div></div>
+    <script>/**
+ * impress.js
+ *
+ * impress.js is a presentation tool based on the power of CSS3 transforms and transitions
+ * in modern browsers and inspired by the idea behind prezi.com.
+ *
+ *
+ * Copyright 2011-2012 Bartek Szopka (@bartaz)
+ *
+ * Released under the MIT and GPL Licenses.
+ *
+ * ------------------------------------------------
+ *  author:  Bartek Szopka
+ *  version: 0.5.3
+ *  url:     http://bartaz.github.com/impress.js/
+ *  source:  http://github.com/bartaz/impress.js/
+ */
+(function(a,b){"use strict";var c=function(){var b=a.createElement("dummy").style,c="Webkit Moz O ms Khtml".split(" "),d={};return function(a){if(d[a]===void 0){var e=a.charAt(0).toUpperCase()+a.substr(1),f=(a+" "+c.join(e+" ")+e).split(" ");d[a]=null;for(var g in f)if(void 0!==b[f[g]]){d[a]=f[g];break}}return d[a]}}(),d=function(a){return[].slice.call(a)},e=function(a,b){var d,e;for(d in b)b.hasOwnProperty(d)&&(e=c(d),null!==e&&(a.style[e]=b[d]));return a},f=function(a,b){return isNaN(a)?b||0:Number(a)},g=function(b){return a.getElementById(b)},h=function(b,c){return c=c||a,c.querySelector(b)},i=function(b,c){return c=c||a,d(c.querySelectorAll(b))},j=function(b,c,d){var e=a.createEvent("CustomEvent");e.initCustomEvent(c,!0,!0,d),b.dispatchEvent(e)},k=function(a){return" translate3d("+a.x+"px,"+a.y+"px,"+a.z+"px) "},l=function(a,b){var c=" rotateX("+a.x+"deg) ",d=" rotateY("+a.y+"deg) ",e=" rotateZ("+a.z+"deg) ";return b?e+d+c:c+d+e},m=function(a){return" scale("+a+") "},n=function(a){return" perspective("+a+"px) "},o=function(){return g(b.location.hash.replace(/^#\/?/,""))},p=function(a){var c=b.innerHeight/a.height,d=b.innerWidth/a.width,e=c>d?d:c;return a.maxScale&&e>a.maxScale&&(e=a.maxScale),a.minScale&&a.minScale>e&&(e=a.minScale),e},q=a.body,r=navigator.userAgent.toLowerCase(),s=null!==c("perspective")&&q.classList&&q.dataset&&-1===r.search(/(iphone)|(ipod)|(android)/);s?(q.classList.remove("impress-not-supported"),q.classList.add("impress-supported")):q.className+=" impress-not-supported ";var t={},u={width:1024,height:768,maxScale:1,minScale:0,perspective:1e3,transitionDuration:1e3},v=function(){return!1},w=b.impress=function(c){if(!s)return{init:v,"goto":v,prev:v,next:v};if(c=c||"impress",t["impress-root-"+c])return t["impress-root-"+c];var r={},w=null,x=null,y=null,z=null,A=null,B=g(c),C=a.createElement("div"),D=!1,E=null,F=function(a){E!==a&&(j(a,"impress:stepenter"),E=a)},G=function(a){E===a&&(j(a,"impress:stepleave"),E=null)},H=function(a,b){var c=a.dataset,d={translate:{x:f(c.x),y:f(c.y),z:f(c.z)},rotate:{x:f(c.rotateX),y:f(c.rotateY),z:f(c.rotateZ||c.rotate)},scale:f(c.scale,1),el:a};a.id||(a.id="step-"+(b+1)),r["impress-"+a.id]=d,e(a,{position:"absolute",transform:"translate(-50%,-50%)"+k(d.translate)+l(d.rotate)+m(d.scale),transformStyle:"preserve-3d"})},I=function(){if(!D){var b=h("meta[name='viewport']")||a.createElement("meta");b.content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no",b.parentNode!==a.head&&(b.name="viewport",a.head.appendChild(b));var g=B.dataset;z={width:f(g.width,u.width),height:f(g.height,u.height),maxScale:f(g.maxScale,u.maxScale),minScale:f(g.minScale,u.minScale),perspective:f(g.perspective,u.perspective),transitionDuration:f(g.transitionDuration,u.transitionDuration)},A=p(z),d(B.childNodes).forEach(function(a){C.appendChild(a)}),B.appendChild(C),a.documentElement.style.height="100%",e(q,{height:"100%",overflow:"hidden"});var k={position:"absolute",transformOrigin:"top left",transition:"all 0s ease-in-out",transformStyle:"preserve-3d"};e(B,k),e(B,{top:"50%",left:"50%",transform:n(z.perspective/A)+m(A)}),e(C,k),q.classList.remove("impress-disabled"),q.classList.add("impress-enabled"),y=i(".step",B),y.forEach(H),x={translate:{x:0,y:0,z:0},rotate:{x:0,y:0,z:0},scale:1},D=!0,j(B,"impress:init",{api:t["impress-root-"+c]})}},J=function(a){return"number"==typeof a?a=0>a?y[y.length+a]:y[a]:"string"==typeof a&&(a=g(a)),a&&a.id&&r["impress-"+a.id]?a:null},K=null,L=function(a,c){if(!D||!(a=J(a)))return!1;b.scrollTo(0,0);var d=r["impress-"+a.id];w&&(w.classList.remove("active"),q.classList.remove("impress-on-"+w.id)),a.classList.add("active"),q.classList.add("impress-on-"+a.id);var g={rotate:{x:-d.rotate.x,y:-d.rotate.y,z:-d.rotate.z},translate:{x:-d.translate.x,y:-d.translate.y,z:-d.translate.z},scale:1/d.scale},h=g.scale>=x.scale;c=f(c,z.transitionDuration);var i=c/2;a===w&&(A=p(z));var j=g.scale*A;return w&&w!==a&&G(w),e(B,{transform:n(z.perspective/j)+m(j),transitionDuration:c+"ms",transitionDelay:(h?i:0)+"ms"}),e(C,{transform:l(g.rotate,!0)+k(g.translate),transitionDuration:c+"ms",transitionDelay:(h?0:i)+"ms"}),(x.scale===g.scale||x.rotate.x===g.rotate.x&&x.rotate.y===g.rotate.y&&x.rotate.z===g.rotate.z&&x.translate.x===g.translate.x&&x.translate.y===g.translate.y&&x.translate.z===g.translate.z)&&(i=0),x=g,w=a,b.clearTimeout(K),K=b.setTimeout(function(){F(w)},c+i),a},M=function(){var a=y.indexOf(w)-1;return a=a>=0?y[a]:y[y.length-1],L(a)},N=function(){var a=y.indexOf(w)+1;return a=y.length>a?y[a]:y[0],L(a)};return B.addEventListener("impress:init",function(){y.forEach(function(a){a.classList.add("future")}),B.addEventListener("impress:stepenter",function(a){a.target.classList.remove("past"),a.target.classList.remove("future"),a.target.classList.add("present")},!1),B.addEventListener("impress:stepleave",function(a){a.target.classList.remove("present"),a.target.classList.add("past")},!1)},!1),B.addEventListener("impress:init",function(){var a="";B.addEventListener("impress:stepenter",function(c){b.location.hash=a="#/"+c.target.id},!1),b.addEventListener("hashchange",function(){b.location.hash!==a&&L(o())},!1),L(o()||y[0],0)},!1),q.classList.add("impress-disabled"),t["impress-root-"+c]={init:I,"goto":L,next:N,prev:M}};w.supported=s})(document,window),function(a,b){"use strict";var c=function(a,b){var c=null;return function(){var d=this,e=arguments;clearTimeout(c),c=setTimeout(function(){a.apply(d,e)},b)}};a.addEventListener("impress:init",function(d){var e=d.detail.api;a.addEventListener("keydown",function(a){(9===a.keyCode||a.keyCode>=32&&34>=a.keyCode||a.keyCode>=37&&40>=a.keyCode)&&a.preventDefault()},!1),a.addEventListener("keyup",function(a){if(9===a.keyCode||a.keyCode>=32&&34>=a.keyCode||a.keyCode>=37&&40>=a.keyCode){switch(a.keyCode){case 33:case 37:case 38:e.prev();break;case 9:case 32:case 34:case 39:case 40:e.next()}a.preventDefault()}},!1),a.addEventListener("click",function(b){for(var c=b.target;"A"!==c.tagName&&c!==a.documentElement;)c=c.parentNode;if("A"===c.tagName){var d=c.getAttribute("href");d&&"#"===d[0]&&(c=a.getElementById(d.slice(1)))}e.goto(c)&&(b.stopImmediatePropagation(),b.preventDefault())},!1),a.addEventListener("click",function(b){for(var c=b.target;(!c.classList.contains("step")||c.classList.contains("active"))&&c!==a.documentElement;)c=c.parentNode;e.goto(c)&&b.preventDefault()},!1),a.addEventListener("touchstart",function(a){if(1===a.touches.length){var c=a.touches[0].clientX,d=.3*b.innerWidth,f=null;d>c?f=e.prev():c>b.innerWidth-d&&(f=e.next()),f&&a.preventDefault()}},!1),b.addEventListener("resize",c(function(){e.goto(a.querySelector(".active"),500)},250),!1)},!1)}(document,window);</script>
+    <script>impress().init();</script>
 </body>
-</html>

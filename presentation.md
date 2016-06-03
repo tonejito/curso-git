@@ -76,11 +76,98 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 # 1. Introducción a los sistemas de control de versiones
 
+## Sistema de control de versiones
+
++ Guarda las versiones del código fuente de un programa
++ Permite mostrar los cambios en el código
++ Trabaja principalmente con archivos de texto
++ Asocia el cambio con el autor
++ Tiene la capacidad de regresar a versiones anteriores
+
+--------------------------------------------------------------------------------
+
 ## 1.1. Local
 
-## 1.2. Centralizado
+### Guardar cambios en archivos separados
 
-## 1.3. Distribuido
+```
+	prog.c prog1.c prog2.c ... prog<n>.c
+```
+
+### Guardar cambios en carpetas separadas
+
+```
+  tarea/prog.c
+  version_inicial/prog.c
+  modificado2/prog.c
+  vers-28sep/prog.c
+  ProyectoFinal_2017-1_completo(Andres)/prog1.c
+```
+
+--------------------------------------------------------------------------------
+
+#### Desventajas del control de versiones local
+
++ Se tienen muchos archivos bastante similares
++ No se conoce cual es la última versión
++ Es necesario copiar el archivo de trabajo constantemente
++ Al modificar el archivo de trabajo se pierde la versión anterior
++ Cuando se borra el archivo de trabajo se pierde esa revisión
+
+--------------------------------------------------------------------------------
+
+### Enviar cambios por correo electrónico
+
++ Se genera un correo por cada versión enviada
++ Puede ser tedioso encontrar una versión anterior
+
+  <img alt="Thunderbird" src="img/1_1-thunderbird.png" style="width: auto; height: 50px;" />
+  <img alt="Gmail" src="img/1_1-gmail.svg" style="width: auto; height: 50px;" />
+  <img alt="Apple Mail" src="img/1_1-apple-mail.png" style="width: auto; height: 50px;" />
+  <img alt="Outlook" src="img/1_1-outlook.svg" style="width: auto; height: 50px;" />
+
+--------------------------------------------------------------------------------
+
+### Utilizar almacenamiento en la nube
+
++ Algunos servicios de almacenamiento en la nube permiten regresar a versiones anteriores
++ Muchos de los servicios gratuitos únicamente permiten un número finito de versiones anteriores
++ Algunas veces los servicios de almacenamiento quitan las versiones anteriores más antiguas
+
+  <img alt="Dropbox" src="img/1_1-dropbox.svg" style="width: auto; height: 50px;" />
+  <img alt="GoogleDrive" src="img/1_1-google_drive.png" style="width: auto; height: 50px;" />
+  <img alt="Evernote" src="img/1_1-evernote.svg" style="width: auto; height: 50px;" />
+  <img alt="box.net" src="img/1_1-box.svg" style="width: auto; height: 50px;" />
+  <img alt="OneDrive" src="img/1_1-onedrive.svg" style="width: auto; height: 50px;" />
+  <img alt="ownCloud" src="img/1_1-owncloud.svg" style="width: auto; height: 50px;" />
+
+--------------------------------------------------------------------------------
+
+## 1.2. Centralizado - CVCS
+
++ Se basa en un modelo *cliente-servidor*
++ El servidor tiene una copia de todas las versiones del código
++ Los clientes *clonan* el repositorio y tienen una *copia de trabajo* que pueden modificar
++ Cuando los cambios están listos, los clientes los envían al servidor
++ Si el servidor falla, se pierden todas las versiones del proyecto
+
+  <img alt="SVN" src="img/1_2-svn.svg" style="width: auto; height: 50px;" />
+  <br />
+  <img alt="svn-actions" src="img/1_2-svn_actions.svg" style="width: auto; height: auto;" />
+
+--------------------------------------------------------------------------------
+
+## 1.3. Distribuido - DVCS
+
++ Cada cliente tiene una copia de todas las versiones del proyecto
++ Si el servidor falla es posible copiar todas las versiones desde un cliente
++ Es posible establecer estructuras jerárquicas
+
+  <img alt="git" src="img/1_3-git.svg" style="width: auto; height: 50px;" />
+  <img alt="hg" src="img/1_3-hg.svg" style="width: auto; height: 50px;" />
+  <img alt="bzr" src="img/1_3-bzr.svg" style="width: auto; height: 50px;" />
+  <img alt="arch" src="img/1_3-arch.png" style="width: auto; height: 50px;" />
+  <img alt="BitKeeper" src="img/1_3-bitkeeper.png" style="width: auto; height: 50px;" />
 
 --------------------------------------------------------------------------------
 
@@ -139,6 +226,14 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 ## 6.4. Github Pages
 
 ## 6.5. Wikis
+
+--------------------------------------------------------------------------------
+
+# Referencias
+
++ https://git-scm.com/docs
++ https://git-scm.com/book/en/v2
++ https://github.com/papadako/git-a-little-tale/
 
 --------------------------------------------------------------------------------
 <!-- zoom-out slide -->
