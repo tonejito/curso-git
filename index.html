@@ -1052,35 +1052,47 @@ kbd {
 <li>Varios desarrolladores pueden trabajar en el mismo proyecto</li>
 </ul>
 </div><div class="step" data-z="96000"><h2 id="user-content-21-inicializar-un-nuevo-repositorio" class="deep-link">2.1. Inicializar un nuevo repositorio</h2>
-<h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
+<ul>
+<li>Para crear un repositorio se utiliza el comando <a href="https://git-scm.com/docs/git-init" title="git-init(1)">git init</a></li>
+</ul>
+<div class="highlight man"><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>$&#xA0;man&#xA0;git-init</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git-init&#xA0;-&#xA0;Create&#xA0;an&#xA0;empty&#xA0;Git&#xA0;repository&#xA0;or&#xA0;reinitialize&#xA0;an&#xA0;existing&#xA0;one</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git&#xA0;init&#xA0;[-q&#xA0;|&#xA0;--quiet]&#xA0;[--bare]&#xA0;[--template=&lt;template_directory&gt;]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--separate-git-dir&#xA0;&lt;git&#xA0;dir&gt;]&#xA0;[--shared[=&lt;permissions&gt;]]&#xA0;[directory]</span></span></div></pre></div>
+<ul>
+<li>Es posible crear el directorio antes de inicializar</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;mkdir&#xA0;repositorio</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;</span><span class="support function builtin shell"><span>cd</span></span><span>&#xA0;repositorio</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;init</span></span></div><div class="line"><span class="source shell"><span>Initialized&#xA0;empty&#xA0;Git&#xA0;repository&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;/home/tonejito/repositorio/.git/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;ls&#xA0;-lA</span></span></div><div class="line"><span class="source shell"><span>total&#xA0;0</span></span></div><div class="line"><span class="source shell"><span>drwxr-xr-x&#xA0;7&#xA0;tonejito&#xA0;users&#xA0;147&#xA0;Jun&#xA0;&#xA0;3&#xA0;17:16&#xA0;.git</span></span></div></pre></div>
+</div><div class="step" data-z="102000"><ul>
+<li>Tambi&#xE9;n se puede especificar el directorio de destino en el comando <a href="https://git-scm.com/docs/git-init" title="git-init(1)">git init</a></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;init&#xA0;otro-repo</span></span></div><div class="line"><span class="source shell"><span>Initialized&#xA0;empty&#xA0;Git&#xA0;repository&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;/home/tonejito/otro-repo/.git/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;ls&#xA0;-lA&#xA0;otro-repo/</span></span></div><div class="line"><span class="source shell"><span>total&#xA0;0</span></span></div><div class="line"><span class="source shell"><span>drwxr-xr-x&#xA0;7&#xA0;tonejito&#xA0;users&#xA0;147&#xA0;Jun&#xA0;&#xA0;3&#xA0;17:19&#xA0;.git</span></span></div></pre></div>
+</div><div class="step" data-z="108000"><h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
 <h2 id="user-content-23-guardar-cambios" class="deep-link">2.3. Guardar cambios</h2>
 <h2 id="user-content-24-enviar-cambios-al-servidor" class="deep-link">2.4. Enviar cambios al servidor</h2>
-</div><div class="step" data-z="102000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
+</div><div class="step" data-z="114000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
 <h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
 <h2 id="user-content-32-reparar-fin-de-l&#xED;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#xED;nea en los archivos</h2>
 <h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
-</div><div class="step" data-z="108000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
+</div><div class="step" data-z="120000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
 <h2 id="user-content-41-clonar-un-repositorio-existente" class="deep-link">4.1. Clonar un repositorio existente</h2>
 <h2 id="user-content-42-resoluci&#xF3;n-de-conflictos" class="deep-link">4.2. Resoluci&#xF3;n de conflictos</h2>
 <h2 id="user-content-43-corregir-el-commit-anterior" class="deep-link">4.3. Corregir el commit anterior</h2>
-</div><div class="step" data-z="114000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
+</div><div class="step" data-z="126000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
 <h2 id="user-content-51-crear-una-cuenta-en-github" class="deep-link">5.1. Crear una cuenta en Github</h2>
 <h2 id="user-content-52-administraci&#xF3;n-de-repositorios-via-web" class="deep-link">5.2. Administraci&#xF3;n de repositorios via web</h2>
 <h2 id="user-content-53-cliente-gr&#xE1;fico-de-git-para-mac-y-windows" class="deep-link">5.3. Cliente gr&#xE1;fico de git para Mac y Windows</h2>
 <h2 id="user-content-54-documentaci&#xF3;n-en-markdown" class="deep-link">5.4. Documentaci&#xF3;n en Markdown</h2>
-</div><div class="step" data-z="120000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
+</div><div class="step" data-z="132000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
 <h2 id="user-content-61-fork" class="deep-link">6.1. Fork</h2>
 <h2 id="user-content-62-pull-requests" class="deep-link">6.2. Pull requests</h2>
 <h2 id="user-content-63-gist" class="deep-link">6.3. gist</h2>
 <h2 id="user-content-64-github-pages" class="deep-link">6.4. Github Pages</h2>
 <h2 id="user-content-65-wikis" class="deep-link">6.5. Wikis</h2>
-</div><div class="step" data-z="126000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
+</div><div class="step" data-z="138000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
 <ul>
 <li><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
 <li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
 <li><a href="https://github.com/papadako/git-a-little-tale/">https://github.com/papadako/git-a-little-tale/</a></li>
 </ul>
-</div><div class="step" data-z="132000"><!-- zoom-out slide -->
+</div><div class="step" data-z="144000"><!-- zoom-out slide -->
 </div></div>
     <script>/**
  * impress.js

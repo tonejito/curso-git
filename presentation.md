@@ -197,6 +197,42 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 ## 2.1. Inicializar un nuevo repositorio
 
++ Para crear un repositorio se utiliza el comando [git init](https://git-scm.com/docs/git-init "git-init(1)")
+
+```man
+$ man git-init
+
+git-init - Create an empty Git repository or reinitialize an existing one
+
+git init [-q | --quiet] [--bare] [--template=<template_directory>]
+         [--separate-git-dir <git dir>] [--shared[=<permissions>]] [directory]
+```
+
++ Es posible crear el directorio antes de inicializar
+
+```sh
+tonejito@linux:~$ mkdir repositorio
+tonejito@linux:~$ cd repositorio
+tonejito@linux:~/repositorio$ git init
+Initialized empty Git repository in /home/tonejito/repositorio/.git/
+tonejito@linux:~/repositorio$ ls -lA
+total 0
+drwxr-xr-x 7 tonejito users 147 Jun  3 17:16 .git
+```
+--------------------------------------------------------------------------------
+
++ También se puede especificar el directorio de destino en el comando [git init](https://git-scm.com/docs/git-init "git-init(1)")
+
+```sh
+tonejito@linux:~$ git init otro-repo
+Initialized empty Git repository in /home/tonejito/otro-repo/.git/
+tonejito@linux:~$ ls -lA otro-repo/
+total 0
+drwxr-xr-x 7 tonejito users 147 Jun  3 17:19 .git
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.2. Agregar y borrar archivos
 
 ## 2.3. Guardar cambios
