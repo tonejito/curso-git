@@ -173,7 +173,29 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 # 2. Introducción a git
 
-## 2.1. Inicializar un repositorio
++ El desarrollo del kernel Linux entre los años 1991 - 2002 no utilizaba un control de versiones *per-se*
++ En 2002 se utilizó un DVCS propietario llamado BitKeeper, que se ofrecía sin costo a los miembros del proyecto
++ En 2005 la compañía quiso cobrar el uso del software
++ La comunidad de desarrolladores, incluyendo a Linus Torvalds, optó por desarrollar su propia herramienta
+
+  <img alt="BitKeeper" src="img/2-bitkeeper.png" style="width: auto; height: 50px;" />
+  <span style="font-size: 5em;">⇒<!--⇨--></span>
+  <img alt="git" src="img/2-git.svg" style="width: auto; height: 50px;" />
+
+--------------------------------------------------------------------------------
+
+### Características de git
+
++ Velocidad
++ Diseño simple
++ Soporte para múltiples ramas
++ Enfoque distribuido
++ Capacidad de alojar grandes proyectos
++ Varios desarrolladores pueden trabajar en el mismo proyecto
+
+--------------------------------------------------------------------------------
+
+## 2.1. Inicializar un nuevo repositorio
 
 ## 2.2. Agregar y borrar archivos
 
