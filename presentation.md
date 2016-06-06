@@ -199,10 +199,10 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 ### Áreas de trabajo
 
 + `git` presenta tres áreas de trabajo, asociadas con los estados que puede tener un archivo
-+ <span style="font-weight: bold; color: OrangeRed;">Working Directory</span> es el directorio de trabajo.
-  * En el se crean, editan, mueven y borran los archivos del proyecto.
-+ <span style="font-weight: bold; color: DarkCyan;">Staging Area</span> es el área donde se preparan los cambios que serán versionados
-+ <span style="font-weight: bold; color: DimGrey;">El directorio `.git`</span> guarda todas las versiones de los archivos del proyecto
++ <span style="color: OrangeRed;">**Working Directory**</span> es el directorio de trabajo.
+  * En el se cr y borran los archivos del proyecto.
++ <span style="color: DarkCyan;">**Staging Area**</span> es el área donde se preparan los cambios que serán versionados
++ <span style="color: DimGrey;">**El directorio `.git`**</span> guarda todas las versiones de los archivos del proyecto
 
 <img alt="" src="img/book/2_0-areas.png" longdesc="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States" />
 
@@ -212,7 +212,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 Estado    | Descripción                                                | Comando
 ---------:| ---------------------------------------------------------- |:-----------------------------------:
-<span style="color: OrangeRed;">**Modified**</span> | El archivo fue editado en el *directorio de trabajo*              | `vi archivo`
+<span style="color: OrangeRed;">**Modified**</span> | El archivo fue editado en el *directorio de trabajo*              | `editor archivo`
 <span style="color: DarkCyan;">**Staged**</span>    | El archivo (nuevo o modificado) fue agregado al *área de staging* | `git add archivo`
 <span style="color: DarkCyan;">**Staged**</span>    | El archivo se movió o renombró utilizando `git`                   | `git mv archivo1 archivo2`
 <span style="color: DarkCyan;">**Staged**</span>    | El archivo se borró del *área de staging* utilizando `git`        | `git rm archivo`
@@ -222,13 +222,13 @@ Estado    | Descripción                                                | Comand
 
 ### Instalar git en GNU/Linux
 
-+ En [Debian GNU/Linux](https://www.debian.org/ "Debian GNU/Linux") utilizando [apt-get](http://linux.die.net/man/8/apt-get "man 8 apt-get") o [aptitude](http://linux.die.net/man/8/aptitude "man 8 aptitude")
++ En [Debian GNU/Linux](https://www.debian.org/ "Debian GNU/Linux") utilizando [apt-get](http://linux.die.net/man/8/apt-get "man 8 apt-get") o [`aptitude`](http://linux.die.net/man/8/aptitude "man 8 aptitude")
 
 ```sh
 root@debian:~# aptitude install git
 ```
 
-+ En [Red Hat ](https://www.redhat.com/ "Red Hat Linux"), [CentOS](https://www.centos.org/ "CentOS") y [Oracle Linux](https://linux.oracle.com/ "Oracle Enterprise Linux") se utiliza [yum](http://linux.die.net/man/8/yum "man 8 yum")
++ En [Red Hat ](https://www.redhat.com/ "Red Hat Linux"), [CentOS](https://www.centos.org/ "CentOS") y [Oracle Linux](https://linux.oracle.com/ "Oracle Enterprise Linux") se utiliza [`yum`](http://linux.die.net/man/8/yum "man 8 yum")
 
 ```sh
 [root@centos ~]# yum install git
@@ -240,7 +240,7 @@ Para instalar en otras variantes de UNIX ver la [documentación oficial](https:/
 
 ## 2.1. Inicializar un nuevo repositorio
 
-+ Para crear un repositorio se utiliza el comando [git init](https://git-scm.com/docs/git-init "git-init(1)")
++ Para crear un repositorio se utiliza el comando [`git init`](https://git-scm.com/docs/git-init "git-init(1)")
 
 ```man
 $ man git-init
@@ -264,7 +264,7 @@ drwxr-xr-x 7 tonejito users 147 Jun  3 17:16 .git
 ```
 --------------------------------------------------------------------------------
 
-+ También se puede especificar el directorio de destino en el comando [git init](https://git-scm.com/docs/git-init "git-init(1)")
++ También se puede especificar el directorio de destino en el comando [`git init`](https://git-scm.com/docs/git-init "git-init(1)")
 
 ```sh
 tonejito@linux:~$ git init otro-repo
