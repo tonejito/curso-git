@@ -274,6 +274,22 @@ total 0
 drwxr-xr-x 7 tonejito users 147 Jun  3 17:19 .git
 ```
 
++ Si el repositorio será compartido en un servidor, utilizar la opción `--shared`
++ No olvides ajustar los permisos del directorio
+
+```sh
+tonejito@linux:~$ git init --shared=group repo-compartido
+Initialized empty shared Git repository in /home/tonejito/repo-compartido/.git/
+tonejito@linux:~$ chmod -R g+rw repo-compartido/
+tonejito@linux:~$ ls -la repo-compartido/
+total 4
+drwxrwsr-x  3 tonejito users   17 Jun  6 09:50 .
+drwxr-xr-x 57 tonejito users 4096 Jun  6 09:50 ..
+drwxrwsr-x  7 tonejito users  147 Jun  6 09:50 .git
+```
+
++ Si tienes dudas, [RTFM](https://git-scm.com/docs/ "git Documentation")
+
 --------------------------------------------------------------------------------
 
 ## 2.2. Agregar y borrar archivos
