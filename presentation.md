@@ -192,6 +192,31 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 + Enfoque distribuido
 + Capacidad de alojar grandes proyectos
 + Varios desarrolladores pueden trabajar en el mismo proyecto
++ Incluye verificación de integridad en los archivos
+
+--------------------------------------------------------------------------------
+
+### Áreas de trabajo
+
++ `git` presenta tres áreas de trabajo, asociadas con los estados que puede tener un archivo
++ <span style="font-weight: bold; color: OrangeRed;">Working Directory</span> es el directorio de trabajo.
+  * En el se crean, editan, mueven y borran los archivos del proyecto.
++ <span style="font-weight: bold; color: DarkCyan;">Staging Area</span> es el área donde se preparan los cambios que serán versionados
++ <span style="font-weight: bold; color: DimGrey;">El directorio `.git`</span> guarda todas las versiones de los archivos del proyecto
+
+<img alt="" src="img/book/2_0-areas.png" longdesc="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States" />
+
+--------------------------------------------------------------------------------
+
+#### Estados de un archivo
+
+Estado    | Descripción                                                | Comando
+---------:| ---------------------------------------------------------- |:-----------------------------------:
+<span style="color: OrangeRed;">**Modified**</span> | El archivo fue editado en el *directorio de trabajo*              | `vi archivo`
+<span style="color: DarkCyan;">**Staged**</span>    | El archivo (nuevo o modificado) fue agregado al *área de staging* | `git add archivo`
+<span style="color: DarkCyan;">**Staged**</span>    | El archivo se movió o renombró utilizando `git`                   | `git mv archivo1 archivo2`
+<span style="color: DarkCyan;">**Staged**</span>    | El archivo se borró del *área de staging* utilizando `git`        | `git rm archivo`
+<span style="color: DimGrey;">**Committed**</span>  | Los cambios del archivo fueron guardados en el repositorio        | `git commit archivo`
 
 --------------------------------------------------------------------------------
 
