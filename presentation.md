@@ -294,6 +294,80 @@ drwxrwsr-x  7 tonejito users  147 Jun  6 09:50 .git
 
 ## 2.2. Agregar y borrar archivos
 
++ El comando [`git add`](https://git-scm.com/docs/git-add "git-add(1)") se utiliza para especificar qué archivos incluirá git en el control de versiones
++ Los cambios del <span style="color: OrangeRed;">**Directorio de trabajo**</span> se incluyen en el <span style="color: DarkCyan;">**Área de Staging**</span>, es decir, se marcan para ser enviados en un *commit*
++ El <span style="color: DarkCyan;">**Área de Staging**</span> también es conocida como **index**
++ La página de `man` de `git add` muestra las opciones de línea de comando:
+
+```
+git-add - Add file contents to the index
+
+git add [-n]  [-v]  [--force | -f]  [--interactive | -i]  [--patch | -p]
+        [--edit | -e]  [--[no-]all | --[no-]ignore-removal | [--update | -u]]
+        [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing]
+        [--]  [<pathspec>...]
+```
+
+--------------------------------------------------------------------------------
+
++ Crear un archivo de texto con el nombre `README.md` y escribir algún mensaje simple en el
++ Muchos repositorios utilizan [Markdown](http://daringfireball.net/projects/markdown/ "Markdown") para el archivo **README** de sus repositorios
++ Github tiene una [versión especial de Markdown](https://help.github.com/categories/writing-on-github/ "GitHub Flavored Markdown")
++ Existen varios editores en línea como [Dillinger](http://dillinger.io/ "Dillinger") y [StackEdit](https://stackedit.io/editor "StackEdit")
+
+```sh
+tonejito@linux:~/repositorio$ editor README.md
+```
+
+	# Mi repositorio de git
+	
+	Andrés Hernández
+
+--------------------------------------------------------------------------------
+
++ Ejecutar el comando [`git status`](https://git-scm.com/docs/git-status "git-status(1)") para revisar si hay cambios
+
+```
+tonejito@linux:~/repositorio$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+--------------------------------------------------------------------------------
+
++ Agregar el archivo `README.md` al repositorio con el comando [`git add`](https://git-scm.com/docs/git-add "git-add(1)")
+
+```sh
+tonejito@linux:~/repositorio$ git add README.md
+```
+
++ Ejecutar una vez mas [`git status`](https://git-scm.com/docs/git-status "git-status(1)") para revisar si hay cambios
+
+```
+On branch master
+
+Initial commit
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+
+	new file:   README.md
+```
+
++ Desapareció el mensaje que sugería utilizar `git add` (comparar con la lámina anterior)
+
++ El cambio **aún no está guardado**, ver siguiente sección
+
+--------------------------------------------------------------------------------
+
 ## 2.3. Guardar cambios
 
 ## 2.4. Enviar cambios al servidor
