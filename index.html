@@ -1050,8 +1050,68 @@ kbd {
 <li>Enfoque distribuido</li>
 <li>Capacidad de alojar grandes proyectos</li>
 <li>Varios desarrolladores pueden trabajar en el mismo proyecto</li>
+<li>Incluye verificaci&#xF3;n de integridad en los archivos</li>
 </ul>
-</div><div class="step" data-z="96000"><h2 id="user-content-21-inicializar-un-nuevo-repositorio" class="deep-link">2.1. Inicializar un nuevo repositorio</h2>
+</div><div class="step" data-z="96000"><h3 id="user-content-&#xE1;reas-de-trabajo" class="deep-link">&#xC1;reas de trabajo</h3>
+<ul>
+<li><code>git</code> presenta tres &#xE1;reas de trabajo, asociadas con los estados que puede tener un archivo</li>
+<li><span style="font-weight: bold; color: OrangeRed;">Working Directory</span> es el directorio de trabajo.
+<ul>
+<li>En el se crean, editan, mueven y borran los archivos del proyecto.</li>
+</ul>
+</li>
+<li><span style="font-weight: bold; color: DarkCyan;">Staging Area</span> es el &#xE1;rea donde se preparan los cambios que ser&#xE1;n versionados</li>
+<li><span style="font-weight: bold; color: DimGrey;">El directorio <code>.git</code></span> guarda todas las versiones de los archivos del proyecto</li>
+</ul>
+<img alt="" src="img/book/2_0-areas.png" longdesc="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States">
+</div><div class="step" data-z="102000"><h4 id="user-content-estados-de-un-archivo" class="deep-link">Estados de un archivo</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:right">Estado</th>
+<th>Descripci&#xF3;n</th>
+<th style="text-align:center">Comando</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"><span style="color: OrangeRed;"><strong>Modified</strong></span></td>
+<td>El archivo fue editado en el <em>directorio de trabajo</em></td>
+<td style="text-align:center"><code>vi archivo</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><span style="color: DarkCyan;"><strong>Staged</strong></span></td>
+<td>El archivo (nuevo o modificado) fue agregado al <em>&#xE1;rea de staging</em></td>
+<td style="text-align:center"><code>git add archivo</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><span style="color: DarkCyan;"><strong>Staged</strong></span></td>
+<td>El archivo se movi&#xF3; o renombr&#xF3; utilizando <code>git</code></td>
+<td style="text-align:center"><code>git mv archivo1 archivo2</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><span style="color: DarkCyan;"><strong>Staged</strong></span></td>
+<td>El archivo se borr&#xF3; del <em>&#xE1;rea de staging</em> utilizando <code>git</code></td>
+<td style="text-align:center"><code>git rm archivo</code></td>
+</tr>
+<tr>
+<td style="text-align:right"><span style="color: DimGrey;"><strong>Committed</strong></span></td>
+<td>Los cambios del archivo fueron guardados en el repositorio</td>
+<td style="text-align:center"><code>git commit archivo</code></td>
+</tr>
+</tbody>
+</table>
+</div><div class="step" data-z="108000"><h3 id="user-content-instalar-git-en-gnulinux" class="deep-link">Instalar git en GNU/Linux</h3>
+<ul>
+<li>En <a href="https://www.debian.org/" title="Debian GNU/Linux">Debian GNU/Linux</a> utilizando <a href="http://linux.die.net/man/8/apt-get" title="man 8 apt-get">apt-get</a> o <a href="http://linux.die.net/man/8/aptitude" title="man 8 aptitude">aptitude</a></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>root@debian:</span><span class="keyword operator tilde shell"><span>~</span></span><span>#&#xA0;aptitude&#xA0;install&#xA0;git</span></span></div></pre></div>
+<ul>
+<li>En <a href="https://www.redhat.com/" title="Red Hat Linux">Red Hat </a>, <a href="https://www.centos.org/" title="CentOS">CentOS</a> y <a href="https://linux.oracle.com/" title="Oracle Enterprise Linux">Oracle Linux</a> se utiliza <a href="http://linux.die.net/man/8/yum" title="man 8 yum">yum</a></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>[root@centos&#xA0;</span><span class="keyword operator tilde shell"><span>~</span></span><span>]#&#xA0;yum&#xA0;install&#xA0;git</span></span></div></pre></div>
+<p>Para instalar en otras variantes de UNIX ver la <a href="https://git-scm.com/download/linux">documentaci&#xF3;n oficial</a></p>
+</div><div class="step" data-z="114000"><h2 id="user-content-21-inicializar-un-nuevo-repositorio" class="deep-link">2.1. Inicializar un nuevo repositorio</h2>
 <ul>
 <li>Para crear un repositorio se utiliza el comando <a href="https://git-scm.com/docs/git-init" title="git-init(1)">git init</a></li>
 </ul>
@@ -1060,39 +1120,47 @@ kbd {
 <li>Es posible crear el directorio antes de inicializar</li>
 </ul>
 <div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;mkdir&#xA0;repositorio</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;</span><span class="support function builtin shell"><span>cd</span></span><span>&#xA0;repositorio</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;init</span></span></div><div class="line"><span class="source shell"><span>Initialized&#xA0;empty&#xA0;Git&#xA0;repository&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;/home/tonejito/repositorio/.git/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;ls&#xA0;-lA</span></span></div><div class="line"><span class="source shell"><span>total&#xA0;0</span></span></div><div class="line"><span class="source shell"><span>drwxr-xr-x&#xA0;7&#xA0;tonejito&#xA0;users&#xA0;147&#xA0;Jun&#xA0;&#xA0;3&#xA0;17:16&#xA0;.git</span></span></div></pre></div>
-</div><div class="step" data-z="102000"><ul>
+</div><div class="step" data-z="120000"><ul>
 <li>Tambi&#xE9;n se puede especificar el directorio de destino en el comando <a href="https://git-scm.com/docs/git-init" title="git-init(1)">git init</a></li>
 </ul>
 <div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;init&#xA0;otro-repo</span></span></div><div class="line"><span class="source shell"><span>Initialized&#xA0;empty&#xA0;Git&#xA0;repository&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;/home/tonejito/otro-repo/.git/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;ls&#xA0;-lA&#xA0;otro-repo/</span></span></div><div class="line"><span class="source shell"><span>total&#xA0;0</span></span></div><div class="line"><span class="source shell"><span>drwxr-xr-x&#xA0;7&#xA0;tonejito&#xA0;users&#xA0;147&#xA0;Jun&#xA0;&#xA0;3&#xA0;17:19&#xA0;.git</span></span></div></pre></div>
-</div><div class="step" data-z="108000"><h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
+<ul>
+<li>Si el repositorio ser&#xE1; compartido en un servidor, utilizar la opci&#xF3;n <code>--shared</code></li>
+<li>No olvides ajustar los permisos del directorio</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;init&#xA0;--shared=group&#xA0;repo-compartido</span></span></div><div class="line"><span class="source shell"><span>Initialized&#xA0;empty&#xA0;shared&#xA0;Git&#xA0;repository&#xA0;</span><span class="keyword control shell"><span>in</span></span><span>&#xA0;/home/tonejito/repo-compartido/.git/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;chmod&#xA0;-R&#xA0;g+rw&#xA0;repo-compartido/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;ls&#xA0;-la&#xA0;repo-compartido/</span></span></div><div class="line"><span class="source shell"><span>total&#xA0;4</span></span></div><div class="line"><span class="source shell"><span>drwxrwsr-x&#xA0;&#xA0;3&#xA0;tonejito&#xA0;users&#xA0;&#xA0;&#xA0;17&#xA0;Jun&#xA0;&#xA0;6&#xA0;09:50&#xA0;</span><span class="support function builtin shell"><span>.</span></span></span></div><div class="line"><span class="source shell"><span>drwxr-xr-x&#xA0;57&#xA0;tonejito&#xA0;users&#xA0;4096&#xA0;Jun&#xA0;&#xA0;6&#xA0;09:50&#xA0;..</span></span></div><div class="line"><span class="source shell"><span>drwxrwsr-x&#xA0;&#xA0;7&#xA0;tonejito&#xA0;users&#xA0;&#xA0;147&#xA0;Jun&#xA0;&#xA0;6&#xA0;09:50&#xA0;.git</span></span></div></pre></div>
+<ul>
+<li>Si tienes dudas, <a href="https://git-scm.com/docs/" title="git Documentation">RTFM</a></li>
+</ul>
+</div><div class="step" data-z="126000"><h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
 <h2 id="user-content-23-guardar-cambios" class="deep-link">2.3. Guardar cambios</h2>
 <h2 id="user-content-24-enviar-cambios-al-servidor" class="deep-link">2.4. Enviar cambios al servidor</h2>
-</div><div class="step" data-z="114000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
+</div><div class="step" data-z="132000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
 <h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
 <h2 id="user-content-32-reparar-fin-de-l&#xED;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#xED;nea en los archivos</h2>
 <h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
-</div><div class="step" data-z="120000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
+</div><div class="step" data-z="138000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
 <h2 id="user-content-41-clonar-un-repositorio-existente" class="deep-link">4.1. Clonar un repositorio existente</h2>
 <h2 id="user-content-42-resoluci&#xF3;n-de-conflictos" class="deep-link">4.2. Resoluci&#xF3;n de conflictos</h2>
 <h2 id="user-content-43-corregir-el-commit-anterior" class="deep-link">4.3. Corregir el commit anterior</h2>
-</div><div class="step" data-z="126000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
+</div><div class="step" data-z="144000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
 <h2 id="user-content-51-crear-una-cuenta-en-github" class="deep-link">5.1. Crear una cuenta en Github</h2>
 <h2 id="user-content-52-administraci&#xF3;n-de-repositorios-via-web" class="deep-link">5.2. Administraci&#xF3;n de repositorios via web</h2>
 <h2 id="user-content-53-cliente-gr&#xE1;fico-de-git-para-mac-y-windows" class="deep-link">5.3. Cliente gr&#xE1;fico de git para Mac y Windows</h2>
 <h2 id="user-content-54-documentaci&#xF3;n-en-markdown" class="deep-link">5.4. Documentaci&#xF3;n en Markdown</h2>
-</div><div class="step" data-z="132000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
+</div><div class="step" data-z="150000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
 <h2 id="user-content-61-fork" class="deep-link">6.1. Fork</h2>
 <h2 id="user-content-62-pull-requests" class="deep-link">6.2. Pull requests</h2>
 <h2 id="user-content-63-gist" class="deep-link">6.3. gist</h2>
 <h2 id="user-content-64-github-pages" class="deep-link">6.4. Github Pages</h2>
 <h2 id="user-content-65-wikis" class="deep-link">6.5. Wikis</h2>
-</div><div class="step" data-z="138000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
+</div><div class="step" data-z="156000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
 <ul>
 <li><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
 <li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
 <li><a href="https://github.com/papadako/git-a-little-tale/">https://github.com/papadako/git-a-little-tale/</a></li>
 </ul>
-</div><div class="step" data-z="144000"><!-- zoom-out slide -->
+</div><div class="step" data-z="162000"><!-- zoom-out slide -->
 </div></div>
     <script>/**
  * impress.js
