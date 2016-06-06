@@ -220,6 +220,24 @@ Estado    | Descripción                                                | Comand
 
 --------------------------------------------------------------------------------
 
+### Instalar git en GNU/Linux
+
++ En [Debian GNU/Linux](https://www.debian.org/ "Debian GNU/Linux") utilizando [apt-get](http://linux.die.net/man/8/apt-get "man 8 apt-get") o [aptitude](http://linux.die.net/man/8/aptitude "man 8 aptitude")
+
+```sh
+root@debian:~# aptitude install git
+```
+
++ En [Red Hat ](https://www.redhat.com/ "Red Hat Linux"), [CentOS](https://www.centos.org/ "CentOS") y [Oracle Linux](https://linux.oracle.com/ "Oracle Enterprise Linux") se utiliza [yum](http://linux.die.net/man/8/yum "man 8 yum")
+
+```sh
+[root@centos ~]# yum install git
+```
+
+Para instalar en otras variantes de UNIX ver la [documentación oficial](https://git-scm.com/download/linux)
+
+--------------------------------------------------------------------------------
+
 ## 2.1. Inicializar un nuevo repositorio
 
 + Para crear un repositorio se utiliza el comando [git init](https://git-scm.com/docs/git-init "git-init(1)")
