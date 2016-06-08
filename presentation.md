@@ -321,9 +321,11 @@ git add [-n]  [-v]  [--force | -f]  [--interactive | -i]  [--patch | -p]
 tonejito@linux:~/repositorio$ editor README.md
 ```
 
-	# Mi repositorio de git
-	
-	Andrés Hernández
+```
+# Mi repositorio de git
+
+Andrés Hernández
+```
 
 --------------------------------------------------------------------------------
 
@@ -389,26 +391,34 @@ git commit [-a | --interactive | --patch]  [-s]  [-v]  [-u<mode>]  [--amend]
 
 --------------------------------------------------------------------------------
 
+### git-commit interactivo
+
 + Para guardar el archivo recién creado en la sección anterior se ejecuta [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
 
 ```sh
-tonejito@VF-117D:~/repositorio$ git commit README.md
+tonejito@linux:~/repositorio$ git commit README.md
 ```
 
 + Se abre un editor de texto donde debe escribirse *el título* y *la descripción* del commit
 + Todas las líneas que inicien con el símbolo `#` serán ignoradas
 + Si se guarda un mensaje vacío, se cancela el proceso de `commit`
++ El editor de texto se toma de las variables `$GIT_EDITOR`, `core.editor`, `$VISUAL` o `$EDITOR`
 
-	# Please enter the commit message for your changes. Lines starting
-	# with '#' will be ignored, and an empty message aborts the commit.
-	# Explicit paths specified without -i or -o; assuming --only paths...
-	# On branch master
-	#
-	# Initial commit
-	#
-	# Changes to be committed:
-	#       new file:   README.md
-	#
+```
+Commit inicial del proyecto
+
++ Se agrega el archivo README.md
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# Explicit paths specified without -i or -o; assuming --only paths...
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#       new file:   README.md
+#
+```
 
 --------------------------------------------------------------------------------
 
@@ -425,7 +435,6 @@ Línea | Elemento               | Contenido
   …   | ✓                      | Puede abarcar varias líneas de texto
   …   | ✓                      | Es posible insertar elementos de sintáxis de Markdown
   …   | ✓                      | Se pueden utilizar listas para enumerar elementos de manera vertical
-
 
 --------------------------------------------------------------------------------
 
