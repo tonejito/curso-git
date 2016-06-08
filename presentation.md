@@ -1,5 +1,5 @@
 
-# Control de versiones con git 
+# Control de versiones con git
 
 --------------------------------------------------------------------------------
 
@@ -11,7 +11,7 @@ Intermedio
 
 ## Objetivo
 
-El alumno conocerá el sistema de control de versiones git y aprenderá el uso de esta herramienta tanto desde línea de comandos, como desde un cliente de escritorio y vía web a través de Github. 
+El alumno conocerá el sistema de control de versiones git y aprenderá el uso de esta herramienta tanto desde línea de comandos, como desde un cliente de escritorio y vía web a través de Github.
 
 --------------------------------------------------------------------------------
 
@@ -222,7 +222,7 @@ Estado    | Descripción                                                | Comand
 
 ### Instalar git en GNU/Linux
 
-+ En [Debian GNU/Linux](https://www.debian.org/ "Debian GNU/Linux") utilizando [apt-get](http://linux.die.net/man/8/apt-get "man 8 apt-get") o [`aptitude`](http://linux.die.net/man/8/aptitude "man 8 aptitude")
++ En [Debian GNU/Linux](https://www.debian.org/ "Debian GNU/Linux") utilizando [`apt-get`](http://linux.die.net/man/8/apt-get "man 8 apt-get") o [`aptitude`](http://linux.die.net/man/8/aptitude "man 8 aptitude")
 
 ```sh
 root@debian:~# aptitude install git
@@ -297,7 +297,7 @@ drwxrwsr-x  7 tonejito users  147 Jun  6 09:50 .git
 + El comando [`git add`](https://git-scm.com/docs/git-add "git-add(1)") se utiliza para especificar qué archivos incluirá git en el control de versiones
 + Los cambios del <span style="color: OrangeRed;">**Directorio de trabajo**</span> se incluyen en el <span style="color: DarkCyan;">**Área de Staging**</span>, es decir, se marcan para ser enviados en un *commit*
 + El <span style="color: DarkCyan;">**Área de Staging**</span> también es conocida como **index**
-+ La página de `man` de `git add` muestra las opciones de línea de comando:
++ La página de `man` de `git add` muestra las opciones de línea de comandos
 
 ```
 git-add - Add file contents to the index
