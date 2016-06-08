@@ -442,6 +442,7 @@ Línea | Elemento               | Contenido
 
 + Es posible ejecutar [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)") y especificar el *título del commit* en el mismo comando
 + No se guarda la descripción del *commit*
++ Puede ser utilizado en scripts o procesos automatizados
 + La bitácora del repositorio se puede visualizar con el comando [`git log`](https://git-scm.com/docs/git-log "git-log(1)")
 
 ```sh
@@ -461,12 +462,12 @@ Date:   Wed Jun 8 13:52:04 2016 -0500
 ## 2.4. Borrar archivos
 
 + Para borrar archivos del repositorio se utiliza el comando [`git rm`](https://git-scm.com/docs/git-rm "git-rm(1)")
-+ No utilizar rm o borrar mediante el navegador de archivos
-+ Para borrar archivos del <span style="color: DimGrey;">**directorio `.git`**</span> se utiliza el comando [`git rm`](https://git-scm.com/docs/git-commit "git-rm(1)")
++ No utilizar `rm` o borrar mediante el *navegador de archivos*
++ Para borrar archivos del <span style="color: DimGrey;">**directorio `.git`**</span> se utiliza el comando [`git rm`](https://git-scm.com/docs/git-rm "git-rm(1)")
 + Esta operación guarda una entrada en la [bitácora del repositorio](https://git-scm.com/docs/git-log "git-log(1)")
 + El archivo también se borra del <span style="color: OrangeRed;">**Directorio de trabajo**</span>
 + Se conservan las versiones anteriores en el repositorio
-+ La página de `man` de `git commit` muestra las opciones de línea de comandos
++ La página de `man` de `git rm` muestra las opciones de línea de comandos
 
 ```
 git-rm - Remove files from the working tree and from the index
