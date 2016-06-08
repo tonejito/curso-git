@@ -509,6 +509,49 @@ tonejito@linux:~/repositorio$ git commit -m "Prueba de git-rm" archivo-para-borr
 
 ## 2.5. Mover archivos
 
++ El comando [`git mv`](https://git-scm.com/docs/git-mv "git-mv(1)") se utiliza para **mover** o **renombrar** archivos del repositorio
++ No utilizar `mv` o renombrar desde el *navegador de archivos*
++ La página de `man` de `git mv` muestra las opciones de línea de comandos
+
+```
+git-mv - Move or rename a file, a directory, or a symlink
+
+git mv [-v] [-f] [-n] [-k] <source>     <destination>
+git mv [-v] [-f] [-n] [-k] <source> ... <destination directory>
+```
+
+--------------------------------------------------------------------------------
+
+### 2.5.1. Ejemplo de git-mv
+
++ Creación de archivos de prueba
+
+```sh
+tonejito@linux:~/repositorio$ touch archivo-para-mover archivo-para-renombrar
+tonejito@linux:~/repositorio$ git add archivo-para-mover archivo-para-renombrar
+tonejito@linux:~/repositorio$ git commit -m "Archivos vacíos para prueba de git-rm" archivo-para-*
+[master 657aa04] Archivos vacíos para prueba de git-rm
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 archivo-para-mover
+ create mode 100644 archivo-para-renombrar
+```
+
++ Prueba de [`git mv`](https://git-scm.com/docs/git-mv "git-mv(1)") moviendo un archivo a otro directorio y renombrando otro archivo
+
+```sh
+tonejito@linux:~/repositorio$ mkdir -v directorio
+mkdir: created directory ‘directorio’
+tonejito@linux:~/repositorio$ git mv archivo-para-mover directorio/
+tonejito@linux:~/repositorio$ git mv archivo-para-renombrar archivo-con-otro-nombre
+tonejito@linux:~/repositorio$ git commit -m "Prueba de git-mv"
+[master 4f30937] Prueba de git-mv
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ rename archivo-para-renombrar => archivo-con-otro-nombre (100%)
+ rename archivo-para-mover => directorio/archivo-para-mover (100%)
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.6. Enviar cambios al servidor
 
 --------------------------------------------------------------------------------
