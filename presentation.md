@@ -37,9 +37,11 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 2. Introducción a git
    1. Inicializar un repositorio
-   2. Agregar y borrar archivos
-   3. Guardar cambios
-   4. Enviar cambios al servidor
+   2. Agregar archivos
+   3. Guardar cambios en el repositorio
+   4. Borrar archivos
+   5. Mover archivos
+   6. Enviar cambios al servidor
 
 --------------------------------------------------------------------------------
 
@@ -292,7 +294,7 @@ drwxrwsr-x  7 tonejito users  147 Jun  6 09:50 .git
 
 --------------------------------------------------------------------------------
 
-## 2.2. Agregar y borrar archivos
+## 2.2. Agregar archivos
 
 + El comando [`git add`](https://git-scm.com/docs/git-add "git-add(1)") se utiliza para especificar qué archivos incluirá git en el control de versiones
 + Los cambios del <span style="color: OrangeRed;">**Directorio de trabajo**</span> se incluyen en el <span style="color: DarkCyan;">**Área de Staging**</span>, es decir, se marcan para ser enviados en un *commit*
@@ -368,9 +370,70 @@ Changes to be committed:
 
 --------------------------------------------------------------------------------
 
-## 2.3. Guardar cambios
+## 2.3. Guardar cambios en el repositorio
 
-## 2.4. Enviar cambios al servidor
++ Para enviar un cambio del <span style="color: DarkCyan;">**Área de Staging**</span> al <span style="color: DimGrey;">**directorio `.git`**</span> se utiliza el comando [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
++ Cada revisión generada guarda una entrada en la [bitácora del repositorio](https://git-scm.com/docs/git-log "git-log(1)")
++ La página de `man` de `git commit` muestra las opciones de línea de comandos
+
+```
+git-commit - Record changes to the repository
+
+git commit [-a | --interactive | --patch]  [-s]  [-v]  [-u<mode>]  [--amend]
+           [--dry-run]  [(-c | -C | --fixup | --squash) <commit>]
+           [-F <file> | -m <msg>]  [--reset-author]  [--allow-empty]
+           [--allow-empty-message]  [--no-verify]  [-e]  [--author=<author>]
+           [--date=<date>]  [--cleanup=<mode>]  [--[no-]status]
+           [-i | -o]  [-S[<key-id>]]  [--]  [<file>...]
+```
+
+--------------------------------------------------------------------------------
+
++ Para guardar el archivo recién creado en la sección anterior se ejecuta [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
+
+```sh
+tonejito@VF-117D:~/repositorio$ git commit README.md
+```
+
++ Se abre un editor de texto donde debe escribirse *el título* y *la descripción* del commit
++ Todas las líneas que inicien con el símbolo `#` serán ignoradas
++ Si se guarda un mensaje vacío, se cancela el proceso de `commit`
+
+	# Please enter the commit message for your changes. Lines starting
+	# with '#' will be ignored, and an empty message aborts the commit.
+	# Explicit paths specified without -i or -o; assuming --only paths...
+	# On branch master
+	#
+	# Initial commit
+	#
+	# Changes to be committed:
+	#       new file:   README.md
+	#
+
+--------------------------------------------------------------------------------
+
+### Estructura del mensaje de un *commit*
+
++ Se recomienda que la estructura del mensaje de un *commit* tenga los siguientes elementos
++ El único elemento requerido es el **título**
+
+Línea | Elemento               | Contenido
+:----:| :--------------------: |:-----------------------------------------------
+  1   | Título del commit      | Descripción **breve** y **concreta** del cambio aplicado, menos de 50 caracteres
+  2   | Línea en blanco        | Se utiliza para separar el título del cuerpo
+  3   | Descripción del commit | Mensaje que explica el cambio aplicado a profundidad
+  …   | ✓                      | Puede abarcar varias líneas de texto
+  …   | ✓                      | Es posible insertar elementos de sintáxis de Markdown
+  …   | ✓                      | Se pueden utilizar listas para enumerar elementos de manera vertical
+
+
+--------------------------------------------------------------------------------
+
+## 2.4. Borrar archivos
+
+## 2.5. Mover archivos
+
+## 2.6. Enviar cambios al servidor
 
 --------------------------------------------------------------------------------
 
@@ -425,6 +488,10 @@ Changes to be committed:
 + https://git-scm.com/docs
 + https://git-scm.com/book/en/v2
 + https://github.com/papadako/git-a-little-tale/
++ https://wiki.openstack.org/wiki/GitCommitMessages
++ https://git-scm.com/book/ch5-2.html#Commit-Guidelines
++ http://chris.beams.io/posts/git-commit/
+
 
 --------------------------------------------------------------------------------
 <!-- zoom-out slide -->
