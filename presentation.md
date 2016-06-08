@@ -460,6 +460,52 @@ Date:   Wed Jun 8 13:52:04 2016 -0500
 
 ## 2.4. Borrar archivos
 
++ Para borrar archivos del repositorio se utiliza el comando [`git rm`](https://git-scm.com/docs/git-rm "git-rm(1)")
++ No utilizar rm o borrar mediante el navegador de archivos
++ Para borrar archivos del <span style="color: DimGrey;">**directorio `.git`**</span> se utiliza el comando [`git rm`](https://git-scm.com/docs/git-commit "git-rm(1)")
++ Esta operación guarda una entrada en la [bitácora del repositorio](https://git-scm.com/docs/git-log "git-log(1)")
++ El archivo también se borra del <span style="color: OrangeRed;">**Directorio de trabajo**</span>
++ Se conservan las versiones anteriores en el repositorio
++ La página de `man` de `git commit` muestra las opciones de línea de comandos
+
+```
+git-rm - Remove files from the working tree and from the index
+
+git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] <file>...
+```
+
+--------------------------------------------------------------------------------
+
+### 2.4.1. Ejemplo de git-rm
+
++ [`git rm`](https://git-scm.com/docs/git-rm "git-rm(1)") borra el archivo del <span style="color: OrangeRed;">**Directorio de trabajo**</span> y marca el cambio en el <span style="color: DarkCyan;">**Área de Staging**</span>
+
+```sh
+tonejito@linux:~/repositorio$ ls -l
+total 4
+-rw-r--r-- 1 tonejito users  0 Jun  8 13:45 archivo-para-borrar
+-rw-r--r-- 1 tonejito users 44 Jun  6 18:01 README.md
+tonejito@linux:~/repositorio$ git rm archivo-para-borrar
+rm 'archivo-para-borrar'
+tonejito@linux:~/repositorio$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    archivo-para-borrar
+```
+
++ Es necesario guardar el cambio en el <span style="color: DimGrey;">**directorio `.git`**</span> con [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
+
+```sh
+tonejito@linux:~/repositorio$ git commit -m "Prueba de git-rm" archivo-para-borrar
+[master 1f6d57a] Prueba de git-rm
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 archivo-para-borrar
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.5. Mover archivos
 
 ## 2.6. Enviar cambios al servidor
