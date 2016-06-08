@@ -391,7 +391,7 @@ git commit [-a | --interactive | --patch]  [-s]  [-v]  [-u<mode>]  [--amend]
 
 --------------------------------------------------------------------------------
 
-### git-commit interactivo
+### 2.3.1. git-commit interactivo
 
 + Para guardar el archivo recién creado en la sección anterior se ejecuta [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
 
@@ -422,7 +422,7 @@ Commit inicial del proyecto
 
 --------------------------------------------------------------------------------
 
-### Estructura del mensaje de un *commit*
+### 2.3.2. Estructura del mensaje de un *commit*
 
 + Se recomienda que la estructura del mensaje de un *commit* tenga los siguientes elementos
 + El único elemento requerido es el **título**
@@ -435,6 +435,26 @@ Línea | Elemento               | Contenido
   …   | ✓                      | Puede abarcar varias líneas de texto
   …   | ✓                      | Es posible insertar elementos de sintáxis de Markdown
   …   | ✓                      | Se pueden utilizar listas para enumerar elementos de manera vertical
+
+--------------------------------------------------------------------------------
+
+### 2.3.3. git-commit - one-liner
+
++ Es posible ejecutar [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)") y especificar el *título del commit* en el mismo comando
++ No se guarda la descripción del *commit*
++ La bitácora del repositorio se puede visualizar con el comando [`git log`](https://git-scm.com/docs/git-log "git-log(1)")
+
+```sh
+tonejito@linux:~/repositorio$ touch archivo-para-borrar
+tonejito@linux:~/repositorio$ git add archivo-para-borrar
+tonejito@linux:~/repositorio$ git commit -m "Archivo de prueba para probar git-rm"
+tonejito@linux:~/repositorio$ git log -n 1
+commit f552622d1a526ed0471ea260e3b99d1cef0c72f3
+Author: Andrés Hernández <andres.hernandez@ciencias.unam.mx>
+Date:   Wed Jun 8 13:52:04 2016 -0500
+
+    Archivo vacío para probar git-rm
+```
 
 --------------------------------------------------------------------------------
 
