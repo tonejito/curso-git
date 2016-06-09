@@ -622,6 +622,7 @@ tonejito@linux:~/repositorio$ git remote -v
 origin	https://github.com/tonejito/repositorio.git (fetch)
 origin	https://github.com/tonejito/repositorio.git (push)
 ```
+
 --------------------------------------------------------------------------------
 
 ### 2.7.2. Enviar cambios con git-push
@@ -659,10 +660,25 @@ To https://github.com/tonejito/repositorio.git
 
 + Dependiendo de la versión y configuración de git, puede aparecer una advertencia sobre `push.default`
 
+--------------------------------------------------------------------------------
+
 ## 2.8. Revisar el estado de los archivos en el directorio de trabajo
 
-## 2.9. Bitácora de revisiones del proyecto
++ `git` reconoce cuando se realizan cambios en los archivos del <span style="color: OrangeRed;">**Directorio de trabajo**</span>
++ Para guardar los cambios en el repositorio del <span style="color: DimGrey;">**directorio `.git`**</span> es necesario ejecutar [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
 
+Estado del archivo                                     | Comando                         | Descripción
+:----------------------------------------------------: | :------------------------------ | :-----------
+<span style="color: Black;">**Untracked**</span>       | `touch   <file>`                | Se creó un nuevo archivo en el <span style="color: OrangeRed;">**Directorio de trabajo**</span><br/>Aún no se agrega al control de versiones
+<span style="color: OliveDrab;">**new file**</span>    | `git add <file>`                | Se agregó un nuevo archivo para ser versionado
+<span style="color: FireBrick;">**deleted**</span>     | `git rm  <file>`                | El archivo se borró del repositorio
+<span style="color: Indigo;">**renamed**</span>        | `git mv  <src> <dst>`           | El archivo cambió de nombre o fue movido
+<span style="color: DarkOrange;">**modified**</span>   | `gedit   <file>`                | El contenido del archivo fue modificado
+<span style="color: Crimson;">**both modified**</span> | :sweat_smile: :confused: :rage: | Es necesario hacer `merge` :scream:
+
+--------------------------------------------------------------------------------
+
+## 2.9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
 
