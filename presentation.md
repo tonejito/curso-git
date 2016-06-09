@@ -604,6 +604,26 @@ tonejito@linux:~/repositorio$ git commit -m "Prueba de git-mv"
 
 ## 2.7. Enviar cambios al servidor
 
++ En los repositorios que se han clonado, es común tener una URL para descargar (*fetch*) y otra para enviar (*push*)
++ El repositorio remoto se llama `origin` y la rama por defecto se llama `master`
++ Cuando la URL remota ya esta configurada, es posible enviar los cambios a un repositorio remoto
+
+--------------------------------------------------------------------------------
+
+### 2.7.1. Listar la URL del repositorio remoto
+
++ Para enviar cambios al servidor es necesario tener configurada una URL remota para envío o *push*
++ Es posible listar las URL de los repositorios remotos con [`git remote`](https://git-scm.com/docs/git-remote "git-remote(1)")
++ En un nuevo repositorio es necesario establecer la URL remota
+
+```sh
+tonejito@linux:~/repositorio$ git remote add origin https://github.com/tonejito/repositorio.git
+tonejito@linux:~/repositorio$ git remote -v
+origin	https://github.com/tonejito/repositorio.git (fetch)
+origin	https://github.com/tonejito/repositorio.git (push)
+```
+--------------------------------------------------------------------------------
+
 ## 2.8. Revisar el estado de los archivos en el directorio de trabajo
 
 ## 2.9. Bitácora de revisiones del proyecto
