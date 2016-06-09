@@ -733,6 +733,26 @@ Changes to be committed:
 
 --------------------------------------------------------------------------------
 
+### 2.8.4. `git mv` ⇨ **renamed**
+
++ Para <span style="color: Indigo;">**mover**</span> un archivo del repositorio a otra carpeta se utiliza `git rm`
++ También se utiliza para <span style="color: Indigo;">**cambiar de nombre**</span> a los archivos
++ No olvidar ejecutar `git commit` para guardar el cambio
+
+```
+tonejito@linux:~/repositorio$ git mv archivo-para-mover directorio/
+tonejito@linux:~/repositorio$ git mv archivo-para-renombrar archivo-con-otro-nombre
+tonejito@linux:~/repositorio$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	renamed:    archivo-para-renombrar -> archivo-con-otro-nombre
+	renamed:    archivo-para-mover -> directorio/archivo-para-mover
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
