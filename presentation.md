@@ -674,7 +674,7 @@ Estado del archivo                                     | Comando                
 <span style="color: FireBrick;">**deleted**</span>     | `git rm  <file>`                | El archivo se borró del repositorio
 <span style="color: Indigo;">**renamed**</span>        | `git mv  <src> <dst>`           | El archivo cambió de nombre o fue movido
 <span style="color: DarkOrange;">**modified**</span>   | `gedit   <file>`                | El contenido del archivo fue modificado
-<span style="color: Crimson;">**both modified**</span> | :sweat_smile: :confused: :rage: | Es necesario hacer `merge` :scream:
+<span style="color: Crimson;">**both modified**</span> | :sweat_smile: :gun: :rage:      | Es necesario hacer `merge` :scream:
 
 --------------------------------------------------------------------------------
 
