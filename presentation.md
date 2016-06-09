@@ -698,6 +698,23 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 --------------------------------------------------------------------------------
 
+### 2.8.2. `git add` ⇨ **new file**
+
++ Para agregar un <span style="color: OliveDrab;">**archivo nuevo**</span> al repositorio se utiliza `git add`
++ No olvidar ejecutar `git commit` para guardar el cambio
+
+```
+tonejito@linux:~/repositorio$ git add archivo-nuevo
+tonejito@linux:~/repositorio$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   archivo-nuevo
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
