@@ -715,6 +715,24 @@ Changes to be committed:
 
 --------------------------------------------------------------------------------
 
+### 2.8.3. `git rm` ⇨ **deleted**
+
++ Para <span style="color: FireBrick;">**borrar**</span> un archivo del repositorio se utiliza `git rm`
++ No olvidar ejecutar `git commit` para guardar el cambio
+
+```
+tonejito@linux:~/repositorio$ git rm archivo-para-borrar
+rm 'archivo-para-borrar'
+tonejito@linux:~/repositorio$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	deleted:    archivo-para-borrar
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
