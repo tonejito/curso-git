@@ -1,5 +1,25 @@
 
 # Control de versiones con git
+<div style="margin: 0.3em auto; text-align: center;">
+  <div style="font-size: 1.5em;">Andrés Hernández</div>
+  <span>
+    <img id="mail" style="width: auto; height: 0.7em;" alt="mail" src="img/mail.svg" />
+  </span>
+  <div style="font-size: 1.1em;">Universidad Nacional Autónoma de México</div>
+  <div style="font-size: 1.1em;">Facultad de Ciencias</div>
+  <div style="font-size: 0.9em;">Junio 2016</div>
+</div>
+
+<span>
+  <a id="UNAM" href="http://www.unam.mx/">
+    <img style="width: auto; height: 8em; margin-left: 25%; float: left;" alt="UNAM" src="img/UNAM.svg" />
+  </a>
+</span>
+<span>
+  <a id="Ciencias" href="http://www.fciencias.unam.mx/">
+    <img style="width: auto; height: 8em; margin-right: 25%; float: right;" alt="Facultad de Ciencias" src="img/Ciencias.svg" />
+  </a>
+</span>
 
 --------------------------------------------------------------------------------
 
@@ -7,7 +27,7 @@
 
 ## Nivel de especialización
 
-Intermedio
+Básico
 
 ## Objetivo
 
@@ -184,7 +204,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 + La comunidad de desarrolladores, incluyendo a Linus Torvalds, optó por desarrollar su propia herramienta
 
   <img alt="BitKeeper" src="img/2-bitkeeper.png" style="width: auto; height: 50px;" />
-  <span style="font-size: 5em;">⇒<!--⇨--></span>
+  <span style="font-size: 5em;">⇒</span>
   <img alt="git" src="img/2-git.svg" style="width: auto; height: 50px;" />
 
 --------------------------------------------------------------------------------
