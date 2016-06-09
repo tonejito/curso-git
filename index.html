@@ -886,9 +886,14 @@ kbd {
 <p>Introducci&#xF3;n a git</p>
 <ol>
 <li>Inicializar un repositorio</li>
-<li>Agregar y borrar archivos</li>
-<li>Guardar cambios</li>
+<li>Clonar un repositorio existente</li>
+<li>Agregar archivos</li>
+<li>Guardar cambios en el repositorio</li>
+<li>Borrar archivos</li>
+<li>Mover archivos</li>
 <li>Enviar cambios al servidor</li>
+<li>Revisar el estado de los archivos en el directorio de trabajo</li>
+<li>Bit&#xE1;cora de revisiones del proyecto</li>
 </ol>
 </li>
 </ol>
@@ -1042,7 +1047,7 @@ kbd {
 <img alt="git" src="img/2-git.svg" style="width: auto; height: 50px;">
 </li>
 </ul>
-</div><div class="step" data-z="90000"><h3 id="user-content-caracter&#xED;sticas-de-git" class="deep-link">Caracter&#xED;sticas de git</h3>
+</div><div class="step" data-z="90000"><h3 id="user-content-201-caracter&#xED;sticas-de-git" class="deep-link">2.0.1. Caracter&#xED;sticas de git</h3>
 <ul>
 <li>Velocidad</li>
 <li>Dise&#xF1;o simple</li>
@@ -1052,7 +1057,7 @@ kbd {
 <li>Varios desarrolladores pueden trabajar en el mismo proyecto</li>
 <li>Incluye verificaci&#xF3;n de integridad en los archivos</li>
 </ul>
-</div><div class="step" data-z="96000"><h3 id="user-content-&#xE1;reas-de-trabajo" class="deep-link">&#xC1;reas de trabajo</h3>
+</div><div class="step" data-z="96000"><h3 id="user-content-202-&#xE1;reas-de-trabajo" class="deep-link">2.0.2. &#xC1;reas de trabajo</h3>
 <ul>
 <li><code>git</code> presenta tres &#xE1;reas de trabajo, asociadas con los estados que puede tener un archivo</li>
 <li><span style="color: OrangeRed;"><strong>Working Directory</strong></span> es el directorio de trabajo.
@@ -1064,7 +1069,7 @@ kbd {
 <li><span style="color: DimGrey;"><strong>El directorio <code>.git</code></strong></span> guarda todas las versiones de los archivos del proyecto</li>
 </ul>
 <img alt="" src="img/book/2_0-areas.png" longdesc="https://git-scm.com/book/en/v2/Getting-Started-Git-Basics#The-Three-States">
-</div><div class="step" data-z="102000"><h4 id="user-content-estados-de-un-archivo" class="deep-link">Estados de un archivo</h4>
+</div><div class="step" data-z="102000"><h4 id="user-content-2011-estados-de-un-archivo" class="deep-link">2.0.1.1. Estados de un archivo</h4>
 <table>
 <thead>
 <tr>
@@ -1101,9 +1106,9 @@ kbd {
 </tr>
 </tbody>
 </table>
-</div><div class="step" data-z="108000"><h3 id="user-content-instalar-git-en-gnulinux" class="deep-link">Instalar git en GNU/Linux</h3>
+</div><div class="step" data-z="108000"><h3 id="user-content-202-instalar-git-en-gnulinux" class="deep-link">2.0.2. Instalar git en GNU/Linux</h3>
 <ul>
-<li>En <a href="https://www.debian.org/" title="Debian GNU/Linux">Debian GNU/Linux</a> utilizando <a href="http://linux.die.net/man/8/apt-get" title="man 8 apt-get">apt-get</a> o <a href="http://linux.die.net/man/8/aptitude" title="man 8 aptitude"><code>aptitude</code></a></li>
+<li>En <a href="https://www.debian.org/" title="Debian GNU/Linux">Debian GNU/Linux</a> utilizando <a href="http://linux.die.net/man/8/apt-get" title="man 8 apt-get"><code>apt-get</code></a> o <a href="http://linux.die.net/man/8/aptitude" title="man 8 aptitude"><code>aptitude</code></a></li>
 </ul>
 <div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>root@debian:</span><span class="keyword operator tilde shell"><span>~</span></span><span>#&#xA0;aptitude&#xA0;install&#xA0;git</span></span></div></pre></div>
 <ul>
@@ -1132,30 +1137,67 @@ kbd {
 <ul>
 <li>Si tienes dudas, <a href="https://git-scm.com/docs/" title="git Documentation">RTFM</a></li>
 </ul>
-</div><div class="step" data-z="126000"><h2 id="user-content-22-agregar-y-borrar-archivos" class="deep-link">2.2. Agregar y borrar archivos</h2>
+</div><div class="step" data-z="126000"><h2 id="user-content-22-clonar-un-repositorio-existente" class="deep-link">2.2. Clonar un repositorio existente</h2>
+<ul>
+<li>
+<p>Se utiliza el comando <a href="https://git-scm.com/docs/git-clone" title="git-clone(1)"><code>git clone</code></a> para guardar una copia de un repositorio existente</p>
+</li>
+<li>
+<p>Es &#xFA;til cuando se quiere trabajar de manera colaborativa en una aplicaci&#xF3;n (como el kernel Linux)</p>
+</li>
+<li>
+<p>El c&#xF3;digo &#x1E55;uede ser modificado y se pueden seguir haciendo commits</p>
+</li>
+<li>
+<p>Para clonar el repositorio es necesario conocer la URL donde se aloja el proyecto</p>
+<ul>
+<li><code>/path/to/repo.git/</code></li>
+<li><code>file:///path/to/repo.git/</code></li>
+<li><code>http[s]://host.xz[:port]/path/to/repo.git/</code></li>
+<li><code>ftp[s]://host.xz[:port]/path/to/repo.git/</code></li>
+<li><code>ssh://[user@]host.xz[:port]/path/to/repo.git/</code></li>
+<li><code>ssh://[user@]host.xz[:port]/~[user]/path/to/repo.git/</code></li>
+<li><code>git://host.xz[:port]/path/to/repo.git/</code></li>
+<li><code>git://host.xz[:port]/~[user]/path/to/repo.git/</code></li>
+<li><code>[user@]host.xz:path/to/repo.git/</code></li>
+<li><code>[user@]host.xz:/~[user]/path/to/repo.git/</code></li>
+</ul>
+</li>
+</ul>
+</div><div class="step" data-z="132000"><h3 id="user-content-221-ejemplo-de-git-clone" class="deep-link">2.2.1. Ejemplo de git-clone</h3>
+<ul>
+<li>Para clonar el repositorio de git de este curso se utiliza el comando <a href="https://git-scm.com/docs/git-clone" title="git-clone(1)"><code>git clone</code></a> de la siguiente manera</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;clone&#xA0;https://github.com/tonejito/curso-git.git</span></span></div><div class="line"><span class="source shell"><span>Cloning&#xA0;into&#xA0;</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>curso-git</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span><span>...</span></span></div><div class="line"><span class="source shell"><span>remote:&#xA0;Counting&#xA0;objects:&#xA0;108,&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div><div class="line"><span class="source shell"><span>remote:&#xA0;Compressing&#xA0;objects:&#xA0;100%&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>42/42</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div><div class="line"><span class="source shell"><span>remote:&#xA0;Total&#xA0;108&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>delta&#xA0;24</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;reused&#xA0;0&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>delta&#xA0;0</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;pack-reused&#xA0;65</span></span></div><div class="line"><span class="source shell"><span>Receiving&#xA0;objects:&#xA0;100%&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>108/108</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;429.40&#xA0;KiB&#xA0;</span><span class="keyword operator pipe shell"><span>|</span></span><span>&#xA0;0&#xA0;bytes/s,&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div><div class="line"><span class="source shell"><span>Resolving&#xA0;deltas:&#xA0;100%&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>45/45</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div><div class="line"><span class="source shell"><span>Checking&#xA0;connectivity...&#xA0;</span><span class="keyword control shell"><span>done</span></span><span>.</span></span></div></pre></div>
+<ul>
+<li>El repositorio se clona en el directorio <code>curso-git</code></li>
+<li>Contiene los archivos del proyecto y el directorio <code>.git</code></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;ls&#xA0;-A&#xA0;curso-git/</span></span></div><div class="line"><span class="source shell"><span>.git&#xA0;&#xA0;.gitignore&#xA0;&#xA0;LICENSE.md&#xA0;&#xA0;presentation.md</span></span></div><div class="line"><span class="source shell"><span>img&#xA0;&#xA0;&#xA0;index.html&#xA0;&#xA0;Makefile&#xA0;&#xA0;&#xA0;&#xA0;README.md</span></span></div></pre></div>
+<ul>
+<li>Ejemplo recursivo &#x1F601;</li>
+</ul>
+</div><div class="step" data-z="138000"><h2 id="user-content-23-agregar-archivos" class="deep-link">2.3. Agregar archivos</h2>
 <ul>
 <li>El comando <a href="https://git-scm.com/docs/git-add" title="git-add(1)"><code>git add</code></a> se utiliza para especificar qu&#xE9; archivos incluir&#xE1; git en el control de versiones</li>
 <li>Los cambios del <span style="color: OrangeRed;"><strong>Directorio de trabajo</strong></span> se incluyen en el <span style="color: DarkCyan;"><strong>&#xC1;rea de Staging</strong></span>, es decir, se marcan para ser enviados en un <em>commit</em></li>
 <li>El <span style="color: DarkCyan;"><strong>&#xC1;rea de Staging</strong></span> tambi&#xE9;n es conocida como <strong>index</strong></li>
-<li>La p&#xE1;gina de <code>man</code> de <code>git add</code> muestra las opciones de l&#xED;nea de comando:</li>
+<li>La p&#xE1;gina de <code>man</code> de <code>git add</code> muestra las opciones de l&#xED;nea de comandos</li>
 </ul>
 <div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>git-add&#xA0;-&#xA0;Add&#xA0;file&#xA0;contents&#xA0;to&#xA0;the&#xA0;index</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git&#xA0;add&#xA0;[-n]&#xA0;&#xA0;[-v]&#xA0;&#xA0;[--force&#xA0;|&#xA0;-f]&#xA0;&#xA0;[--interactive&#xA0;|&#xA0;-i]&#xA0;&#xA0;[--patch&#xA0;|&#xA0;-p]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--edit&#xA0;|&#xA0;-e]&#xA0;&#xA0;[--[no-]all&#xA0;|&#xA0;--[no-]ignore-removal&#xA0;|&#xA0;[--update&#xA0;|&#xA0;-u]]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--intent-to-add&#xA0;|&#xA0;-N]&#xA0;[--refresh]&#xA0;[--ignore-errors]&#xA0;[--ignore-missing]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--]&#xA0;&#xA0;[&lt;pathspec&gt;...]</span></span></div></pre></div>
-</div><div class="step" data-z="132000"><ul>
+</div><div class="step" data-z="144000"><ul>
 <li>Crear un archivo de texto con el nombre <code>README.md</code> y escribir alg&#xFA;n mensaje simple en el</li>
 <li>Muchos repositorios utilizan <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a> para el archivo <strong>README</strong> de sus repositorios</li>
 <li>Github tiene una <a href="https://help.github.com/categories/writing-on-github/" title="GitHub Flavored Markdown">versi&#xF3;n especial de Markdown</a></li>
 <li>Existen varios editores en l&#xED;nea como <a href="http://dillinger.io/" title="Dillinger">Dillinger</a> y <a href="https://stackedit.io/editor" title="StackEdit">StackEdit</a></li>
 </ul>
 <div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;editor&#xA0;README.md</span></span></div></pre></div>
-<pre><code># Mi repositorio de git
-
-Andr&#xE9;s Hern&#xE1;ndez
-</code></pre>
-</div><div class="step" data-z="138000"><ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>#&#xA0;Mi&#xA0;repositorio&#xA0;de&#xA0;git</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>Andr&#xE9;s&#xA0;Hern&#xE1;ndez</span></span></div></pre></div>
+</div><div class="step" data-z="150000"><ul>
 <li>Ejecutar el comando <a href="https://git-scm.com/docs/git-status" title="git-status(1)"><code>git status</code></a> para revisar si hay cambios</li>
 </ul>
 <div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="text plain null-grammar"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>Initial&#xA0;commit</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>Untracked&#xA0;files:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;add&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;include&#xA0;in&#xA0;what&#xA0;will&#xA0;be&#xA0;committed)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;README.md</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>nothing&#xA0;added&#xA0;to&#xA0;commit&#xA0;but&#xA0;untracked&#xA0;files&#xA0;present&#xA0;(use&#xA0;&quot;git&#xA0;add&quot;&#xA0;to&#xA0;track)</span></span></div></pre></div>
-</div><div class="step" data-z="144000"><ul>
+</div><div class="step" data-z="156000"><ul>
 <li>Agregar el archivo <code>README.md</code> al repositorio con el comando <a href="https://git-scm.com/docs/git-add" title="git-add(1)"><code>git add</code></a></li>
 </ul>
 <div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;add&#xA0;README.md</span></span></div></pre></div>
@@ -1171,34 +1213,254 @@ Andr&#xE9;s Hern&#xE1;ndez
 <p>El cambio <strong>a&#xFA;n no est&#xE1; guardado</strong>, ver siguiente secci&#xF3;n</p>
 </li>
 </ul>
-</div><div class="step" data-z="150000"><h2 id="user-content-23-guardar-cambios" class="deep-link">2.3. Guardar cambios</h2>
-<h2 id="user-content-24-enviar-cambios-al-servidor" class="deep-link">2.4. Enviar cambios al servidor</h2>
-</div><div class="step" data-z="156000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
+</div><div class="step" data-z="162000"><h2 id="user-content-24-guardar-cambios-en-el-repositorio" class="deep-link">2.4. Guardar cambios en el repositorio</h2>
+<ul>
+<li>Para enviar un cambio del <span style="color: DarkCyan;"><strong>&#xC1;rea de Staging</strong></span> al <span style="color: DimGrey;"><strong>directorio <code>.git</code></strong></span> se utiliza el comando <a href="https://git-scm.com/docs/git-commit" title="git-commit(1)"><code>git commit</code></a></li>
+<li>Cada revisi&#xF3;n generada guarda una entrada en la <a href="https://git-scm.com/docs/git-log" title="git-log(1)">bit&#xE1;cora del repositorio</a></li>
+<li>La p&#xE1;gina de <code>man</code> de <code>git commit</code> muestra las opciones de l&#xED;nea de comandos</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>git-commit&#xA0;-&#xA0;Record&#xA0;changes&#xA0;to&#xA0;the&#xA0;repository</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git&#xA0;commit&#xA0;[-a&#xA0;|&#xA0;--interactive&#xA0;|&#xA0;--patch]&#xA0;&#xA0;[-s]&#xA0;&#xA0;[-v]&#xA0;&#xA0;[-u&lt;mode&gt;]&#xA0;&#xA0;[--amend]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--dry-run]&#xA0;&#xA0;[(-c&#xA0;|&#xA0;-C&#xA0;|&#xA0;--fixup&#xA0;|&#xA0;--squash)&#xA0;&lt;commit&gt;]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[-F&#xA0;&lt;file&gt;&#xA0;|&#xA0;-m&#xA0;&lt;msg&gt;]&#xA0;&#xA0;[--reset-author]&#xA0;&#xA0;[--allow-empty]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--allow-empty-message]&#xA0;&#xA0;[--no-verify]&#xA0;&#xA0;[-e]&#xA0;&#xA0;[--author=&lt;author&gt;]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[--date=&lt;date&gt;]&#xA0;&#xA0;[--cleanup=&lt;mode&gt;]&#xA0;&#xA0;[--[no-]status]</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;[-i&#xA0;|&#xA0;-o]&#xA0;&#xA0;[-S[&lt;key-id&gt;]]&#xA0;&#xA0;[--]&#xA0;&#xA0;[&lt;file&gt;...]</span></span></div></pre></div>
+</div><div class="step" data-z="168000"><h3 id="user-content-241-git-commit-interactivo" class="deep-link">2.4.1. git-commit interactivo</h3>
+<ul>
+<li>Para guardar el archivo reci&#xE9;n creado en la secci&#xF3;n anterior se ejecuta <a href="https://git-scm.com/docs/git-commit" title="git-commit(1)"><code>git commit</code></a></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;commit&#xA0;README.md</span></span></div></pre></div>
+<ul>
+<li>Se abre un editor de texto donde debe escribirse <em>el t&#xED;tulo</em> y <em>la descripci&#xF3;n</em> del commit</li>
+<li>Todas las l&#xED;neas que inicien con el s&#xED;mbolo <code>#</code> ser&#xE1;n ignoradas</li>
+<li>Si se guarda un mensaje vac&#xED;o, se cancela el proceso de <code>commit</code></li>
+<li>El editor de texto se toma de las variables <code>$GIT_EDITOR</code>, <code>core.editor</code>, <code>$VISUAL</code> o <code>$EDITOR</code></li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>Commit&#xA0;inicial&#xA0;del&#xA0;proyecto</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>+&#xA0;Se&#xA0;agrega&#xA0;el&#xA0;archivo&#xA0;README.md</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;Please&#xA0;enter&#xA0;the&#xA0;commit&#xA0;message&#xA0;for&#xA0;your&#xA0;changes.&#xA0;Lines&#xA0;starting</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;with&#xA0;&apos;#&apos;&#xA0;will&#xA0;be&#xA0;ignored,&#xA0;and&#xA0;an&#xA0;empty&#xA0;message&#xA0;aborts&#xA0;the&#xA0;commit.</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;Explicit&#xA0;paths&#xA0;specified&#xA0;without&#xA0;-i&#xA0;or&#xA0;-o;&#xA0;assuming&#xA0;--only&#xA0;paths...</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>#</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;Initial&#xA0;commit</span></span></div><div class="line"><span class="text plain null-grammar"><span>#</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;Changes&#xA0;to&#xA0;be&#xA0;committed:</span></span></div><div class="line"><span class="text plain null-grammar"><span>#&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;new&#xA0;file:&#xA0;&#xA0;&#xA0;README.md</span></span></div><div class="line"><span class="text plain null-grammar"><span>#</span></span></div></pre></div>
+</div><div class="step" data-z="174000"><h3 id="user-content-242-estructura-del-mensaje-de-un-commit" class="deep-link">2.4.2. Estructura del mensaje de un commit</h3>
+<ul>
+<li>Se recomienda que la estructura del mensaje de un <em>commit</em> tenga los siguientes elementos</li>
+<li>El &#xFA;nico elemento requerido es el <strong>t&#xED;tulo</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">L&#xED;nea</th>
+<th style="text-align:center">Elemento</th>
+<th style="text-align:left">Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">T&#xED;tulo del commit</td>
+<td style="text-align:left">Descripci&#xF3;n <strong>breve</strong> y <strong>concreta</strong> del cambio aplicado, menos de 50 caracteres</td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:center">L&#xED;nea en blanco</td>
+<td style="text-align:left">Se utiliza para separar el t&#xED;tulo del cuerpo</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">Descripci&#xF3;n del commit</td>
+<td style="text-align:left">Mensaje que explica el cambio aplicado a profundidad</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x2026;</td>
+<td style="text-align:center">&#x2713;</td>
+<td style="text-align:left">Puede abarcar varias l&#xED;neas de texto</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x2026;</td>
+<td style="text-align:center">&#x2713;</td>
+<td style="text-align:left">Es posible insertar elementos de sint&#xE1;xis de Markdown</td>
+</tr>
+<tr>
+<td style="text-align:center">&#x2026;</td>
+<td style="text-align:center">&#x2713;</td>
+<td style="text-align:left">Se pueden utilizar listas para enumerar elementos de manera vertical</td>
+</tr>
+</tbody>
+</table>
+</div><div class="step" data-z="180000"><h3 id="user-content-243-git-commit---one-liner" class="deep-link">2.4.3. git-commit - one-liner</h3>
+<ul>
+<li>Es posible ejecutar <a href="https://git-scm.com/docs/git-commit" title="git-commit(1)"><code>git commit</code></a> y especificar el <em>t&#xED;tulo del commit</em> en el mismo comando</li>
+<li>No se guarda la descripci&#xF3;n del <em>commit</em></li>
+<li>Puede ser utilizado en scripts o procesos automatizados</li>
+<li>La bit&#xE1;cora del repositorio se puede visualizar con el comando <a href="https://git-scm.com/docs/git-log" title="git-log(1)"><code>git log</code></a></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;touch&#xA0;archivo-para-borrar</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;add&#xA0;archivo-para-borrar</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;commit&#xA0;-m&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>Archivo&#xA0;de&#xA0;prueba&#xA0;para&#xA0;probar&#xA0;git-rm</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;log&#xA0;-n&#xA0;1</span></span></div><div class="line"><span class="source shell"><span>commit&#xA0;f552622d1a526ed0471ea260e3b99d1cef0c72f3</span></span></div><div class="line"><span class="source shell"><span>Author:&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez&#xA0;</span><span class="keyword operator redirect shell"><span>&lt;</span></span><span>andres.hernandez@ciencias.unam.mx</span><span class="keyword operator redirect shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>Date:&#xA0;&#xA0;&#xA0;Wed&#xA0;Jun&#xA0;8&#xA0;13:52:04&#xA0;2016&#xA0;-0500</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;Archivo&#xA0;vac&#xED;o&#xA0;para&#xA0;probar&#xA0;git-rm</span></span></div></pre></div>
+</div><div class="step" data-z="186000"><h2 id="user-content-25-borrar-archivos" class="deep-link">2.5. Borrar archivos</h2>
+<ul>
+<li>Para borrar archivos del repositorio se utiliza el comando <a href="https://git-scm.com/docs/git-rm" title="git-rm(1)"><code>git rm</code></a></li>
+<li>No utilizar <code>rm</code> o borrar mediante el <em>navegador de archivos</em></li>
+<li>Para borrar archivos del <span style="color: DimGrey;"><strong>directorio <code>.git</code></strong></span> se utiliza el comando <a href="https://git-scm.com/docs/git-rm" title="git-rm(1)"><code>git rm</code></a></li>
+<li>Esta operaci&#xF3;n guarda una entrada en la <a href="https://git-scm.com/docs/git-log" title="git-log(1)">bit&#xE1;cora del repositorio</a></li>
+<li>El archivo tambi&#xE9;n se borra del <span style="color: OrangeRed;"><strong>Directorio de trabajo</strong></span></li>
+<li>Se conservan las versiones anteriores en el repositorio</li>
+<li>La p&#xE1;gina de <code>man</code> de <code>git rm</code> muestra las opciones de l&#xED;nea de comandos</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>git-rm&#xA0;-&#xA0;Remove&#xA0;files&#xA0;from&#xA0;the&#xA0;working&#xA0;tree&#xA0;and&#xA0;from&#xA0;the&#xA0;index</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git&#xA0;rm&#xA0;[-f&#xA0;|&#xA0;--force]&#xA0;[-n]&#xA0;[-r]&#xA0;[--cached]&#xA0;[--ignore-unmatch]&#xA0;[--quiet]&#xA0;[--]&#xA0;&lt;file&gt;...</span></span></div></pre></div>
+</div><div class="step" data-z="192000"><h3 id="user-content-251-ejemplo-de-git-rm" class="deep-link">2.5.1. Ejemplo de git-rm</h3>
+<ul>
+<li><a href="https://git-scm.com/docs/git-rm" title="git-rm(1)"><code>git rm</code></a> borra el archivo del <span style="color: OrangeRed;"><strong>Directorio de trabajo</strong></span> y marca el cambio en el <span style="color: DarkCyan;"><strong>&#xC1;rea de Staging</strong></span></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;ls&#xA0;-l</span></span></div><div class="line"><span class="source shell"><span>total&#xA0;4</span></span></div><div class="line"><span class="source shell"><span>-rw-r--r--&#xA0;1&#xA0;tonejito&#xA0;users&#xA0;&#xA0;0&#xA0;Jun&#xA0;&#xA0;8&#xA0;13:45&#xA0;archivo-para-borrar</span></span></div><div class="line"><span class="source shell"><span>-rw-r--r--&#xA0;1&#xA0;tonejito&#xA0;users&#xA0;44&#xA0;Jun&#xA0;&#xA0;6&#xA0;18:01&#xA0;README.md</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;rm&#xA0;archivo-para-borrar</span></span></div><div class="line"><span class="source shell"><span>rm&#xA0;</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>archivo-para-borrar</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="source shell"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="source shell"><span>Changes&#xA0;to&#xA0;be&#xA0;committed:</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>use&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>git&#xA0;reset&#xA0;HEAD&#xA0;&lt;file&gt;...</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;to&#xA0;unstage</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;deleted:&#xA0;&#xA0;&#xA0;&#xA0;archivo-para-borrar</span></span></div></pre></div>
+<ul>
+<li>Es necesario guardar el cambio en el <span style="color: DimGrey;"><strong>directorio <code>.git</code></strong></span> con <a href="https://git-scm.com/docs/git-commit" title="git-commit(1)"><code>git commit</code></a></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;commit&#xA0;-m&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>Prueba&#xA0;de&#xA0;git-rm</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;archivo-para-borrar</span></span></div><div class="line"><span class="source shell"><span>[master&#xA0;1f6d57a]&#xA0;Prueba&#xA0;de&#xA0;git-rm</span></span></div><div class="line"><span class="source shell"><span>&#xA0;1&#xA0;file&#xA0;changed,&#xA0;0&#xA0;insertions</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>+</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;0&#xA0;deletions</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>-</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;delete&#xA0;mode&#xA0;100644&#xA0;archivo-para-borrar</span></span></div></pre></div>
+</div><div class="step" data-z="198000"><h2 id="user-content-26-mover-archivos" class="deep-link">2.6. Mover archivos</h2>
+<ul>
+<li>El comando <a href="https://git-scm.com/docs/git-mv" title="git-mv(1)"><code>git mv</code></a> se utiliza para <strong>mover</strong> o <strong>renombrar</strong> archivos del repositorio</li>
+<li>No utilizar <code>mv</code> o renombrar desde el <em>navegador de archivos</em></li>
+<li>La p&#xE1;gina de <code>man</code> de <code>git mv</code> muestra las opciones de l&#xED;nea de comandos</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>git-mv&#xA0;-&#xA0;Move&#xA0;or&#xA0;rename&#xA0;a&#xA0;file,&#xA0;a&#xA0;directory,&#xA0;or&#xA0;a&#xA0;symlink</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git&#xA0;mv&#xA0;[-v]&#xA0;[-f]&#xA0;[-n]&#xA0;[-k]&#xA0;&lt;source&gt;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&lt;destination&gt;</span></span></div><div class="line"><span class="text plain null-grammar"><span>git&#xA0;mv&#xA0;[-v]&#xA0;[-f]&#xA0;[-n]&#xA0;[-k]&#xA0;&lt;source&gt;&#xA0;...&#xA0;&lt;destination&#xA0;directory&gt;</span></span></div></pre></div>
+</div><div class="step" data-z="204000"><h3 id="user-content-261-ejemplo-de-git-mv" class="deep-link">2.6.1. Ejemplo de git-mv</h3>
+<ul>
+<li>Creaci&#xF3;n de archivos de prueba</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;touch&#xA0;archivo-para-mover&#xA0;archivo-para-renombrar</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;add&#xA0;archivo-para-mover&#xA0;archivo-para-renombrar</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;commit&#xA0;-m&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>Archivos&#xA0;vac&#xED;os&#xA0;para&#xA0;prueba&#xA0;de&#xA0;git-rm</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span><span>&#xA0;archivo-para-</span><span class="keyword operator glob shell"><span>*</span></span></span></div><div class="line"><span class="source shell"><span>[master&#xA0;657aa04]&#xA0;Archivos&#xA0;vac&#xED;os&#xA0;para&#xA0;prueba&#xA0;de&#xA0;git-rm</span></span></div><div class="line"><span class="source shell"><span>&#xA0;2&#xA0;files&#xA0;changed,&#xA0;0&#xA0;insertions</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>+</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;0&#xA0;deletions</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>-</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;create&#xA0;mode&#xA0;100644&#xA0;archivo-para-mover</span></span></div><div class="line"><span class="source shell"><span>&#xA0;create&#xA0;mode&#xA0;100644&#xA0;archivo-para-renombrar</span></span></div></pre></div>
+<ul>
+<li>Prueba de <a href="https://git-scm.com/docs/git-mv" title="git-mv(1)"><code>git mv</code></a> moviendo un archivo a otro directorio y renombrando otro archivo</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;mkdir&#xA0;-v&#xA0;directorio</span></span></div><div class="line"><span class="source shell"><span>mkdir:&#xA0;created&#xA0;directory&#xA0;&#x2018;directorio&#x2019;</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;mv&#xA0;archivo-para-mover&#xA0;directorio/</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;mv&#xA0;archivo-para-renombrar&#xA0;archivo-con-otro-nombre</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;commit&#xA0;-m&#xA0;</span><span class="string quoted double shell"><span class="punctuation definition string begin shell"><span>&quot;</span></span><span>Prueba&#xA0;de&#xA0;git-mv</span><span class="punctuation definition string end shell"><span>&quot;</span></span></span></span></div><div class="line"><span class="source shell"><span>[master&#xA0;4f30937]&#xA0;Prueba&#xA0;de&#xA0;git-mv</span></span></div><div class="line"><span class="source shell"><span>&#xA0;2&#xA0;files&#xA0;changed,&#xA0;0&#xA0;insertions</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>+</span><span class="punctuation definition subshell shell"><span>)</span></span></span><span>,&#xA0;0&#xA0;deletions</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>-</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;rename&#xA0;archivo-para-renombrar&#xA0;=</span><span class="keyword operator redirect shell"><span>&gt;</span></span><span>&#xA0;archivo-con-otro-nombre&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>100%</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;rename&#xA0;archivo-para-mover&#xA0;=</span><span class="keyword operator redirect shell"><span>&gt;</span></span><span>&#xA0;directorio/archivo-para-mover&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>100%</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div></pre></div>
+</div><div class="step" data-z="210000"><h2 id="user-content-27-enviar-cambios-al-servidor" class="deep-link">2.7. Enviar cambios al servidor</h2>
+<ul>
+<li>En los repositorios que se han clonado, es com&#xFA;n tener una URL para descargar (<em>fetch</em>) y otra para enviar (<em>push</em>)</li>
+<li>El repositorio remoto se llama <code>origin</code> y la rama por defecto se llama <code>master</code></li>
+<li>Cuando la URL remota ya esta configurada, es posible enviar los cambios a un repositorio remoto</li>
+</ul>
+</div><div class="step" data-z="216000"><h3 id="user-content-271-listar-la-url-del-repositorio-remoto" class="deep-link">2.7.1. Listar la URL del repositorio remoto</h3>
+<ul>
+<li>Para enviar cambios al servidor es necesario tener configurada una URL remota para env&#xED;o o <em>push</em></li>
+<li>Es posible listar las URL de los repositorios remotos con <a href="https://git-scm.com/docs/git-remote" title="git-remote(1)"><code>git remote</code></a></li>
+<li>En un nuevo repositorio es necesario establecer la URL remota</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;remote&#xA0;add&#xA0;origin&#xA0;https://github.com/tonejito/repositorio.git</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;remote&#xA0;-v</span></span></div><div class="line"><span class="source shell"><span>origin	https://github.com/tonejito/repositorio.git&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>fetch</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div><div class="line"><span class="source shell"><span>origin	https://github.com/tonejito/repositorio.git&#xA0;</span><span class="meta scope subshell shell"><span class="punctuation definition subshell shell"><span>(</span></span><span>push</span><span class="punctuation definition subshell shell"><span>)</span></span></span></span></div></pre></div>
+</div><div class="step" data-z="222000"><h3 id="user-content-272-enviar-cambios-con-git-push" class="deep-link">2.7.2. Enviar cambios con git-push</h3>
+<ul>
+<li>Para enviar los cambios al servidor <em>la primera vez</em> se ejecuta <a href="https://git-scm.com/docs/git-push" title="git-push(1)"><code>git push</code></a> de la siguiente manera</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;push&#xA0;-u&#xA0;origin&#xA0;master</span></span></div><div class="line"><span class="source shell"><span>Username&#xA0;</span><span class="meta scope for-in-loop shell"><span class="keyword control shell"><span>for</span></span><span>&#xA0;</span><span class="variable other loop shell"><span>&apos;https://github.com</span></span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>:&#xA0;tonejito</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Password&#xA0;for&#xA0;</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span><span>https://tonejito@github.com</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>:</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Counting&#xA0;objects:&#xA0;12,&#xA0;done.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Delta&#xA0;compression&#xA0;using&#xA0;up&#xA0;to&#xA0;8&#xA0;threads.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Compressing&#xA0;objects:&#xA0;100%&#xA0;(8/8),&#xA0;done.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Writing&#xA0;objects:&#xA0;100%&#xA0;(12/12),&#xA0;1.35&#xA0;KiB&#xA0;|&#xA0;0&#xA0;bytes/s,&#xA0;done.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Total&#xA0;12&#xA0;(delta&#xA0;1),&#xA0;reused&#xA0;0&#xA0;(delta&#xA0;0)</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>To&#xA0;</span><span class="markup underline link https hyperlink"><span>https://github.com/tonejito/repositorio.git</span></span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>&#xA0;*&#xA0;[new&#xA0;branch]&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;master&#xA0;-&gt;&#xA0;master</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Branch&#xA0;master&#xA0;set&#xA0;up&#xA0;to&#xA0;track&#xA0;remote&#xA0;branch&#xA0;master&#xA0;from&#xA0;origin.</span></span></span></span></div></pre></div>
+<ul>
+<li>Las dem&#xE1;s veces s&#xF3;lo es necesario utilizar <code>git push</code></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;push</span></span></div><div class="line"><span class="source shell"><span>Username&#xA0;</span><span class="meta scope for-in-loop shell"><span class="keyword control shell"><span>for</span></span><span>&#xA0;</span><span class="variable other loop shell"><span>&apos;https://github.com</span></span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>:&#xA0;tonejito</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Password&#xA0;for&#xA0;</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span><span>https://tonejito@github.com</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>:</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Counting&#xA0;objects:&#xA0;3,&#xA0;done.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Delta&#xA0;compression&#xA0;using&#xA0;up&#xA0;to&#xA0;8&#xA0;threads.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Compressing&#xA0;objects:&#xA0;100%&#xA0;(3/3),&#xA0;done.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Writing&#xA0;objects:&#xA0;100%&#xA0;(3/3),&#xA0;462&#xA0;bytes&#xA0;|&#xA0;0&#xA0;bytes/s,&#xA0;done.</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>Total&#xA0;3&#xA0;(delta&#xA0;1),&#xA0;reused&#xA0;0&#xA0;(delta&#xA0;0)</span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>To&#xA0;</span><span class="markup underline link https hyperlink"><span>https://github.com/tonejito/repositorio.git</span></span></span></span></span></div><div class="line"><span class="source shell"><span class="meta scope for-in-loop shell"><span class="string quoted single shell"><span>&#xA0;&#xA0;&#xA0;4f30937..be47c1b&#xA0;&#xA0;master&#xA0;-&gt;&#xA0;master</span></span></span></span></div></pre></div>
+<ul>
+<li>Dependiendo de la versi&#xF3;n y configuraci&#xF3;n de git, puede aparecer una advertencia sobre <code>push.default</code></li>
+</ul>
+</div><div class="step" data-z="228000"><h2 id="user-content-28-revisar-el-estado-de-los-archivos-en-el-directorio-de-trabajo" class="deep-link">2.8. Revisar el estado de los archivos en el directorio de trabajo</h2>
+<ul>
+<li><code>git</code> reconoce cuando se realizan cambios en los archivos del <span style="color: OrangeRed;"><strong>Directorio de trabajo</strong></span></li>
+<li>Para guardar los cambios en el repositorio del <span style="color: DimGrey;"><strong>directorio <code>.git</code></strong></span> es necesario ejecutar <a href="https://git-scm.com/docs/git-commit" title="git-commit(1)"><code>git commit</code></a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Estado del archivo</th>
+<th style="text-align:left">Comando</th>
+<th style="text-align:left">Descripci&#xF3;n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><span style="color: Black;"><strong>Untracked</strong></span></td>
+<td style="text-align:left"><code>touch &lt;file&gt;</code></td>
+<td style="text-align:left">Se cre&#xF3; un nuevo archivo en el <span style="color: OrangeRed;"><strong>Directorio de trabajo</strong></span><br>A&#xFA;n no se agrega al control de versiones</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color: OliveDrab;"><strong>new file</strong></span></td>
+<td style="text-align:left"><code>git add &lt;file&gt;</code></td>
+<td style="text-align:left">Se agreg&#xF3; un nuevo archivo para ser versionado</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color: FireBrick;"><strong>deleted</strong></span></td>
+<td style="text-align:left"><code>git rm &lt;file&gt;</code></td>
+<td style="text-align:left">El archivo se borr&#xF3; del repositorio</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color: Indigo;"><strong>renamed</strong></span></td>
+<td style="text-align:left"><code>git mv &lt;src&gt; &lt;dst&gt;</code></td>
+<td style="text-align:left">El archivo cambi&#xF3; de nombre o fue movido</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color: DarkOrange;"><strong>modified</strong></span></td>
+<td style="text-align:left"><code>gedit &lt;file&gt;</code></td>
+<td style="text-align:left">El contenido del archivo fue modificado</td>
+</tr>
+<tr>
+<td style="text-align:center"><span style="color: Crimson;"><strong>both modified</strong></span></td>
+<td style="text-align:left">&#x1F605; &#x1F52B; &#x1F621;</td>
+<td style="text-align:left">Es necesario hacer <code>merge</code> &#x1F631;</td>
+</tr>
+</tbody>
+</table>
+</div><div class="step" data-z="234000"><h3 id="user-content-281-untracked-files---archivos-nuevos-sin-versionar" class="deep-link">2.8.1. Untracked files - Archivos nuevos sin versionar</h3>
+<ul>
+<li>Cuando se crea un archivo nuevo, se marca como <span style="color: Black;"><strong>Untracked</strong></span></li>
+<li>Para agregar el archivo al repositorio se utiliza <code>git add</code> (ver siguiente secci&#xF3;n)</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;touch&#xA0;archivo-externo</span></span></div><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="text plain null-grammar"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>Your&#xA0;branch&#xA0;is&#xA0;up-to-date&#xA0;with&#xA0;&apos;origin/master&apos;.</span></span></div><div class="line"><span class="text plain null-grammar"><span>Untracked&#xA0;files:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;add&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;include&#xA0;in&#xA0;what&#xA0;will&#xA0;be&#xA0;committed)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;archivo-externo</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>nothing&#xA0;added&#xA0;to&#xA0;commit&#xA0;but&#xA0;untracked&#xA0;files&#xA0;present&#xA0;(use&#xA0;&quot;git&#xA0;add&quot;&#xA0;to&#xA0;track)</span></span></div></pre></div>
+</div><div class="step" data-z="240000"><h3 id="user-content-282-git-add-&#x21E8;-new-file" class="deep-link">2.8.2. git add &#x21E8; new file</h3>
+<ul>
+<li>Para <span style="color: OliveDrab;"><strong>agregar</strong></span> un archivo nuevo al repositorio se utiliza <code>git add</code></li>
+<li>No olvidar ejecutar <code>git commit</code> para guardar el cambio</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;add&#xA0;archivo-nuevo</span></span></div><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="text plain null-grammar"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>Changes&#xA0;to&#xA0;be&#xA0;committed:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;reset&#xA0;HEAD&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;unstage)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;new&#xA0;file:&#xA0;&#xA0;&#xA0;archivo-nuevo</span></span></div></pre></div>
+</div><div class="step" data-z="246000"><h3 id="user-content-283-git-rm-&#x21E8;-deleted" class="deep-link">2.8.3. git rm &#x21E8; deleted</h3>
+<ul>
+<li>Para <span style="color: FireBrick;"><strong>borrar</strong></span> un archivo del repositorio se utiliza <code>git rm</code></li>
+<li>No olvidar ejecutar <code>git commit</code> para guardar el cambio</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;rm&#xA0;archivo-para-borrar</span></span></div><div class="line"><span class="text plain null-grammar"><span>rm&#xA0;&apos;archivo-para-borrar&apos;</span></span></div><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="text plain null-grammar"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>Changes&#xA0;to&#xA0;be&#xA0;committed:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;reset&#xA0;HEAD&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;unstage)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;deleted:&#xA0;&#xA0;&#xA0;&#xA0;archivo-para-borrar</span></span></div></pre></div>
+</div><div class="step" data-z="252000"><h3 id="user-content-284-git-mv-&#x21E8;-renamed" class="deep-link">2.8.4. git mv &#x21E8; renamed</h3>
+<ul>
+<li>Para <span style="color: Indigo;"><strong>mover</strong></span> un archivo del repositorio a otra carpeta se utiliza <code>git rm</code></li>
+<li>Tambi&#xE9;n se utiliza para <span style="color: Indigo;"><strong>cambiar de nombre</strong></span> a los archivos</li>
+<li>No olvidar ejecutar <code>git commit</code> para guardar el cambio</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;mv&#xA0;archivo-para-mover&#xA0;directorio/</span></span></div><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;mv&#xA0;archivo-para-renombrar&#xA0;archivo-con-otro-nombre</span></span></div><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="text plain null-grammar"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>Changes&#xA0;to&#xA0;be&#xA0;committed:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;reset&#xA0;HEAD&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;unstage)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;renamed:&#xA0;&#xA0;&#xA0;&#xA0;archivo-para-renombrar&#xA0;-&gt;&#xA0;archivo-con-otro-nombre</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;renamed:&#xA0;&#xA0;&#xA0;&#xA0;archivo-para-mover&#xA0;-&gt;&#xA0;directorio/archivo-para-mover</span></span></div></pre></div>
+</div><div class="step" data-z="258000"><h3 id="user-content-285-modified---archivos-editados" class="deep-link">2.8.5. modified - Archivos editados</h3>
+<ul>
+<li>Al <span style="color: DarkOrange;"><strong>editar</strong></span> un archivo, git lo marca como <strong>modified</strong></li>
+<li>No olvidar ejecutar <code>git commit</code> para guardar el cambio</li>
+<li>Si se desea regresar a la <em>&#xFA;ltima versi&#xF3;n conocida</em>, ejecutar <code>git checkout &lt;archivo&gt;</code></li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="text plain null-grammar"><span>tonejito@linux:~/repositorio$&#xA0;git&#xA0;status</span></span></div><div class="line"><span class="text plain null-grammar"><span>On&#xA0;branch&#xA0;master</span></span></div><div class="line"><span class="text plain null-grammar"><span>Your&#xA0;branch&#xA0;is&#xA0;up-to-date&#xA0;with&#xA0;&apos;origin/master&apos;.</span></span></div><div class="line"><span class="text plain null-grammar"><span>Changes&#xA0;not&#xA0;staged&#xA0;for&#xA0;commit:</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;add&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;update&#xA0;what&#xA0;will&#xA0;be&#xA0;committed)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;(use&#xA0;&quot;git&#xA0;checkout&#xA0;--&#xA0;&lt;file&gt;...&quot;&#xA0;to&#xA0;discard&#xA0;changes&#xA0;in&#xA0;working&#xA0;directory)</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;&#xA0;&#xA0;&#xA0;modified:&#xA0;&#xA0;&#xA0;pagina.html</span></span></div><div class="line"><span class="text plain null-grammar"><span>&#xA0;</span></span></div><div class="line"><span class="text plain null-grammar"><span>no&#xA0;changes&#xA0;added&#xA0;to&#xA0;commit&#xA0;(use&#xA0;&quot;git&#xA0;add&quot;&#xA0;and/or&#xA0;&quot;git&#xA0;commit&#xA0;-a&quot;)</span></span></div></pre></div>
+</div><div class="step" data-z="264000"><h2 id="user-content-29-bit&#xE1;cora-de-revisiones-del-proyecto" class="deep-link">2.9. Bit&#xE1;cora de revisiones del proyecto</h2>
+<ul>
+<li>El comando <a href="https://git-scm.com/docs/git-log" title="git-log(1)"><code>git log</code></a> se utiliza para visualizar la <em>bit&#xE1;cora de revisiones del proyecto</em></li>
+<li>En la bit&#xE1;cora se muestra cada commit realizado en la rama actual</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;log</span></span></div><div class="line"><span class="source shell"><span>commit&#xA0;be47c1b99c212c0b25d7351c1d9bd8de33c06dd8</span></span></div><div class="line"><span class="source shell"><span>Author:&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez&#xA0;</span><span class="keyword operator redirect shell"><span>&lt;</span></span><span>andres.hernandez@ciencias.unam.mx</span><span class="keyword operator redirect shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>Date:&#xA0;&#xA0;&#xA0;Thu&#xA0;Jun&#xA0;9&#xA0;10:53:34&#xA0;2016&#xA0;-0500</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;P&#xE1;gina&#xA0;de&#xA0;prueba&#xA0;para&#xA0;</span><span class="string interpolated backtick shell"><span class="punctuation definition string begin shell"><span>`</span></span><span>curso-git</span><span class="punctuation definition string end shell"><span>`</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;+&#xA0;C&#xF3;digo&#xA0;base&#xA0;</span><span class="string interpolated backtick shell"><span class="punctuation definition string begin shell"><span>`</span></span><span>html5</span><span class="punctuation definition string end shell"><span>`</span></span></span><span>&#xA0;sin&#xA0;estilos</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>...	...	...	...	...	...	m&#xE1;s&#xA0;entradas&#xA0;del&#xA0;log	...</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>commit&#xA0;1b75a81323d5a6befff5d4ddfd3ad3254914c8da</span></span></div><div class="line"><span class="source shell"><span>Author:&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez&#xA0;</span><span class="keyword operator redirect shell"><span>&lt;</span></span><span>andres.hernandez@ciencias.unam.mx</span><span class="keyword operator redirect shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>Date:&#xA0;&#xA0;&#xA0;Wed&#xA0;Jun&#xA0;8&#xA0;13:46:21&#xA0;2016&#xA0;-0500</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;Commit&#xA0;inicial&#xA0;del&#xA0;proyecto</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;+&#xA0;Se&#xA0;agrega&#xA0;el&#xA0;archivo&#xA0;README.md</span></span></div></pre></div>
+</div><div class="step" data-z="270000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
 <h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
 <h2 id="user-content-32-reparar-fin-de-l&#xED;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#xED;nea en los archivos</h2>
 <h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
-</div><div class="step" data-z="162000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
+</div><div class="step" data-z="276000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
 <h2 id="user-content-41-clonar-un-repositorio-existente" class="deep-link">4.1. Clonar un repositorio existente</h2>
 <h2 id="user-content-42-resoluci&#xF3;n-de-conflictos" class="deep-link">4.2. Resoluci&#xF3;n de conflictos</h2>
 <h2 id="user-content-43-corregir-el-commit-anterior" class="deep-link">4.3. Corregir el commit anterior</h2>
-</div><div class="step" data-z="168000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
+</div><div class="step" data-z="282000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
 <h2 id="user-content-51-crear-una-cuenta-en-github" class="deep-link">5.1. Crear una cuenta en Github</h2>
 <h2 id="user-content-52-administraci&#xF3;n-de-repositorios-via-web" class="deep-link">5.2. Administraci&#xF3;n de repositorios via web</h2>
 <h2 id="user-content-53-cliente-gr&#xE1;fico-de-git-para-mac-y-windows" class="deep-link">5.3. Cliente gr&#xE1;fico de git para Mac y Windows</h2>
 <h2 id="user-content-54-documentaci&#xF3;n-en-markdown" class="deep-link">5.4. Documentaci&#xF3;n en Markdown</h2>
-</div><div class="step" data-z="174000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
+</div><div class="step" data-z="288000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
 <h2 id="user-content-61-fork" class="deep-link">6.1. Fork</h2>
 <h2 id="user-content-62-pull-requests" class="deep-link">6.2. Pull requests</h2>
 <h2 id="user-content-63-gist" class="deep-link">6.3. gist</h2>
 <h2 id="user-content-64-github-pages" class="deep-link">6.4. Github Pages</h2>
 <h2 id="user-content-65-wikis" class="deep-link">6.5. Wikis</h2>
-</div><div class="step" data-z="180000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
+</div><div class="step" data-z="294000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
 <ul>
 <li><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
 <li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
 <li><a href="https://github.com/papadako/git-a-little-tale/">https://github.com/papadako/git-a-little-tale/</a></li>
+<li><a href="https://wiki.openstack.org/wiki/GitCommitMessages">https://wiki.openstack.org/wiki/GitCommitMessages</a></li>
+<li><a href="https://git-scm.com/book/ch5-2.html#Commit-Guidelines">https://git-scm.com/book/ch5-2.html#Commit-Guidelines</a></li>
+<li><a href="http://chris.beams.io/posts/git-commit/">http://chris.beams.io/posts/git-commit/</a></li>
+<li><a href="https://rogerdudler.github.io/git-guide/">https://rogerdudler.github.io/git-guide/</a></li>
 </ul>
-</div><div class="step" data-z="186000"><!-- zoom-out slide -->
+</div><div class="step" data-z="300000"><!-- zoom-out slide -->
 </div></div>
     <script>/**
  * impress.js
