@@ -700,7 +700,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 ### 2.8.2. `git add` ⇨ **new file**
 
-+ Para agregar un <span style="color: OliveDrab;">**archivo nuevo**</span> al repositorio se utiliza `git add`
++ Para <span style="color: OliveDrab;">**agregar**</span> un archivo nuevo al repositorio se utiliza `git add`
 + No olvidar ejecutar `git commit` para guardar el cambio
 
 ```
@@ -755,7 +755,7 @@ Changes to be committed:
 
 ### 2.8.5. **modified** - Archivos editados
 
-+ Al **editar** un archivo, git lo marca como <span style="color: DarkOrange;">**modified**</span>
++ Al <span style="color: DarkOrange;">**editar**</span> un archivo, git lo marca como **modified**
 + No olvidar ejecutar `git commit` para guardar el cambio
 + Si se desea regresar a la *última versión conocida*, ejecutar `git checkout <archivo>`
 
@@ -771,6 +771,8 @@ Changes not staged for commit:
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
+
+--------------------------------------------------------------------------------
 
 ## 2.9. Bitácora de revisiones del proyecto
 
