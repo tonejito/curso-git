@@ -624,6 +624,41 @@ origin	https://github.com/tonejito/repositorio.git (push)
 ```
 --------------------------------------------------------------------------------
 
+### 2.7.2. Enviar cambios con git-push
+
++ Para enviar los cambios al servidor *la primera vez* se ejecuta [`git push`](https://git-scm.com/docs/git-push "git-push(1)") de la siguiente manera
+
+```sh
+tonejito@linux:~/repositorio$ git push -u origin master
+Username for 'https://github.com': tonejito
+Password for 'https://tonejito@github.com':
+Counting objects: 12, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.35 KiB | 0 bytes/s, done.
+Total 12 (delta 1), reused 0 (delta 0)
+To https://github.com/tonejito/repositorio.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+```
+
++ Las demás veces sólo es necesario utilizar `git push`
+
+```sh
+tonejito@linux:~/repositorio$ git push
+Username for 'https://github.com': tonejito
+Password for 'https://tonejito@github.com':
+Counting objects: 3, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 462 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/tonejito/repositorio.git
+   4f30937..be47c1b  master -> master
+```
+
++ Dependiendo de la versión y configuración de git, puede aparecer una advertencia sobre `push.default`
+
 ## 2.8. Revisar el estado de los archivos en el directorio de trabajo
 
 ## 2.9. Bitácora de revisiones del proyecto
