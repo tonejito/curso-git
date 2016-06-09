@@ -753,6 +753,25 @@ Changes to be committed:
 
 --------------------------------------------------------------------------------
 
+### 2.8.5. **modified** - Archivos editados
+
++ Al **editar** un archivo, git lo marca como <span style="color: DarkOrange;">**modified**</span>
++ No olvidar ejecutar `git commit` para guardar el cambio
++ Si se desea regresar a la *última versión conocida*, ejecutar `git checkout <archivo>`
+
+```
+tonejito@linux:~/repositorio$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   pagina.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+```
+
 ## 2.9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
