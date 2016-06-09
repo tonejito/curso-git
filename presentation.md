@@ -678,6 +678,26 @@ Estado del archivo                                     | Comando                
 
 --------------------------------------------------------------------------------
 
+### 2.8.1. **Untracked files** - Archivos nuevos sin versionar
+
++ Cuando se crea un archivo nuevo, se marca como <span style="color: Black;">**Untracked**</span>
++ Para agregar el archivo al repositorio se utiliza `git add` (ver siguiente sección)
+
+```
+tonejito@linux:~/repositorio$ touch archivo-externo
+tonejito@linux:~/repositorio$ git status
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	archivo-externo
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+--------------------------------------------------------------------------------
+
 ## 2.9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
