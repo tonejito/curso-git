@@ -776,6 +776,30 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 ## 2.9. Bitácora de revisiones del proyecto
 
++ El comando [`git log`](https://git-scm.com/docs/git-log "git-log(1)") se utiliza para visualizar la *bitácora de revisiones del proyecto*
++ En la bitácora se muestra cada commit realizado en la rama actual
+
+```sh
+tonejito@linux:~/repositorio$ git log
+commit be47c1b99c212c0b25d7351c1d9bd8de33c06dd8
+Author: Andrés Hernández <andres.hernandez@ciencias.unam.mx>
+Date:   Thu Jun 9 10:53:34 2016 -0500
+
+    Página de prueba para `curso-git`
+    
+    + Código base `html5` sin estilos
+
+...	...	...	...	...	...	más entradas del log	...
+
+commit 1b75a81323d5a6befff5d4ddfd3ad3254914c8da
+Author: Andrés Hernández <andres.hernandez@ciencias.unam.mx>
+Date:   Wed Jun 8 13:46:21 2016 -0500
+
+    Commit inicial del proyecto
+    
+    + Se agrega el archivo README.md
+```
+
 --------------------------------------------------------------------------------
 
 # 3. Configuración del cliente git
