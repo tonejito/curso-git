@@ -37,11 +37,14 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 2. Introducción a git
    1. Inicializar un repositorio
-   2. Agregar archivos
-   3. Guardar cambios en el repositorio
-   4. Borrar archivos
-   5. Mover archivos
-   6. Enviar cambios al servidor
+   2. Clonar un repositorio existente
+   3. Agregar archivos
+   4. Guardar cambios en el repositorio
+   5. Borrar archivos
+   6. Mover archivos
+   7. Enviar cambios al servidor
+   8. Revisar el estado de los archivos en el directorio de trabajo
+   9. Bitácora de revisiones del proyecto
 
 --------------------------------------------------------------------------------
 
@@ -186,7 +189,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 --------------------------------------------------------------------------------
 
-### Características de git
+### 2.0.1. Características de git
 
 + Velocidad
 + Diseño simple
@@ -198,7 +201,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 --------------------------------------------------------------------------------
 
-### Áreas de trabajo
+### 2.0.2. Áreas de trabajo
 
 + `git` presenta tres áreas de trabajo, asociadas con los estados que puede tener un archivo
 + <span style="color: OrangeRed;">**Working Directory**</span> es el directorio de trabajo.
@@ -210,7 +213,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 --------------------------------------------------------------------------------
 
-#### Estados de un archivo
+#### 2.0.1.1. Estados de un archivo
 
 Estado    | Descripción                                                | Comando
 ---------:| ---------------------------------------------------------- |:-----------------------------------:
@@ -222,7 +225,7 @@ Estado    | Descripción                                                | Comand
 
 --------------------------------------------------------------------------------
 
-### Instalar git en GNU/Linux
+### 2.0.2. Instalar git en GNU/Linux
 
 + En [Debian GNU/Linux](https://www.debian.org/ "Debian GNU/Linux") utilizando [`apt-get`](http://linux.die.net/man/8/apt-get "man 8 apt-get") o [`aptitude`](http://linux.die.net/man/8/aptitude "man 8 aptitude")
 
@@ -294,7 +297,9 @@ drwxrwsr-x  7 tonejito users  147 Jun  6 09:50 .git
 
 --------------------------------------------------------------------------------
 
-## 2.2. Agregar archivos
+## 2.2. Clonar un repositorio existente
+
+## 2.3. Agregar archivos
 
 + El comando [`git add`](https://git-scm.com/docs/git-add "git-add(1)") se utiliza para especificar qué archivos incluirá git en el control de versiones
 + Los cambios del <span style="color: OrangeRed;">**Directorio de trabajo**</span> se incluyen en el <span style="color: DarkCyan;">**Área de Staging**</span>, es decir, se marcan para ser enviados en un *commit*
@@ -372,7 +377,7 @@ Changes to be committed:
 
 --------------------------------------------------------------------------------
 
-## 2.3. Guardar cambios en el repositorio
+## 2.4. Guardar cambios en el repositorio
 
 + Para enviar un cambio del <span style="color: DarkCyan;">**Área de Staging**</span> al <span style="color: DimGrey;">**directorio `.git`**</span> se utiliza el comando [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
 + Cada revisión generada guarda una entrada en la [bitácora del repositorio](https://git-scm.com/docs/git-log "git-log(1)")
@@ -391,7 +396,7 @@ git commit [-a | --interactive | --patch]  [-s]  [-v]  [-u<mode>]  [--amend]
 
 --------------------------------------------------------------------------------
 
-### 2.3.1. git-commit interactivo
+### 2.4.1. git-commit interactivo
 
 + Para guardar el archivo recién creado en la sección anterior se ejecuta [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)")
 
@@ -422,7 +427,7 @@ Commit inicial del proyecto
 
 --------------------------------------------------------------------------------
 
-### 2.3.2. Estructura del mensaje de un *commit*
+### 2.4.2. Estructura del mensaje de un *commit*
 
 + Se recomienda que la estructura del mensaje de un *commit* tenga los siguientes elementos
 + El único elemento requerido es el **título**
@@ -438,7 +443,7 @@ Línea | Elemento               | Contenido
 
 --------------------------------------------------------------------------------
 
-### 2.3.3. git-commit - one-liner
+### 2.4.3. git-commit - one-liner
 
 + Es posible ejecutar [`git commit`](https://git-scm.com/docs/git-commit "git-commit(1)") y especificar el *título del commit* en el mismo comando
 + No se guarda la descripción del *commit*
@@ -459,7 +464,7 @@ Date:   Wed Jun 8 13:52:04 2016 -0500
 
 --------------------------------------------------------------------------------
 
-## 2.4. Borrar archivos
+## 2.5. Borrar archivos
 
 + Para borrar archivos del repositorio se utiliza el comando [`git rm`](https://git-scm.com/docs/git-rm "git-rm(1)")
 + No utilizar `rm` o borrar mediante el *navegador de archivos*
@@ -477,7 +482,7 @@ git rm [-f | --force] [-n] [-r] [--cached] [--ignore-unmatch] [--quiet] [--] <fi
 
 --------------------------------------------------------------------------------
 
-### 2.4.1. Ejemplo de git-rm
+### 2.5.1. Ejemplo de git-rm
 
 + [`git rm`](https://git-scm.com/docs/git-rm "git-rm(1)") borra el archivo del <span style="color: OrangeRed;">**Directorio de trabajo**</span> y marca el cambio en el <span style="color: DarkCyan;">**Área de Staging**</span>
 
@@ -507,7 +512,7 @@ tonejito@linux:~/repositorio$ git commit -m "Prueba de git-rm" archivo-para-borr
 
 --------------------------------------------------------------------------------
 
-## 2.5. Mover archivos
+## 2.6. Mover archivos
 
 + El comando [`git mv`](https://git-scm.com/docs/git-mv "git-mv(1)") se utiliza para **mover** o **renombrar** archivos del repositorio
 + No utilizar `mv` o renombrar desde el *navegador de archivos*
@@ -522,7 +527,7 @@ git mv [-v] [-f] [-n] [-k] <source> ... <destination directory>
 
 --------------------------------------------------------------------------------
 
-### 2.5.1. Ejemplo de git-mv
+### 2.6.1. Ejemplo de git-mv
 
 + Creación de archivos de prueba
 
@@ -552,7 +557,12 @@ tonejito@linux:~/repositorio$ git commit -m "Prueba de git-mv"
 
 --------------------------------------------------------------------------------
 
-## 2.6. Enviar cambios al servidor
+## 2.7. Enviar cambios al servidor
+
+## 2.8. Revisar el estado de los archivos en el directorio de trabajo
+
+## 2.9. Bitácora de revisiones del proyecto
+
 
 --------------------------------------------------------------------------------
 
