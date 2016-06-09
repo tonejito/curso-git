@@ -299,6 +299,51 @@ drwxrwsr-x  7 tonejito users  147 Jun  6 09:50 .git
 
 ## 2.2. Clonar un repositorio existente
 
++ Se utiliza el comando [`git clone`](https://git-scm.com/docs/git-clone "git-clone(1)") para guardar una copia de un repositorio existente
++ Es útil cuando se quiere trabajar de manera colaborativa en una aplicación (como el kernel Linux)
++ El código ṕuede ser modificado y se pueden seguir haciendo commits
++ Para clonar el repositorio es necesario conocer la URL donde se aloja el proyecto
+
+  * `/path/to/repo.git/`
+  * `file:///path/to/repo.git/`
+  * `http[s]://host.xz[:port]/path/to/repo.git/`
+  * `ftp[s]://host.xz[:port]/path/to/repo.git/`
+  * `ssh://[user@]host.xz[:port]/path/to/repo.git/`
+  * `ssh://[user@]host.xz[:port]/~[user]/path/to/repo.git/`
+  * `git://host.xz[:port]/path/to/repo.git/`
+  * `git://host.xz[:port]/~[user]/path/to/repo.git/`
+  * `[user@]host.xz:path/to/repo.git/`
+  * `[user@]host.xz:/~[user]/path/to/repo.git/`
+
+--------------------------------------------------------------------------------
+
+### 2.2.1. Ejemplo de git-clone
+
++ Para clonar el repositorio de git de este curso se utiliza el comando [`git clone`](https://git-scm.com/docs/git-clone "git-clone(1)") de la siguiente manera
+
+```sh
+tonejito@linux:~$ git clone https://github.com/tonejito/curso-git.git
+Cloning into 'curso-git'...
+remote: Counting objects: 108, done.
+remote: Compressing objects: 100% (42/42), done.
+remote: Total 108 (delta 24), reused 0 (delta 0), pack-reused 65
+Receiving objects: 100% (108/108), 429.40 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (45/45), done.
+Checking connectivity... done.
+```
+
++ El repositorio se clona en el directorio `curso-git`
++ Contiene los archivos del proyecto y el directorio `.git`
+
+```sh
+tonejito@linux:~$ ls -A curso-git/
+.git  .gitignore  LICENSE.md  presentation.md
+img   index.html  Makefile    README.md
+```
+
++ Ejemplo recursivo :grin:
+--------------------------------------------------------------------------------
+
 ## 2.3. Agregar archivos
 
 + El comando [`git add`](https://git-scm.com/docs/git-add "git-add(1)") se utiliza para especificar qué archivos incluirá git en el control de versiones
@@ -620,6 +665,7 @@ tonejito@linux:~/repositorio$ git commit -m "Prueba de git-mv"
 + https://wiki.openstack.org/wiki/GitCommitMessages
 + https://git-scm.com/book/ch5-2.html#Commit-Guidelines
 + http://chris.beams.io/posts/git-commit/
++ https://rogerdudler.github.io/git-guide/
 
 
 --------------------------------------------------------------------------------
