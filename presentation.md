@@ -99,6 +99,33 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 
 --------------------------------------------------------------------------------
 
+# 0. Configurar el nombre de usuario
+
++ Abrir el cuadro de diálogo de **preferencias del sistema**
+
+<span>
+  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings" src="img/0-System_settings.png" />
+</span>
+
+--------------------------------------------------------------------------------
+
++ Selecciona la opción **Usuarios**
+
+<span>
+  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings > Users" src="img/0-Users.png" />
+</span>
+
+--------------------------------------------------------------------------------
+
++ Da clic en **Facultad de Ciencias**, introduce tu nombre y presiona `<Enter>`
++ Al terminar, cierra la ventana
+
+<span>
+  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings > Users > Username" src="img/0-Username.png" />
+</span>
+
+--------------------------------------------------------------------------------
+
 # 1. Introducción a los sistemas de control de versiones
 
 ## Sistema de control de versiones
