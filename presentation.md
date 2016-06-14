@@ -926,5 +926,7 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 + https://wiki.openstack.org/wiki/GitCommitMessages
 + https://git-scm.com/book/ch5-2.html#Commit-Guidelines
 + http://chris.beams.io/posts/git-commit/
++ http://marklodato.github.io/visual-git-guide/index-en.html
++ http://think-like-a-git.net/
 + https://rogerdudler.github.io/git-guide/
 
