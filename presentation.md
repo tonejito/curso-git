@@ -112,7 +112,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 + Selecciona la opción **Usuarios**
 
 <span>
-  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings > Users" src="img/0-Users.png" />
+  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings ⇒ Users" src="img/0-Users.png" />
 </span>
 
 --------------------------------------------------------------------------------
@@ -121,7 +121,7 @@ Estudiantes, pasantes o egresados de carreras afines a computación, desarrollad
 + Al terminar, cierra la ventana
 
 <span>
-  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings > Users > Username" src="img/0-Username.png" />
+  <img style="margin-left: auto; margin-right: auto; display: block;" alt="System Settings ⇒ Users ⇒ Username" src="img/0-Username.png" />
 </span>
 
 --------------------------------------------------------------------------------
