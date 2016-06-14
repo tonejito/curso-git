@@ -855,6 +855,36 @@ Local <br/> **Repositorio**   | `$GIT_DIR/config` | Aplica únicamente para el r
 
 ## 3.1. Datos del usuario
 
+### 3.1.1. Configuración global para el usuario
+
++ Es útil establecer la configuración global para **todos los repositorios** de git del usuario actual
+
+```sh
+tonejito@linux:~$ git config --global user.name  'Andrés Hernández'
+tonejito@linux:~$ git config --global user.email 'andres.hernandez@unam.mx'
+tonejito@linux:~$ cat ~/.gitconfig
+[user]
+	name  = Andrés Hernández
+	email = andres.hernandez@unam.mx
+```
+
+--------------------------------------------------------------------------------
+
+### 3.1.2. Configuración local para el repositorio
+
++ Para un repositorio donde se necesite realizar commits con otra cuenta de correo utilizar la **configuración local**
+
+```sh
+tonejito@linux:~/repositorio$ git config --local user.name  'Andrés Hernández'
+tonejito@linux:~/repositorio$ git config --local user.email 'andres.hernandez@ciencias.unam.mx'
+tonejito@linux:~/repositorio$ cat .git/config
+[user]
+	name  = Andrés Hernández
+	email = andres.hernandez@ciencias.unam.mx
+```
+
+--------------------------------------------------------------------------------
+
 ## 3.2. Reparar fin de línea en los archivos
 
 ## 3.3. Ignorar espacios en blanco
