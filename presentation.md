@@ -902,10 +902,25 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 
 --------------------------------------------------------------------------------
 
+# Got 15 minutes and want to learn Git?
+
++ Curso interactivo de git
++ En inglés
+
+<span>
+  <a id="try-git" href="https://try.github.io/">
+    <img style="width: 40%; height: auto; margin-left: auto; margin-right: auto; display: block;" alt="try-git by CodeSchool and Github" src="img/2-try-git-flyer.png" />
+  </a>
+</span>
+<div style="clear: both;" />
+
+--------------------------------------------------------------------------------
+
 # Referencias
 
 + https://git-scm.com/docs
 + https://git-scm.com/book/en/v2
++ https://try.github.io/
 + https://services.github.com/resources/
 + https://github.com/papadako/git-a-little-tale/
 + https://wiki.openstack.org/wiki/GitCommitMessages
