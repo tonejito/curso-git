@@ -11,6 +11,12 @@
 </div>
 
 <span>
+  <a id="book" alt="html5 book version" href="book.html">
+    <img style="width: 2em; height: auto; margin-left: auto; margin-right: auto; display: block;" alt="html5 book version" src="img/html5.svg" />
+  </a>
+</span>
+<br/>
+<span>
   <a id="UNAM" href="http://www.unam.mx/">
     <img style="width: auto; height: 8em; margin-left: 25%; float: left;" alt="UNAM" src="img/UNAM.svg" />
   </a>
@@ -906,8 +912,4 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 + https://git-scm.com/book/ch5-2.html#Commit-Guidelines
 + http://chris.beams.io/posts/git-commit/
 + https://rogerdudler.github.io/git-guide/
-
-
---------------------------------------------------------------------------------
-<!-- zoom-out slide -->
 
