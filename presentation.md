@@ -900,6 +900,7 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 
 + https://git-scm.com/docs
 + https://git-scm.com/book/en/v2
++ https://services.github.com/resources/
 + https://github.com/papadako/git-a-little-tale/
 + https://wiki.openstack.org/wiki/GitCommitMessages
 + https://git-scm.com/book/ch5-2.html#Commit-Guidelines
