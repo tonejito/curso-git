@@ -840,6 +840,19 @@ Date:   Tue 19 Jan 03:14:08 2038 +0000
 
 --------------------------------------------------------------------------------
 
+### 3.0.1. Secciones de configuración de git
+
++ Existen tres ubicaciones donde se puede configurar el cliente git
++ El cliente de git toma en cuenta los valores más específicos
+
+Ubicación                     | Directorio        | Descripción
+:----------------------------:|:------------------|:----------------------------
+System-wide <br/> **Sistema** | `/etc/gitconfig`  | Archivo de configuración global para todos los repositorios presentes en el sistema
+Global <br/> **Usuario**      | `~/.gitconfig`    | Archivo de configuración que aplica para todos los repositorios del usuario
+Local <br/> **Repositorio**   | `$GIT_DIR/config` | Aplica únicamente para el repositorio actual
+
+--------------------------------------------------------------------------------
+
 ## 3.1. Datos del usuario
 
 ## 3.2. Reparar fin de línea en los archivos
