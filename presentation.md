@@ -824,6 +824,22 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 
 # 3. Configuración del cliente git
 
++ Hasta ahora los mensajes del commit han sido atribuidos a un autor *anónimo*
++ ¿Qué pasa si trabajo con *más de una* cuenta de correo asociada a git?
++ ¿Cómo puedo cambiar el campo `Author` en la bitácora del repositorio?
+
+```
+commit f020486f071bf11053547a86f4a7153b3c950f4b
+Author: Facultad de Ciencias <ciencias@debian8.local>
+Date:   Tue 19 Jan 03:14:08 2038 +0000
+
+    Título del commit
+    
+    Mensaje del commit
+```
+
+--------------------------------------------------------------------------------
+
 ## 3.1. Datos del usuario
 
 ## 3.2. Reparar fin de línea en los archivos
