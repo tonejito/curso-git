@@ -887,6 +887,28 @@ tonejito@linux:~/repositorio$ cat .git/config
 
 ## 3.2. Reparar fin de línea en los archivos
 
++ El retorno de línea cambia dependiendo del sistema operativo :confused:
+
+Sistema operativo                     | Retorno de línea |Descripción
+:------------------------------------:|:----------------:|:---------------------
+UNIX / BSD / Solaris / MacOSX / Linux | `LF`             | El salto de línea se representa con el caracter `\n`
+MacOS <= 9.2.2 <br/> *Classic*        | `CR`             | El salto de línea se representa con el caracter `\r`
+**Windows**                           | `CR-LF`          | El salto de línea se representa con el caracter `\r` seguido de `\n`
+
+--------------------------------------------------------------------------------
+
++ Por fortuna `git config` puede corregir esto de manera adecuada :grin:
++ Escribir lo siguiente para escribir la configuración de manera **global** para el usuario
+
+```sh
+tonejito@linux:~$ git config --global core.autocrlf input
+tonejito@linux:~$ cat .gitconfig
+[core]
+	autocrlf = input
+```
+
+--------------------------------------------------------------------------------
+
 ## 3.3. Ignorar espacios en blanco
 
 --------------------------------------------------------------------------------
