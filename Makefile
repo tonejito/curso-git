@@ -20,7 +20,7 @@ build:
 	# Build impress.js HTML from Markdown source
 	${NODE} --harmony ${MARKPRESS_BIN} --input ${INPUT} --output ${OUTPUT} --no-embed --layout ${MARKPRESS_LAYOUT}
 	# Build book version from Markdown souce
-	${PANDOC} --standalone --toc --from ${PANDOC_INPUT} --to ${PANDOC_OUTPUT} --css ${PANDOC_CSS} --output ${BOOK} ${INPUT}
+	${PANDOC} --standalone --from ${PANDOC_INPUT} --to ${PANDOC_OUTPUT} --css ${PANDOC_CSS} --output ${BOOK} ${INPUT}
 
 deps:
 	sudo aptitude install npm

@@ -20,6 +20,7 @@
     <img style="width: auto; height: 8em; margin-right: 25%; float: right;" alt="Facultad de Ciencias" src="img/Ciencias.svg" />
   </a>
 </span>
+<div style="clear: both;" />
 
 --------------------------------------------------------------------------------
 
