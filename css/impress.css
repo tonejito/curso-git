@@ -212,7 +212,6 @@ body {
   text-size-adjust: 100%;
   color: #333;
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 16px;
   line-height: 1.6;
   word-wrap: break-word;
 }
@@ -227,7 +226,6 @@ strong {
   font-weight: bold;
 }
 h1 {
-  font-size: 2em;
   margin: 0.67em 0;
 }
 img {
@@ -244,7 +242,6 @@ code,
 kbd,
 pre {
   font-family: monospace, monospace;
-  font-size: 1em;
 }
 input {
   color: inherit;
@@ -311,22 +308,16 @@ h6 {
   line-height: 1.1;
 }
 h1 {
-  font-size: 30px;
 }
 h2 {
-  font-size: 21px;
 }
 h3 {
-  font-size: 16px;
 }
 h4 {
-  font-size: 14px;
 }
 h5 {
-  font-size: 12px;
 }
 h6 {
-  font-size: 11px;
 }
 blockquote {
   margin: 0;
@@ -352,7 +343,6 @@ dd {
 }
 code {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
 }
 pre {
   margin-top: 0;
@@ -443,7 +433,6 @@ h6:hover .anchor .octicon-link {
 }
 h1 {
   padding-bottom: 0.3em;
-  font-size: 2.25em;
   line-height: 1.2;
   border-bottom: 1px solid #eee;
 }
@@ -452,7 +441,6 @@ h1 .anchor {
 }
 h2 {
   padding-bottom: 0.3em;
-  font-size: 1.75em;
   line-height: 1.225;
   border-bottom: 1px solid #eee;
 }
@@ -460,26 +448,22 @@ h2 .anchor {
   line-height: 1;
 }
 h3 {
-  font-size: 1.5em;
   line-height: 1.43;
 }
 h3 .anchor {
   line-height: 1.2;
 }
 h4 {
-  font-size: 1.25em;
 }
 h4 .anchor {
   line-height: 1.2;
 }
 h5 {
-  font-size: 1em;
 }
 h5 .anchor {
   line-height: 1.1;
 }
 h6 {
-  font-size: 1em;
   color: #777;
 }
 h6 .anchor {
@@ -522,7 +506,6 @@ dl {
 dl dt {
   padding: 0;
   margin-top: 16px;
-  font-size: 1em;
   font-style: italic;
   font-weight: bold;
 }
@@ -573,7 +556,6 @@ code {
   padding-top: 0.2em;
   padding-bottom: 0.2em;
   margin: 0;
-  font-size: 85%;
   background-color: rgba(0, 0, 0, 0.04);
   border-radius: 3px;
 }
@@ -585,7 +567,6 @@ code:after {
 pre > code {
   padding: 0;
   margin: 0;
-  font-size: 100%;
   word-break: normal;
   white-space: pre;
   background: transparent;
@@ -598,7 +579,6 @@ pre > code {
 pre {
   padding: 16px;
   overflow: auto;
-  font-size: 85%;
   line-height: 1.45;
   background-color: #f7f7f7;
   border-radius: 3px;
@@ -628,7 +608,6 @@ pre code:after {
 kbd {
   display: inline-block;
   padding: 3px 5px;
-  font-size: 11px;
   line-height: 10px;
   color: #555;
   vertical-align: middle;
@@ -746,8 +725,6 @@ kbd {
   border-color: #4078c0;
 }
 body {
-  font-size: 100%;
-  font-size: 2.4vmin;
 }
 h1,
 h2,
@@ -758,25 +735,18 @@ h6 {
   border-bottom: 0;
 }
 h1 {
-  font-size: 6em;
-  font-size: 6.24vmin;
   text-align: center;
   margin-top: 0;
 }
 h2 {
-  font-size: 4em;
-  font-size: 4.32vmin;
   margin-top: 2.4vmin;
 }
 h3 {
-  font-size: 3em;
-  font-size: 2.88vmin;
   margin-top: 2.4vmin;
 }
 h4,
 h5,
 h6 {
-  font-size: 2.4vmin;
 }
 body {
   line-height: 1;
@@ -834,7 +804,6 @@ a:hover {
   opacity: 1;
 }
 kbd {
-  font-size: 2.4vmin;
   display: inline-block;
   padding: 0.36vmin 0.84vmin;
   font: Consolas, "Liberation Mono", Menlo, Courier, monospace;
