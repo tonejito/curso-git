@@ -921,6 +921,12 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 + https://git-scm.com/docs
 + https://git-scm.com/book/en/v2
 + https://try.github.io/
++ https://help.github.com/
++ https://help.github.com/articles/associating-text-editors-with-git/
++ https://help.github.com/articles/github-flow-in-the-browser/
++ https://github.com/github/training-kit
++ https://guides.github.com/introduction/flow/
++ https://services.github.com/kit/
 + https://services.github.com/resources/
 + https://github.com/papadako/git-a-little-tale/
 + https://wiki.openstack.org/wiki/GitCommitMessages
