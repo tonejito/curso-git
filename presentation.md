@@ -904,12 +904,46 @@ MacOS <= 9.2.2 <br/> *Classic*        | `CR`             | El salto de línea se
 tonejito@linux:~$ git config --global core.autocrlf input
 tonejito@linux:~$ cat .gitconfig
 [core]
+   ...
 	autocrlf = input
 ```
 
 --------------------------------------------------------------------------------
 
 ## 3.3. Ignorar espacios en blanco
+
+Un problema común con algunos editores es que agregan espacios en blanco sin que el usuario se de cuenta
+
+Elemento              | Activo <br> por defecto                        | Descripción
+:--------------------:|:----------------------------------------------:|:-------
+`blank-at-eol`        | <span style="color: OliveDrab;">**SI**</span> | Quita espacios en blanco al final de la línea
+`blank-at-eof`        | <span style="color: OliveDrab;">**SI**</span> | Quita lineas vacías al final del archivo
+`space-before-tab`    | <span style="color: OliveDrab;">**SI**</span> | Quita espacios antes de un caracter `<TAB>` en el principio de la línea
+`indent-with-non-tab` | <span style="color:   DarkRed;">**NO**</span> | Busca lineas que estan identadas con espacios, se controla con la directiva `tabwidth`
+`tab-in-indent`       | <span style="color:   DarkRed;">**NO**</span> | Busca `<TAB>` en la identación de las lineas
+`cr-at-eol`           | <span style="color:   DarkRed;">**NO**</span> | Identifica el caracter `<CR>` como válido al final de la linea
+
+--------------------------------------------------------------------------------
+
+### Ejemplo de `core.whitespace`
+
+* Para establecer estos valores se utiliza `git config` para modificar la directiva `core.whitespace`
+* Los elementos especificados se activan al incluirlos en el valor de la directiva
+* Los elementos que no se especifican o que comienzan con un símbolo `-` son excluidos
+
+Para establecer el valor de `core.whitespace` utilizaremos las siguientes características:
+
+* Se desean los elementos `blank-at-eol`, `blank-at-eof` y `space-before-tab`
+* Desactivamos explícitamente `indent-with-non-tab` y `tab-in-indent`
+* Desactivamos implícitamente `cr-at-eol` ya que no se especifica en el valor
+
+```sh
+tonejito@linux:~$ git config core.whitespace blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-in-indent
+tonejito@linux:~$ cat .gitconfig
+[core]
+   ...
+	whitespace = blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-in-indent
+```
 
 --------------------------------------------------------------------------------
 
