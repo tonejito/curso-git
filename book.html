@@ -771,9 +771,176 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
     + Se agrega el archivo README.md</code></pre>
 <hr />
 <h1 id="configuración-del-cliente-git">3. Configuración del cliente git</h1>
+<ul>
+<li>Hasta ahora los mensajes del commit han sido atribuidos a un autor <em>anónimo</em></li>
+<li>¿Qué pasa si trabajo con <em>más de una</em> cuenta de correo asociada a git?</li>
+<li>¿Cómo puedo cambiar el campo <code>Author</code> en la bitácora del repositorio?</li>
+</ul>
+<pre><code>commit f020486f071bf11053547a86f4a7153b3c950f4b
+Author: Facultad de Ciencias &lt;ciencias@debian8.local&gt;
+Date:   Tue 19 Jan 03:14:08 2038 +0000
+
+    Título del commit
+    
+    Mensaje del commit</code></pre>
+<hr />
+<h3 id="secciones-de-configuración-de-git">3.0.1. Secciones de configuración de git</h3>
+<ul>
+<li>Existen tres ubicaciones donde se puede configurar el cliente git</li>
+<li>El cliente de git toma en cuenta los valores más específicos</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Ubicación</th>
+<th style="text-align: left;">Directorio</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">System-wide <br/> <strong>Sistema</strong></td>
+<td style="text-align: left;"><code>/etc/gitconfig</code></td>
+<td style="text-align: left;">Archivo de configuración global para todos los repositorios presentes en el sistema</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Global <br/> <strong>Usuario</strong></td>
+<td style="text-align: left;"><code>~/.gitconfig</code></td>
+<td style="text-align: left;">Archivo de configuración que aplica para todos los repositorios del usuario</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Local <br/> <strong>Repositorio</strong></td>
+<td style="text-align: left;"><code>$GIT_DIR/config</code></td>
+<td style="text-align: left;">Aplica únicamente para el repositorio actual</td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2 id="datos-del-usuario">3.1. Datos del usuario</h2>
+<h3 id="configuración-global-para-el-usuario">3.1.1. Configuración global para el usuario</h3>
+<ul>
+<li>Es útil establecer la configuración global para <strong>todos los repositorios</strong> de git del usuario actual</li>
+</ul>
+<pre class="sh"><code>tonejito@linux:~$ git config --global user.name  &#39;Andrés Hernández&#39;
+tonejito@linux:~$ git config --global user.email &#39;andres.hernandez@unam.mx&#39;
+tonejito@linux:~$ cat ~/.gitconfig
+[user]
+    name  = Andrés Hernández
+    email = andres.hernandez@unam.mx</code></pre>
+<hr />
+<h3 id="configuración-local-para-el-repositorio">3.1.2. Configuración local para el repositorio</h3>
+<ul>
+<li>Para un repositorio donde se necesite realizar commits con otra cuenta de correo utilizar la <strong>configuración local</strong></li>
+</ul>
+<pre class="sh"><code>tonejito@linux:~/repositorio$ git config --local user.name  &#39;Andrés Hernández&#39;
+tonejito@linux:~/repositorio$ git config --local user.email &#39;andres.hernandez@ciencias.unam.mx&#39;
+tonejito@linux:~/repositorio$ cat .git/config
+[user]
+    name  = Andrés Hernández
+    email = andres.hernandez@ciencias.unam.mx</code></pre>
+<hr />
 <h2 id="reparar-fin-de-línea-en-los-archivos">3.2. Reparar fin de línea en los archivos</h2>
+<ul>
+<li>El retorno de línea cambia dependiendo del sistema operativo :confused:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Sistema operativo</th>
+<th style="text-align: center;">Retorno de línea</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">UNIX / BSD / Solaris / MacOSX / Linux</td>
+<td style="text-align: center;"><code>LF</code></td>
+<td style="text-align: left;">El salto de línea se representa con el caracter <code>\n</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">MacOS &lt;= 9.2.2 <br/> <em>Classic</em></td>
+<td style="text-align: center;"><code>CR</code></td>
+<td style="text-align: left;">El salto de línea se representa con el caracter <code>\r</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><strong>Windows</strong></td>
+<td style="text-align: center;"><code>CR-LF</code></td>
+<td style="text-align: left;">El salto de línea se representa con el caracter <code>\r</code> seguido de <code>\n</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<ul>
+<li>Por fortuna <code>git config</code> puede corregir esto de manera adecuada :grin:</li>
+<li>Escribir lo siguiente para escribir la configuración de manera <strong>global</strong> para el usuario</li>
+</ul>
+<pre class="sh"><code>tonejito@linux:~$ git config --global core.autocrlf input
+tonejito@linux:~$ cat .gitconfig
+[core]
+   ...
+    autocrlf = input</code></pre>
+<hr />
 <h2 id="ignorar-espacios-en-blanco">3.3. Ignorar espacios en blanco</h2>
+<p>Un problema común con algunos editores es que agregan espacios en blanco sin que el usuario se de cuenta</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Elemento</th>
+<th style="text-align: center;">Activo <br> por defecto</th>
+<th style="text-align: left;">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><code>blank-at-eol</code></td>
+<td style="text-align: center;"><span style="color: OliveDrab;"><strong>SI</strong></span></td>
+<td style="text-align: left;">Quita espacios en blanco al final de la línea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>blank-at-eof</code></td>
+<td style="text-align: center;"><span style="color: OliveDrab;"><strong>SI</strong></span></td>
+<td style="text-align: left;">Quita lineas vacías al final del archivo</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>space-before-tab</code></td>
+<td style="text-align: center;"><span style="color: OliveDrab;"><strong>SI</strong></span></td>
+<td style="text-align: left;">Quita espacios antes de un caracter <code>&lt;TAB&gt;</code> en el principio de la línea</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>indent-with-non-tab</code></td>
+<td style="text-align: center;"><span style="color:   DarkRed;"><strong>NO</strong></span></td>
+<td style="text-align: left;">Busca lineas que estan identadas con espacios, se controla con la directiva <code>tabwidth</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><code>tab-in-indent</code></td>
+<td style="text-align: center;"><span style="color:   DarkRed;"><strong>NO</strong></span></td>
+<td style="text-align: left;">Busca <code>&lt;TAB&gt;</code> en la identación de las lineas</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><code>cr-at-eol</code></td>
+<td style="text-align: center;"><span style="color:   DarkRed;"><strong>NO</strong></span></td>
+<td style="text-align: left;">Identifica el caracter <code>&lt;CR&gt;</code> como válido al final de la linea</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="ejemplo-de-core.whitespace">Ejemplo de <code>core.whitespace</code></h3>
+<ul>
+<li>Para establecer estos valores se utiliza <code>git config</code> para modificar la directiva <code>core.whitespace</code></li>
+<li>Los elementos especificados se activan al incluirlos en el valor de la directiva</li>
+<li>Los elementos que no se especifican o que comienzan con un símbolo <code>-</code> son excluidos</li>
+</ul>
+<p>Para establecer el valor de <code>core.whitespace</code> utilizaremos las siguientes características:</p>
+<ul>
+<li>Se desean los elementos <code>blank-at-eol</code>, <code>blank-at-eof</code> y <code>space-before-tab</code></li>
+<li>Desactivamos explícitamente <code>indent-with-non-tab</code> y <code>tab-in-indent</code></li>
+<li>Desactivamos implícitamente <code>cr-at-eol</code> ya que no se especifica en el valor</li>
+</ul>
+<pre class="sh"><code>tonejito@linux:~$ git config core.whitespace blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-in-indent
+tonejito@linux:~$ cat .gitconfig
+[core]
+   ...
+    whitespace = blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-in-indent</code></pre>
 <hr />
 <h1 id="trabajando-con-repositorios-existentes">4. Trabajando con repositorios existentes</h1>
 <h2 id="clonar-un-repositorio-existente-1">4.1. Clonar un repositorio existente</h2>

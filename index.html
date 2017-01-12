@@ -1478,25 +1478,161 @@ kbd {
 </ul>
 <div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;log</span></span></div><div class="line"><span class="source shell"><span>commit&#xA0;be47c1b99c212c0b25d7351c1d9bd8de33c06dd8</span></span></div><div class="line"><span class="source shell"><span>Author:&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez&#xA0;</span><span class="keyword operator redirect shell"><span>&lt;</span></span><span>andres.hernandez@ciencias.unam.mx</span><span class="keyword operator redirect shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>Date:&#xA0;&#xA0;&#xA0;Thu&#xA0;Jun&#xA0;9&#xA0;10:53:34&#xA0;2016&#xA0;-0500</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;P&#xE1;gina&#xA0;de&#xA0;prueba&#xA0;para&#xA0;</span><span class="string interpolated backtick shell"><span class="punctuation definition string begin shell"><span>`</span></span><span>curso-git</span><span class="punctuation definition string end shell"><span>`</span></span></span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;+&#xA0;C&#xF3;digo&#xA0;base&#xA0;</span><span class="string interpolated backtick shell"><span class="punctuation definition string begin shell"><span>`</span></span><span>html5</span><span class="punctuation definition string end shell"><span>`</span></span></span><span>&#xA0;sin&#xA0;estilos</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>...	...	...	...	...	...	m&#xE1;s&#xA0;entradas&#xA0;del&#xA0;log	...</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>commit&#xA0;1b75a81323d5a6befff5d4ddfd3ad3254914c8da</span></span></div><div class="line"><span class="source shell"><span>Author:&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez&#xA0;</span><span class="keyword operator redirect shell"><span>&lt;</span></span><span>andres.hernandez@ciencias.unam.mx</span><span class="keyword operator redirect shell"><span>&gt;</span></span></span></div><div class="line"><span class="source shell"><span>Date:&#xA0;&#xA0;&#xA0;Wed&#xA0;Jun&#xA0;8&#xA0;13:46:21&#xA0;2016&#xA0;-0500</span></span></div><div class="line"><span class="source shell"><span>&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;Commit&#xA0;inicial&#xA0;del&#xA0;proyecto</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;+&#xA0;Se&#xA0;agrega&#xA0;el&#xA0;archivo&#xA0;README.md</span></span></div></pre></div>
 </div><div class="step" data-z="288000"><h1 id="user-content-3-configuraci&#xF3;n-del-cliente-git" class="deep-link">3. Configuraci&#xF3;n del cliente git</h1>
-<h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
-<h2 id="user-content-32-reparar-fin-de-l&#xED;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#xED;nea en los archivos</h2>
-<h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
-</div><div class="step" data-z="294000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
+<ul>
+<li>Hasta ahora los mensajes del commit han sido atribuidos a un autor <em>an&#xF3;nimo</em></li>
+<li>&#xBF;Qu&#xE9; pasa si trabajo con <em>m&#xE1;s de una</em> cuenta de correo asociada a git?</li>
+<li>&#xBF;C&#xF3;mo puedo cambiar el campo <code>Author</code> en la bit&#xE1;cora del repositorio?</li>
+</ul>
+<div><pre class="editor editor-colors"><div class="line"><span class="source diff"><span>commit&#xA0;f020486f071bf11053547a86f4a7153b3c950f4b</span></span></div><div class="line"><span class="source diff"><span>Author:&#xA0;Facultad&#xA0;de&#xA0;Ciencias&#xA0;&lt;ciencias@debian8.local&gt;</span></span></div><div class="line"><span class="source diff"><span>Date:&#xA0;&#xA0;&#xA0;Tue&#xA0;19&#xA0;Jan&#xA0;03:14:08&#xA0;2038&#xA0;+0000</span></span></div><div class="line"><span class="source diff"><span>&#xA0;</span></span></div><div class="line"><span class="source diff"><span>&#xA0;&#xA0;&#xA0;&#xA0;T&#xED;tulo&#xA0;del&#xA0;commit</span></span></div><div class="line"><span class="source diff"><span>&#xA0;&#xA0;&#xA0;&#xA0;</span></span></div><div class="line"><span class="source diff"><span>&#xA0;&#xA0;&#xA0;&#xA0;Mensaje&#xA0;del&#xA0;commit</span></span></div></pre></div>
+</div><div class="step" data-z="294000"><h3 id="user-content-301-secciones-de-configuraci&#xF3;n-de-git" class="deep-link">3.0.1. Secciones de configuraci&#xF3;n de git</h3>
+<ul>
+<li>Existen tres ubicaciones donde se puede configurar el cliente git</li>
+<li>El cliente de git toma en cuenta los valores m&#xE1;s espec&#xED;ficos</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Ubicaci&#xF3;n</th>
+<th style="text-align:left">Directorio</th>
+<th style="text-align:left">Descripci&#xF3;n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">System-wide <br> <strong>Sistema</strong></td>
+<td style="text-align:left"><code>/etc/gitconfig</code></td>
+<td style="text-align:left">Archivo de configuraci&#xF3;n global para todos los repositorios presentes en el sistema</td>
+</tr>
+<tr>
+<td style="text-align:center">Global <br> <strong>Usuario</strong></td>
+<td style="text-align:left"><code>~/.gitconfig</code></td>
+<td style="text-align:left">Archivo de configuraci&#xF3;n que aplica para todos los repositorios del usuario</td>
+</tr>
+<tr>
+<td style="text-align:center">Local <br> <strong>Repositorio</strong></td>
+<td style="text-align:left"><code>$GIT_DIR/config</code></td>
+<td style="text-align:left">Aplica &#xFA;nicamente para el repositorio actual</td>
+</tr>
+</tbody>
+</table>
+</div><div class="step" data-z="300000"><h2 id="user-content-31-datos-del-usuario" class="deep-link">3.1. Datos del usuario</h2>
+<h3 id="user-content-311-configuraci&#xF3;n-global-para-el-usuario" class="deep-link">3.1.1. Configuraci&#xF3;n global para el usuario</h3>
+<ul>
+<li>Es &#xFA;til establecer la configuraci&#xF3;n global para <strong>todos los repositorios</strong> de git del usuario actual</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;config&#xA0;--global&#xA0;user.name&#xA0;&#xA0;</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>Andr&#xE9;s&#xA0;Hern&#xE1;ndez</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;config&#xA0;--global&#xA0;user.email&#xA0;</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>andres.hernandez@unam.mx</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;cat&#xA0;</span><span class="keyword operator tilde shell"><span>~</span></span><span>/.gitconfig</span></span></div><div class="line"><span class="source shell"><span>[user]</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;name&#xA0;&#xA0;=&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;email&#xA0;=&#xA0;andres.hernandez@unam.mx</span></span></div></pre></div>
+</div><div class="step" data-z="306000"><h3 id="user-content-312-configuraci&#xF3;n-local-para-el-repositorio" class="deep-link">3.1.2. Configuraci&#xF3;n local para el repositorio</h3>
+<ul>
+<li>Para un repositorio donde se necesite realizar commits con otra cuenta de correo utilizar la <strong>configuraci&#xF3;n local</strong></li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;config&#xA0;--local&#xA0;user.name&#xA0;&#xA0;</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>Andr&#xE9;s&#xA0;Hern&#xE1;ndez</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;git&#xA0;config&#xA0;--local&#xA0;user.email&#xA0;</span><span class="string quoted single shell"><span class="punctuation definition string begin shell"><span>&apos;</span></span><span>andres.hernandez@ciencias.unam.mx</span><span class="punctuation definition string end shell"><span>&apos;</span></span></span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>/repositorio$&#xA0;cat&#xA0;.git/config</span></span></div><div class="line"><span class="source shell"><span>[user]</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;name&#xA0;&#xA0;=&#xA0;Andr&#xE9;s&#xA0;Hern&#xE1;ndez</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;email&#xA0;=&#xA0;andres.hernandez@ciencias.unam.mx</span></span></div></pre></div>
+</div><div class="step" data-z="312000"><h2 id="user-content-32-reparar-fin-de-l&#xED;nea-en-los-archivos" class="deep-link">3.2. Reparar fin de l&#xED;nea en los archivos</h2>
+<ul>
+<li>El retorno de l&#xED;nea cambia dependiendo del sistema operativo &#x1F615;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Sistema operativo</th>
+<th style="text-align:center">Retorno de l&#xED;nea</th>
+<th style="text-align:left">Descripci&#xF3;n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">UNIX / BSD / Solaris / MacOSX / Linux</td>
+<td style="text-align:center"><code>LF</code></td>
+<td style="text-align:left">El salto de l&#xED;nea se representa con el caracter <code>\n</code></td>
+</tr>
+<tr>
+<td style="text-align:center">MacOS &lt;= 9.2.2 <br> <em>Classic</em></td>
+<td style="text-align:center"><code>CR</code></td>
+<td style="text-align:left">El salto de l&#xED;nea se representa con el caracter <code>\r</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Windows</strong></td>
+<td style="text-align:center"><code>CR-LF</code></td>
+<td style="text-align:left">El salto de l&#xED;nea se representa con el caracter <code>\r</code> seguido de <code>\n</code></td>
+</tr>
+</tbody>
+</table>
+</div><div class="step" data-z="318000"><ul>
+<li>Por fortuna <code>git config</code> puede corregir esto de manera adecuada &#x1F601;</li>
+<li>Escribir lo siguiente para escribir la configuraci&#xF3;n de manera <strong>global</strong> para el usuario</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;config&#xA0;--global&#xA0;core.autocrlf&#xA0;input</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;cat&#xA0;.gitconfig</span></span></div><div class="line"><span class="source shell"><span>[core]</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;...</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;autocrlf&#xA0;=&#xA0;input</span></span></div></pre></div>
+</div><div class="step" data-z="324000"><h2 id="user-content-33-ignorar-espacios-en-blanco" class="deep-link">3.3. Ignorar espacios en blanco</h2>
+<p>Un problema com&#xFA;n con algunos editores es que agregan espacios en blanco sin que el usuario se de cuenta</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Elemento</th>
+<th style="text-align:center">Activo <br> por defecto</th>
+<th style="text-align:left">Descripci&#xF3;n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>blank-at-eol</code></td>
+<td style="text-align:center"><span style="color: OliveDrab;"><strong>SI</strong></span></td>
+<td style="text-align:left">Quita espacios en blanco al final de la l&#xED;nea</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>blank-at-eof</code></td>
+<td style="text-align:center"><span style="color: OliveDrab;"><strong>SI</strong></span></td>
+<td style="text-align:left">Quita lineas vac&#xED;as al final del archivo</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>space-before-tab</code></td>
+<td style="text-align:center"><span style="color: OliveDrab;"><strong>SI</strong></span></td>
+<td style="text-align:left">Quita espacios antes de un caracter <code>&lt;TAB&gt;</code> en el principio de la l&#xED;nea</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>indent-with-non-tab</code></td>
+<td style="text-align:center"><span style="color:   DarkRed;"><strong>NO</strong></span></td>
+<td style="text-align:left">Busca lineas que estan identadas con espacios, se controla con la directiva <code>tabwidth</code></td>
+</tr>
+<tr>
+<td style="text-align:center"><code>tab-in-indent</code></td>
+<td style="text-align:center"><span style="color:   DarkRed;"><strong>NO</strong></span></td>
+<td style="text-align:left">Busca <code>&lt;TAB&gt;</code> en la identaci&#xF3;n de las lineas</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>cr-at-eol</code></td>
+<td style="text-align:center"><span style="color:   DarkRed;"><strong>NO</strong></span></td>
+<td style="text-align:left">Identifica el caracter <code>&lt;CR&gt;</code> como v&#xE1;lido al final de la linea</td>
+</tr>
+</tbody>
+</table>
+</div><div class="step" data-z="330000"><h3 id="user-content-ejemplo-de-corewhitespace" class="deep-link">Ejemplo de core.whitespace</h3>
+<ul>
+<li>Para establecer estos valores se utiliza <code>git config</code> para modificar la directiva <code>core.whitespace</code></li>
+<li>Los elementos especificados se activan al incluirlos en el valor de la directiva</li>
+<li>Los elementos que no se especifican o que comienzan con un s&#xED;mbolo <code>-</code> son excluidos</li>
+</ul>
+<p>Para establecer el valor de <code>core.whitespace</code> utilizaremos las siguientes caracter&#xED;sticas:</p>
+<ul>
+<li>Se desean los elementos <code>blank-at-eol</code>, <code>blank-at-eof</code> y <code>space-before-tab</code></li>
+<li>Desactivamos expl&#xED;citamente <code>indent-with-non-tab</code> y <code>tab-in-indent</code></li>
+<li>Desactivamos impl&#xED;citamente <code>cr-at-eol</code> ya que no se especifica en el valor</li>
+</ul>
+<div class="highlight sh"><pre class="editor editor-colors"><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;git&#xA0;config&#xA0;core.whitespace&#xA0;blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-</span><span class="keyword control shell"><span>in</span></span><span>-indent</span></span></div><div class="line"><span class="source shell"><span>tonejito@linux:</span><span class="keyword operator tilde shell"><span>~</span></span><span>$&#xA0;cat&#xA0;.gitconfig</span></span></div><div class="line"><span class="source shell"><span>[core]</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;...</span></span></div><div class="line"><span class="source shell"><span>&#xA0;&#xA0;&#xA0;&#xA0;whitespace&#xA0;=&#xA0;blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-</span><span class="keyword control shell"><span>in</span></span><span>-indent</span></span></div></pre></div>
+</div><div class="step" data-z="336000"><h1 id="user-content-4-trabajando-con-repositorios-existentes" class="deep-link">4. Trabajando con repositorios existentes</h1>
 <h2 id="user-content-41-clonar-un-repositorio-existente" class="deep-link">4.1. Clonar un repositorio existente</h2>
 <h2 id="user-content-42-resoluci&#xF3;n-de-conflictos" class="deep-link">4.2. Resoluci&#xF3;n de conflictos</h2>
 <h2 id="user-content-43-corregir-el-commit-anterior" class="deep-link">4.3. Corregir el commit anterior</h2>
-</div><div class="step" data-z="300000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
+</div><div class="step" data-z="342000"><h1 id="user-content-5-introducci&#xF3;n-a-github" class="deep-link">5. Introducci&#xF3;n a Github</h1>
 <h2 id="user-content-51-crear-una-cuenta-en-github" class="deep-link">5.1. Crear una cuenta en Github</h2>
 <h2 id="user-content-52-administraci&#xF3;n-de-repositorios-via-web" class="deep-link">5.2. Administraci&#xF3;n de repositorios via web</h2>
 <h2 id="user-content-53-cliente-gr&#xE1;fico-de-git-para-mac-y-windows" class="deep-link">5.3. Cliente gr&#xE1;fico de git para Mac y Windows</h2>
 <h2 id="user-content-54-documentaci&#xF3;n-en-markdown" class="deep-link">5.4. Documentaci&#xF3;n en Markdown</h2>
-</div><div class="step" data-z="306000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
+</div><div class="step" data-z="348000"><h1 id="user-content-6-trabajo-colaborativo-en-github" class="deep-link">6. Trabajo colaborativo en Github</h1>
 <h2 id="user-content-61-fork" class="deep-link">6.1. Fork</h2>
 <h2 id="user-content-62-pull-requests" class="deep-link">6.2. Pull requests</h2>
 <h2 id="user-content-63-gist" class="deep-link">6.3. gist</h2>
 <h2 id="user-content-64-github-pages" class="deep-link">6.4. Github Pages</h2>
 <h2 id="user-content-65-wikis" class="deep-link">6.5. Wikis</h2>
-</div><div class="step" data-z="312000"><h1 id="user-content-got-15-minutes-and-want-to-learn-git" class="deep-link">Got 15 minutes and want to learn Git?</h1>
+</div><div class="step" data-z="354000"><h1 id="user-content-got-15-minutes-and-want-to-learn-git" class="deep-link">Got 15 minutes and want to learn Git?</h1>
 <ul>
 <li>Curso interactivo de git</li>
 <li>En ingl&#xE9;s</li>
@@ -1507,7 +1643,7 @@ kbd {
   </a>
 </span>
 <div style="clear: both;">
-</div></div><div class="step" data-z="318000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
+</div></div><div class="step" data-z="360000"><h1 id="user-content-referencias" class="deep-link">Referencias</h1>
 <ul>
 <li><a href="https://git-scm.com/docs">https://git-scm.com/docs</a></li>
 <li><a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></li>
