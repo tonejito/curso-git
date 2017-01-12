@@ -858,11 +858,126 @@ Date:   Wed Jun 8 13:46:21 2016 -0500
 
 # 3. Configuración del cliente git
 
++ Hasta ahora los mensajes del commit han sido atribuidos a un autor *anónimo*
++ ¿Qué pasa si trabajo con *más de una* cuenta de correo asociada a git?
++ ¿Cómo puedo cambiar el campo `Author` en la bitácora del repositorio?
+
+```
+commit f020486f071bf11053547a86f4a7153b3c950f4b
+Author: Facultad de Ciencias <ciencias@debian8.local>
+Date:   Tue 19 Jan 03:14:08 2038 +0000
+
+    Título del commit
+    
+    Mensaje del commit
+```
+
+--------------------------------------------------------------------------------
+
+### 3.0.1. Secciones de configuración de git
+
++ Existen tres ubicaciones donde se puede configurar el cliente git
++ El cliente de git toma en cuenta los valores más específicos
+
+Ubicación                     | Directorio        | Descripción
+:----------------------------:|:------------------|:----------------------------
+System-wide <br/> **Sistema** | `/etc/gitconfig`  | Archivo de configuración global para todos los repositorios presentes en el sistema
+Global <br/> **Usuario**      | `~/.gitconfig`    | Archivo de configuración que aplica para todos los repositorios del usuario
+Local <br/> **Repositorio**   | `$GIT_DIR/config` | Aplica únicamente para el repositorio actual
+
+--------------------------------------------------------------------------------
+
 ## 3.1. Datos del usuario
+
+### 3.1.1. Configuración global para el usuario
+
++ Es útil establecer la configuración global para **todos los repositorios** de git del usuario actual
+
+```sh
+tonejito@linux:~$ git config --global user.name  'Andrés Hernández'
+tonejito@linux:~$ git config --global user.email 'andres.hernandez@unam.mx'
+tonejito@linux:~$ cat ~/.gitconfig
+[user]
+	name  = Andrés Hernández
+	email = andres.hernandez@unam.mx
+```
+
+--------------------------------------------------------------------------------
+
+### 3.1.2. Configuración local para el repositorio
+
++ Para un repositorio donde se necesite realizar commits con otra cuenta de correo utilizar la **configuración local**
+
+```sh
+tonejito@linux:~/repositorio$ git config --local user.name  'Andrés Hernández'
+tonejito@linux:~/repositorio$ git config --local user.email 'andres.hernandez@ciencias.unam.mx'
+tonejito@linux:~/repositorio$ cat .git/config
+[user]
+	name  = Andrés Hernández
+	email = andres.hernandez@ciencias.unam.mx
+```
+
+--------------------------------------------------------------------------------
 
 ## 3.2. Reparar fin de línea en los archivos
 
++ El retorno de línea cambia dependiendo del sistema operativo :confused:
+
+Sistema operativo                     | Retorno de línea |Descripción
+:------------------------------------:|:----------------:|:---------------------
+UNIX / BSD / Solaris / MacOSX / Linux | `LF`             | El salto de línea se representa con el caracter `\n`
+MacOS <= 9.2.2 <br/> *Classic*        | `CR`             | El salto de línea se representa con el caracter `\r`
+**Windows**                           | `CR-LF`          | El salto de línea se representa con el caracter `\r` seguido de `\n`
+
+--------------------------------------------------------------------------------
+
++ Por fortuna `git config` puede corregir esto de manera adecuada :grin:
++ Escribir lo siguiente para escribir la configuración de manera **global** para el usuario
+
+```sh
+tonejito@linux:~$ git config --global core.autocrlf input
+tonejito@linux:~$ cat .gitconfig
+[core]
+   ...
+	autocrlf = input
+```
+
+--------------------------------------------------------------------------------
+
 ## 3.3. Ignorar espacios en blanco
+
+Un problema común con algunos editores es que agregan espacios en blanco sin que el usuario se de cuenta
+
+Elemento              | Activo <br> por defecto                        | Descripción
+:--------------------:|:----------------------------------------------:|:-------
+`blank-at-eol`        | <span style="color: OliveDrab;">**SI**</span> | Quita espacios en blanco al final de la línea
+`blank-at-eof`        | <span style="color: OliveDrab;">**SI**</span> | Quita lineas vacías al final del archivo
+`space-before-tab`    | <span style="color: OliveDrab;">**SI**</span> | Quita espacios antes de un caracter `<TAB>` en el principio de la línea
+`indent-with-non-tab` | <span style="color:   DarkRed;">**NO**</span> | Busca lineas que estan identadas con espacios, se controla con la directiva `tabwidth`
+`tab-in-indent`       | <span style="color:   DarkRed;">**NO**</span> | Busca `<TAB>` en la identación de las lineas
+`cr-at-eol`           | <span style="color:   DarkRed;">**NO**</span> | Identifica el caracter `<CR>` como válido al final de la linea
+
+--------------------------------------------------------------------------------
+
+### Ejemplo de `core.whitespace`
+
+* Para establecer estos valores se utiliza `git config` para modificar la directiva `core.whitespace`
+* Los elementos especificados se activan al incluirlos en el valor de la directiva
+* Los elementos que no se especifican o que comienzan con un símbolo `-` son excluidos
+
+Para establecer el valor de `core.whitespace` utilizaremos las siguientes características:
+
+* Se desean los elementos `blank-at-eol`, `blank-at-eof` y `space-before-tab`
+* Desactivamos explícitamente `indent-with-non-tab` y `tab-in-indent`
+* Desactivamos implícitamente `cr-at-eol` ya que no se especifica en el valor
+
+```sh
+tonejito@linux:~$ git config core.whitespace blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-in-indent
+tonejito@linux:~$ cat .gitconfig
+[core]
+   ...
+	whitespace = blank-at-eol,blank-at-eof,space-before-tab,-indent-with-non-tab,-tab-in-indent
+```
 
 --------------------------------------------------------------------------------
 
