@@ -1,2 +1,4 @@
 *.sw?
 node_modules/*
+index.html
+book.html
